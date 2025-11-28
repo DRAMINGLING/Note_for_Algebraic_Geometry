@@ -34,7 +34,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.ref_name }} # 使用触发工作流的标签
-          name: Advanced Algebraic Geometry 2025fall
+          name: Algebraic Varieties
           body: |
             Automated release for ${{ github.ref_name }}.
             This PDF was automatically built from the LaTeX source.
