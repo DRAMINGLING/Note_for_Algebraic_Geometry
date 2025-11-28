@@ -2152,4 +2152,13 @@ There is also an induced tangent map $T_{x}\varphi: T_{x}X \rightarrow T_{y}Y$.
     is a singular point in $\varphi^{-1}(b)$.
     Hence there does not exist smooth open dense subset $V\subseteq Y$ such that $\varphi^{-1}(V) \rightarrow V$ is smooth.
 \end{example}
+\begin{proof}
+    We may assume that $X$ and $Y$ are both smooth.
+    Let $Z = \{x\in X \big{|} \}$ which is closed in $X$.
+    For all irreducible component $Y'$ of $\overline{\varphi(Z)}$,
+    we can pick an irreducible component $X'$ of $Z$ such that $\varphi\big{|}_{X'}$ is dominant.
+    By Proposition \ref{Proposition 5.6}, there exist smooth open dense subsets $U' \subseteq X'$ and $V' \subseteq Y'$ such that $\varphi\big{|}_{U'}: U' \rightarrow V'$ is a smooth morphism.
+    Hence $\dim Y' = \dim V' \le \dim U' = \dim X' < d$.
+    Take $V = Y \setminus Y'$.
+\end{proof}
 \end{document}
