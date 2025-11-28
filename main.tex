@@ -2145,6 +2145,15 @@ There is also an induced tangent map $T_{x}\varphi: T_{x}X \rightarrow T_{y}Y$.
     where $\varphi^{-1}(V) \cap X^{\smooth}$ is the schemetic intersection i.e. the ideal sheaf would generated union of the original two.
     \label{Theorem 5.4}
 \end{theorem}
+\begin{proof}
+    We may assume that $X$ and $Y$ are both smooth.
+    Let $Z = \{x\in X \big{|} \varphi \text{ is not smooth at } x\}$ which by Proposition \ref{Proposition 5.4} is closed in $X$.
+    For all irreducible component $Y'$ of $\overline{\varphi(Z)}$,
+    we can pick an irreducible component $X'$ of $Z$ such that $\varphi\big{|}_{X'}$ is dominant.
+    By Proposition \ref{Proposition 5.6}, there exist smooth open dense subsets $U' \subseteq X'$ and $V' \subseteq Y'$ such that $\varphi\big{|}_{U'}: U' \rightarrow V'$ is a smooth morphism.
+    Hence $\dim Y' = \dim V' \le \dim U' = \dim X' < d$.
+    Take $V = Y \setminus Y'$.
+\end{proof}
 \begin{example}
     Assume $\characteristic k = 0$.
     Consider $\varphi: \mathbb{A}_{k}^{2} \rightarrow \mathbb{A}_{k}^{1}$ sending $(x, y)$ to $x^{2} - y^{p}$.
@@ -2152,13 +2161,4 @@ There is also an induced tangent map $T_{x}\varphi: T_{x}X \rightarrow T_{y}Y$.
     is a singular point in $\varphi^{-1}(b)$.
     Hence there does not exist smooth open dense subset $V\subseteq Y$ such that $\varphi^{-1}(V) \rightarrow V$ is smooth.
 \end{example}
-\begin{proof}
-    We may assume that $X$ and $Y$ are both smooth.
-    Let $Z = \{x\in X \big{|} \}$ which is closed in $X$.
-    For all irreducible component $Y'$ of $\overline{\varphi(Z)}$,
-    we can pick an irreducible component $X'$ of $Z$ such that $\varphi\big{|}_{X'}$ is dominant.
-    By Proposition \ref{Proposition 5.6}, there exist smooth open dense subsets $U' \subseteq X'$ and $V' \subseteq Y'$ such that $\varphi\big{|}_{U'}: U' \rightarrow V'$ is a smooth morphism.
-    Hence $\dim Y' = \dim V' \le \dim U' = \dim X' < d$.
-    Take $V = Y \setminus Y'$.
-\end{proof}
 \end{document}
