@@ -341,7 +341,7 @@ So we here give it a formal definition.
     Let $X, Y$ be (quasi-)projective varieties.
     Wa say a map $\varphi: X \rightarrow Y$ is regular if 
     \begin{itemize}
-        \item $varphi$ is continuous
+        \item $\varphi$ is continuous
         \item for all regular function $f: U \rightarrow k$ with $U \subseteq Y$ open,
         $f \circ \varphi: \varphi^{-1}(U) \rightarrow k$ is a regular function
     \end{itemize}
@@ -365,7 +365,7 @@ So we here give it a formal definition.
 \end{reason}
 \begin{proposition}
     Let $X$ be a (quasi-)projective subvariety of $\mathbb{P}_{k}^{m}$, $\varphi: X \rightarrow \mathbb{P}_{k}^{m}$ a regular map.
-    Then for every $x\in X$, there exists open neighbourhood $U$ of $x$ and homogeneous polynomials $F_{0}, \cdots, F_{m}$ such that $\varphi(y) = [F_{0}(y), \cdots, F_{n}(y)]$ for all $y\in U$.
+    Then for every $x\in X$, there exists affine open neighbourhood $U$ of $x$ and polynomials $F_{0}, \cdots, F_{m}\in A(U)$ such that $\varphi(y) = [F_{0}(y), \cdots, F_{n}(y)]$ for all $y\in U$.
     \label{Proposition 2.1}
 \end{proposition}
 \begin{proof}
@@ -1701,6 +1701,27 @@ Easy to $D_{\theta}$ satisfies Libniz's Law and hence is a derivation.
     By taking affine cover, we may assume $X$ is affine.
     Hence by Jacobian criterion, we are done.
 \end{reason}
+\begin{lemma}
+    Let $X$ be a variety.
+    Assume $V$ and $U$ are two closed subvariety of $X$.
+    Then $(V \cup U)^{\smooth} \subseteq V^{\smooth} \cup U^{\smooth}$.
+    \label{Lemma 5.2}
+\end{lemma}
+\begin{proof}
+    We may assume that $X$ is affine.
+    For all $x\in (V \cup U)^{\smooth}$, we have that $\dim_{V \cup U} x = \max \{\dim_{V} x, \dim_{U} x\}$.
+    Note that defining equations of $T_{x}(V \cup U)$ are
+    \begin{equation}
+        \{\sum \frac{\partial F}{\partial x_{j}}(x)x_{j} \big{|} F\in I(V) \cap I(U)\}
+    \end{equation}
+    Hence $\max \{\dim_{V} x, \dim_{U} x\} \le \max \{\dim_{k} T_{x}V, \dim_{k} T_{x}U\} \le \dim_{k} T_{x}(V \cup U) = \dim_{V \cup U} x$.
+    Thus all the equalities hold so that $x\in V^{\smooth} \cup U^{\smooth}$ and $(V \cup U)^{\smooth} \subseteq V^{\smooth} \cup U^{\smooth}$.
+\end{proof}
+\begin{example}
+    Let $X = \mathbb{A}_{k}^{2}$ be the affine space.
+    Then $x$-axis and $y$-axis are both smooth, while the union of two axis is singular at the origin.
+    Hence the equality in Lemma \ref{Lemma 5.2} does not necessarily hold.
+\end{example}
 
 \subsection{Regular rings}
 \label{subsection:Smooth_Points_and_Smooth_Morphisms_Regular_rings}
@@ -1708,7 +1729,7 @@ Easy to $D_{\theta}$ satisfies Libniz's Law and hence is a derivation.
 \begin{lemma}
     Let $A$ be a noetherian local ring with residue field $k$, $\mathfrak{m}_{A}$ the maximal ideal.
     Then we always have that $\dim_{k} (\mathfrak{m}_{A}/\mathfrak{m}_{A}^{2}) \ge \dim A$.
-    \label{Lemma 5.2}
+    \label{Lemma 5.3}
 \end{lemma}
 \begin{reason}
     By Krull's Principal Ideal Theorem.
@@ -1720,7 +1741,7 @@ Easy to $D_{\theta}$ satisfies Libniz's Law and hence is a derivation.
 \begin{lemma}
     Let $A$ be a noetherian integral domain.
     Then $A$ is UFD if and only if all prime ideals of height $1$ are principal ideals.
-    \label{Lemma 5.3}
+    \label{Lemma 5.4}
 \end{lemma}
 \begin{theorem}
     A regular local ring is a UFD.
@@ -1758,24 +1779,24 @@ Easy to $D_{\theta}$ satisfies Libniz's Law and hence is a derivation.
     Let $R$ be an integral domain.
     Assume $(x)$ is a prime ideal of $R$.
     Then if $R[\frac{1}{x}]$ is a UFD, so is $R$.
-    \label{Lemma 5.4}
+    \label{Lemma 5.5}
 \end{lemma}
 \begin{proof}
     Let $\mathfrak{p}$ be a prime ideal of $R$ of height $1$.
     If $\mathfrak{p} = (x)$, then $\mathfrak{p}$ is principal.
     Otherwise, $\mathfrak{p}R[\frac{1}{x}]$ is a prime ideal of $R[\frac{1}{x}]$ of height $1$.
-    As $R[\frac{1}{x}]$ is a UFD, by Lemma \ref{Lemma 5.3} there exists some $y\in R[\frac{1}{x}]$ such that $\mathfrak{p}R[\frac{1}{x}] = (y)$.
+    As $R[\frac{1}{x}]$ is a UFD, by Lemma \ref{Lemma 5.4} there exists some $y\in R[\frac{1}{x}]$ such that $\mathfrak{p}R[\frac{1}{x}] = (y)$.
     \par
     Assume that $y = y_{0}x^{n}$ where $y_{0}\in R \setminus (x)$.
     Note that $\mathfrak{p}R[\frac{1}{x}] \cap R = \mathfrak{p}$, 
     we get that $\mathfrak{p} = yR[\frac{1}{x}] \cap R = y_{0}R[\frac{1}{x}] \cap R = (y_{0})$ also principal.
-    Again \ref{Lemma 5.3}, we conclude that $R$ is UFD.
+    Again \ref{Lemma 5.4}, we conclude that $R$ is UFD.
 \end{proof}
-With Lemma \ref{Lemma 5.4}, we give a proof of the $n \ge 5$ case in Example \ref{example:singularity_of_quotient_ring_by_square_sum}.
+With Lemma \ref{Lemma 5.5}, we give a proof of the $n \ge 5$ case in Example \ref{example:singularity_of_quotient_ring_by_square_sum}.
 \begin{lemma}
     Let $R = k[x_{1}, \cdots, x_{n}]/(x_{1}^{2} + \cdots + x_{n}^{2})$ and $\characteristic k \neq 2$.
     If $n \ge 5$, then $R$ is a UFD.
-    \label{Lemma 5.5}
+    \label{Lemma 5.6}
 \end{lemma}
 \begin{proof}
     Denote $x = x_{n - 1} + ix_{n}$ and $y = x_{n - 1} - ix_{n}$.
@@ -1788,7 +1809,7 @@ Theorem \ref{Theorem 5.1} is too hard to give a complete proof here.
 But we can prove for a much more easier but useful result.
 \begin{lemma}
     A regular local ring is an integral domain.
-    \label{Lemma 5.6}
+    \label{Lemma 5.7}
 \end{lemma}
 \begin{proof}
     Induct on dimension of $R$.
@@ -1805,6 +1826,10 @@ But we can prove for a much more easier but useful result.
     By Nakayama's Lemma, $\mathfrak{q}$ is zero ideal.
     Conclude that $R$ is an integral domain.
 \end{proof}
+\begin{remark}
+    If $X$ is smooth at $x$, then $x$ cannot be contianed in two distinct irreducible components since $\mathcal{O}_{X, x}$ is a regular local ring,
+    which by the previous lemma is an integral domain with unique minimal prime ideal $(0)$.
+\end{remark}
 \begin{proposition}
     Let $X$ be an irreducible variety of dimension $n$.
     Assume that $Y \subseteq X$ be a closed subvariety of pure dimension $n - 1$.
@@ -1957,13 +1982,13 @@ There is also an induced tangent map $T_{x}\varphi: T_{x}X \rightarrow T_{y}Y$.
 \begin{lemma}
     Given morphisms $X \overset{\varphi}{\rightarrow} Y \overset{\psi}{\rightarrow} Z$,
     then $T_{x}(\psi \circ \varphi) = T_{\varphi(x)}\psi \circ T_{x}\varphi$ for all $x\in X$.
-    \label{Lemma 5.7}
+    \label{Lemma 5.8}
 \end{lemma}
 \begin{lemma}
     Let $\varphi: X \rightarrow Y$ be a morphism, $x\in X$.
     Assume that $X'$ is the connected component of $X_{x}$ containing $x$.
     Then $T_{x}X' \subseteq \ker T_{x}\varphi$.
-    \label{Lemma 5.8}
+    \label{Lemma 5.9}
 \end{lemma}
 \begin{proof}
     As definition of Zariski tangent space is local, we may assume $X$ and $Y$ are affine.
@@ -2027,7 +2052,7 @@ There is also an induced tangent map $T_{x}\varphi: T_{x}X \rightarrow T_{y}Y$.
     Let $X$ be an irreducible variety, $Z$ irreducible subvariety of $X$ of codimension $r$.
     Assume $X$ and $Z$ are both smooth at $x\in Z$.
     Then there exists affine open neighbourhood $U\ni x$ and a regular sequence $f_{1}, \cdots, f_{r}$ in $A(U)$ such that $Z \cap U$ is an irreducible component of $V(f_{1}, \cdots, f_{r}) \subseteq U$.
-    \label{Lemma 5.9}
+    \label{Lemma 5.10}
 \end{lemma}
 \begin{proof}
     We may assume that $X$ is affine.
@@ -2073,7 +2098,7 @@ There is also an induced tangent map $T_{x}\varphi: T_{x}X \rightarrow T_{y}Y$.
             & = \dim X - r
         \end{split}
     \end{equation}
-    On the other hand, for all $y\in Z$, by Lemma \ref{Lemma 5.9},
+    On the other hand, for all $y\in Z$, by Lemma \ref{Lemma 5.10},
     there exist affine open neighbourhood $U\ni y$ and a regular sequence $f_{1}, \cdots, f_{r}$ in $A(U)$ such that $Z \cap U$ is an irreducible component of $V(f_{1}, \cdots, f_{r})$.
     As continuous map sending irreducible sets to irreducible sets, $\varphi^{-1}(Z \cap U)$ would be union of some irreducible components of $\varphi^{-1}(V(f_{1}, \cdots, f_{r})) = V(f_{1} \circ \varphi, \cdots, f_{r} \circ \varphi_{r})$.
     By Krull's Principal Ideal Theorem, those irreducible components should be of codimension at most $r$ in $\varphi^{-1}(U)$.
@@ -2142,20 +2167,20 @@ There is also an induced tangent map $T_{x}\varphi: T_{x}X \rightarrow T_{y}Y$.
     Assume $\characteristic k = 0$.
     Let $\varphi: X \rightarrow Y$ be a dominant morphism between irreducible varieties.
     Then there exists smooth open dense subset $V \subseteq Y$ such that $\varphi^{-1}(V) \cap X^{\smooth} \overset{\varphi}{\rightarrow} V$ is a smooth morphism,
-    where $\varphi^{-1}(V) \cap X^{\smooth}$ is the schemetic intersection i.e. the ideal sheaf would generated union of the original two.
+    where $\varphi^{-1}(V) \cap X^{\smooth}$ is the schemetic intersection i.e. the subvariety with ideal sheaf generated by union of the original two.
     \label{Theorem 5.4}
 \end{theorem}
 \begin{proof}
-    We may assume that $X$ and $Y$ are both smooth.
+    We may assume that $X$ and $Y$ are smooth.
     Let $Z = \{x\in X \big{|} \varphi \text{ is not smooth at } x\}$ which by Proposition \ref{Proposition 5.4} is closed in $X$.
     If $Z = \varnothing$, then take $V = Y$ and we are done.
     \par
     For all irreducible component $Y'$ of $\overline{\varphi(Z)}$, $\varphi^{-1}(Y')$ is union of some irreducible components of $Z$.
     by irreducibility of $Y'$, we can pick some irreducible component $X'$ of $Z$ such that $\overline{\varphi(X')} = Y'$ and hence $\varphi\big{|}_{X'}$ is dominant.
     By Proposition \ref{Proposition 5.6}, there exist smooth open dense subsets $U' \subseteq X'$ and $V' \subseteq Y'$ such that $\varphi\big{|}_{U'}: U' \rightarrow V'$ is a smooth morphism.
+    \par
     Hence for $x\in U'$, $\dim Y' = \dim_{k} T_{\varphi(x)}V' = \dim_{k} T_{x}\varphi\big{|}_{U'}(T_{x}U') \le \dim_{k} T_{x}\varphi(T_{x}X) < \dim_{k} T_{\varphi(y)}Y = \dim Y$.
     Thus $\overline{\varphi(Z)} \subsetneq Y$.
-    \par
     Take $V = Y \setminus \overline{\varphi(Z)}$.
     Want to show that $\varphi^{-1}(V) \overset{\varphi}{\rightarrow} V$ is a smooth morphism.
     In fact, for all $x\in \varphi^{-1}(V)$, the tangent map is just $T_{x}\varphi$ which is surjective as $\varphi^{-1}(V) \cap Z = \varnothing$.
@@ -2167,4 +2192,72 @@ There is also an induced tangent map $T_{x}\varphi: T_{x}X \rightarrow T_{y}Y$.
     is a singular point in $\varphi^{-1}(b)$.
     Hence there does not exist smooth open dense subset $V\subseteq Y$ such that $\varphi^{-1}(V) \rightarrow V$ is smooth.
 \end{example}
+
+\subsection{Bertini's Theorem}
+\label{subsection:Smooth_Points_and_Smooth_Morphisms_Bertini's_Theorem}
+
+\begin{theorem}[\textbf{\emph{Bertini's Theorem}}]
+    Assume $\characteristic k = 0$.
+    Let $X$ be a smooth variety, $\varphi: X \rightarrow \mathbb{P}_{k}^{n}$ morphism.
+    Then for a general hyperplane $H$ of $\mathbb{P}_{k}^{n}$ i.e. for $H$ in some nonempty open subset of ${\mathbb{P}_{k}^{n}}^{\vee}$, $\varphi^{-1}(H)$ is smooth.
+    \label{Theorem 5.5}
+\end{theorem}
+\begin{proof}
+    Since $X$ is smooth, $X$ is disjoint union of irreducible components.
+    We may assume $X$ is irreducible of dimension at least $1$.
+    Then consider the incident variety $I_{X} := \{(x, [H])\in X \times {\mathbb{P}_{k}^{n}}^{\vee} \big{|} \varphi(x)\in H\}$ and morphism $\varphi \times \identity: X \times {\mathbb{P}_{k}^{n}}^{\vee} \rightarrow \mathbb{P}_{k}^{n} \times {\mathbb{P}_{k}^{n}}^{\vee}$.
+    Clearly, $I_{X}$ is preimage of the universal hyperplane $I = \{(\alpha, [H])\in \mathbb{P}_{k}^{n} \times {\mathbb{P}_{k}^{n}}^{\vee} \big{|} \alpha\in H\}$.
+    \par
+    For all $x\in X$, preimage of $x$ under projection $I_{X} \overset{p_{1}}{\rightarrow} X$ is isomorphic to $\mathbb{P}_{k}^{n - 1}$.
+    Hence by Proposition \ref{Proposition 4.5}, $I_{X}$ is irreducible and $\dim I_{X} = \dim X + n - 1$.
+    For all $P = (x, [H])\in I_{X}$, want to show that $\dim_{k} T_{P}I_{X} = \dim X + n - 1$.
+    \par
+    Denote coordinate of $\mathbb{P}_{k}^{n}$ by $y_{1}, \cdots, y_{n}$ and coordinate of ${\mathbb{P}_{k}^{n}}^{\vee}$ by $z_{1}, \cdots, z_{n}$.
+    By coordinate transformation, We may assume that $\varphi(x) = [1, 0, \cdots, 0]$ and $[H] = [0, \cdots, 0, 1]$.
+    By Proposition \ref{Proposition 2.1}, there exists affine open neighbourhood $V$ of $x$ such that $\varphi\big{|}_{V}$ is defined by polynomial $f_{1}, \cdots, f_{n}\in A(U)$.
+    \par
+    Thus $I_{X} \cap (V \times D_{+}(z_{n}))$ is defined by $z_{0/n} + z_{1/n}f_{1} + \cdots + z_{n - 1/n}f_{n - 1} + f_{n}$ in $V \times D_{+}(z_{n})$,
+    whose partial derivation with respect to $z_{0/n}$ is constantly $1$.
+    Hence $T_{P}I_{X} \subseteq T_{P}(V \times D_{+}(z_{n}))$ and $\dim_{k} T_{P}I_{X} \le \dim_{k} T_{P}(V \times D_{+}(z_{n})) - 1 = \dim X + n - 1 = \dim I_{X}$.
+    We get that $I_{X}$ is smooth.
+    \par
+    Now apply generic smoothness for $I_{X} \overset{p_{2}}{\rightarrow} {\mathbb{P}_{k}^{n}}^{\vee}$,
+    there exists open dense subset $U \subseteq {\mathbb{P}_{k}^{n}}^{\vee}$ such that $I_{X} \cap p_{2}^{-1}(U) \overset{p_{2}}{\rightarrow} U$ is a smooth morphism.
+    And for all $[H]\in U$, by Proposition \ref{Proposition 5.5}, the fiber $p_{2}^{-1}([H]) = \varphi^{-1}(H) \times \{[H]\} \cong \varphi^{-1}(H)$ is smooth since $[H]$ is smooth as a one-point set.
+\end{proof}
+\begin{theorem}[\textbf{\emph{Bertini's Theorem}}]
+    Let $X \hookrightarrow \mathbb{P}_{k}^{n}$ be an irreducible smooth subvariety.
+    Then for a general hyperplane $H$ of $\mathbb{P}_{k}^{n}$, $H$ does not contain $X$ and $X \cap H$ is smooth.
+    \label{Theorem 5.6}
+\end{theorem}
+\begin{proof}
+    Consider $S_{X} := \{(x, [H])\in X \times {\mathbb{P}_{k}^{n}}^{\vee} \big{|} X \subseteq H \text{ or } x\in \singular(X \cap H)\}$.
+    Suffices to show that $S$ is closed and of dimension $< n$.
+    Assume that $S_{X}$ is a variety first.
+    Denote coordinate of $\mathbb{P}_{k}^{n}$ by $y_{1}, \cdots, y_{n}$ and coordinate of ${\mathbb{P}_{k}^{n}}^{\vee}$ by $z_{1}, \cdots, z_{n}$.
+    \par
+    We may assume that $X$ is irreducible.
+    Consider $S_{X} \overset{p_{1}}{\rightarrow} X$.
+    For $x\in X$ and $(x, [H])\in p_{1}^{-1}(x)$, by coordinate transformation assume that $x = [1, 0, \cdots, 0]$.
+    Then we can replace $X$ by $X \cap D_{+}(y_{0})$ and $[H]\in V(z_{0})$.
+    \par 
+    When $X \subseteq H$, the defining equation $F$ of $H$ should in $I(X)$.
+    When $H$ does not contain whole $X$, $\dim X \cap H = \dim X - 1 = \dim_{k} T_{x}X - 1$.
+    Since $X \cap H$ is singular at $x$, $\dim_{k} T_{x}(X \cap H) > \dim X \cap H$.
+    Note that the defining equations of $T_{x}(X \cap H)$ are
+    \begin{equation}
+        S \cup \{\sum \frac{\partial F}{\partial y_{j/0}}(x)y_{j/0}\}
+    \end{equation}
+    where $S$ are the defining equations of $T_{x}X$.
+    Hence $\dim_{k} T_{x}X \ge \dim_{k} T_{x}(X \cap H) > \dim_{k} T_{x}X - 1$.
+    Thus $\sum \frac{\partial F}{\partial y_{j/0}}(x)y_{j/0}$ is always contained in the linear subspace generated by $S$, denoted by $\langle S \rangle$.
+    In fact, $\dim_{k} \langle S \rangle = n - \dim_{k} T_{x}X = n - \dim X$,
+    \par
+    Now $\langle S \rangle$ is a subvariety of ${\mathbb{P}_{k}^{n}}^{\vee}$ of dimension $n - \dim X$.
+    And $p_{1}^{-1}(x) \cong \langle S \rangle \cap V(z_{0})$.
+    It is clear that $\langle S \rangle$ is not contained in $V(z_{0})$.
+    Thus $p_{1}^{-1}(x)$ is a projective subspace of ${\mathbb{P}_{k}^{n}}^{\vee}$ of codimension $\dim X + 1$.
+    Hence by Proposition \ref{Proposition 4.5}, $S_{X}$ is irreducible and $\dim S_{X} = n - 1$.
+    Conclude that $\overline{p_{2}(S_{X})} \neq {\mathbb{P}_{k}^{n}}^{\vee}$ and for all $[H]\in {\mathbb{P}_{k}^{n}}^{\vee} \setminus \overline{p_{2}(S_{X})}$, $X \cap H$ is smooth.
+\end{proof}
 \end{document}
