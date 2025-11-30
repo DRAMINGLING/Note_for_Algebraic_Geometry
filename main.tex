@@ -2257,10 +2257,10 @@ There is also an induced tangent map $T_{x}\varphi: T_{x}X \rightarrow T_{y}Y$.
     Hence $(x, [H])\in p_{1}^{-1}(x)$ if and only if $F\in V(z_{0})$ and the rank of the following matrix is equal to the rank of the submatrix of the first $n - \dim X$ rows
     \begin{equation}
         \begin{pmatrix}
-            \frac{\partial G_{1}}{\partial y_{1/0}} & \cdots & \frac{\partial G_{1}}{\partial y_{n/0}} \\
+            \frac{\partial G_{1}}{\partial y_{1/0}}(x) & \cdots & \frac{\partial G_{1}}{\partial y_{n/0}}(x) \\
             \vdots & \ddots & \vdots \\
-            \frac{\partial G_{n - \dim X}}{\partial y_{1/0}} & \cdots & \frac{\partial G_{n - \dim X}}{\partial y_{n/0}} \\
-            \frac{\partial F}{\partial y_{1/0}} & \cdots & \frac{\partial F}{\partial y_{n/0}}
+            \frac{\partial G_{n - \dim X}}{\partial y_{1/0}}(x) & \cdots & \frac{\partial G_{n - \dim X}}{\partial y_{n/0}}(x) \\
+            \frac{\partial F}{\partial y_{1/0}}(x) & \cdots & \frac{\partial F}{\partial y_{n/0}}(x)
         \end{pmatrix}
     \end{equation}
     which is a closed condition, so that $S_{X}$ is closed.
@@ -2268,4 +2268,14 @@ There is also an induced tangent map $T_{x}\varphi: T_{x}X \rightarrow T_{y}Y$.
     Hence by Proposition \ref{Proposition 4.5}, $S_{X}$ is irreducible and $\dim S_{X} = n - 1$.
     Conclude that $\overline{p_{2}(S_{X})} \neq {\mathbb{P}_{k}^{n}}^{\vee}$ and for all $[H]\in {\mathbb{P}_{k}^{n}}^{\vee} \setminus \overline{p_{2}(S_{X})}$, $X \cap H$ is smooth.
 \end{proof}
+\begin{theorem}[\textbf{\emph{Bertini's Theorem}}]
+    Let $X$ be an irreducible variety, $\varphi: X \rightarrow \mathbb{P}_{k}^{n}$ a morphism and $\overline{\varphi(X)} \ge 2$.
+    Then for a general hyperplane $H$ of $\mathbb{P}_{k}^{n}$, $\varphi^{-1}(H)$ is still irreducible.
+    \label{Theorem 5.7}
+\end{theorem}
+
+\section{Some Interesting Varieties}
+\label{section:Some_Interesting_Varieties}
+
+
 \end{document}
