@@ -472,7 +472,7 @@ So we here give it a formal definition.
 \begin{remark}
     In general, we cannot directly define composition of two rational maps.
     But for a dominant rational map $f: X \dashrightarrow Y$ and any rational map $g: Y \dashrightarrow Z$,
-    $g \circ f$ is a well-defined rational map.
+    $g \circ f$ is a well defined rational map.
     \par
     In addition, for a dominant rational map $f: X \dashrightarrow Y$, 
     it induces a canonical map $f^{\ast}: K(Y) \rightarrow K(X)$ mapping $g$ to $f \circ f$, which is a homomorphism of $k$-algebras.
@@ -2419,5 +2419,181 @@ In fact, $\grassmannianscheme{m}{n}$ is intersection of the quadric surfaces cut
     Then we call $\mathcal{J}(X, Y) = \overline{\cup_{p\in X, q \neq p\in Y} L_{p, q}}$ the joint variety of $X$ and $Y$,
     where $L_{p, q}$ is the line connecting $p$ and $q$.
     In particular, when $Y = X$, we call $\mathcal{J}(X, X)$ the second variety of $X$.
+\end{example}
+
+\section{Divisors}
+\label{section:Divisors}
+
+\subsection{Line bundles}
+\label{subsection:Divisors_Line_bundles}
+
+\begin{definition}
+    Let $X$ be a variety.
+    A line bundle $L$ over $X$ is a morphism $P: L \rightarrow X$ such that
+    \begin{itemize}
+        \item $\exists$ open covering $\{U_{i}\}$ of $X$ with commutative diagrams
+        $
+        \begin{tikzcd}
+            P^{-1}(U_{i}) \arrow[r, "\psi_{i}", "\sim" swap] \arrow[rd, "P" swap] &
+            U_{i} \times \mathbb{A}_{k}^{1} \arrow[d, "projection"] \\
+            & U_{i}   
+        \end{tikzcd}
+        $
+        \item for all $i, j$, the map $\psi_{i} \circ \psi_{j}^{-1}: (U_{i} \cap U_{j}) \times \mathbb{A}_{k}^{1} \rightarrow (U_{i} \cap U_{j}) \times \mathbb{A}_{k}^{1}$ sending $(x, t)$ to $(x, g_{ij}(x)t)$ is linear i.e. $g_{ij}$ is an invertible regular function on $U_{i} \cap U_{j}$.
+    \end{itemize}
+    Usually, we call $\{g_{ij}\}$ transition functions.
+\end{definition}
+\begin{definition}
+    Let $P: L \rightarrow X$ and $P': L' \rightarrow X$ be two lines bundles over $X$.
+    We say $P$ and $P'$ (or $L$ and $L'$ when there is no confusion) are isomorphic if there is a commutative diagram
+    \begin{equation}
+        \begin{tikzcd}
+            L \arrow[r, "\phi", "\sim" swap] \arrow[d, "P" swap] &
+            L' \arrow[dl, "P'"] \\
+            X &
+        \end{tikzcd}
+    \end{equation}
+    and $\psi_{j}' \circ \phi \circ \psi_{i}^{-1}$ is linear.
+\end{definition}
+\begin{definition}
+    Let $P: L \rightarrow X$ be a line bundle over $X$.
+    A (resp. rational) section of $L$ is a regular (resp. rational) map $s: X \rightarrow L$ such that $P \circ s = id_{X}$.
+    Denote the set of all sections of $L$ on $X$ by $\Gamma(X, L)$.
+\end{definition}
+\begin{remark}
+    For all line bundle $L$, there is always a zero section $0_{L}: X \rightarrow L$ glued up by local morphisms $x \mapsto (x, 0)$.
+    Hence $\Gamma(X, L)$ is nonempty.
+\end{remark}
+\begin{lemma}
+    $\Gamma(X, L)$ is a $k$-linear space.
+    \label{Lemma 7.1}
+\end{lemma}
+\begin{lemma}
+    Let $\varphi: X \rightarrow Y$ be a morphism between varieties, $P: L \rightarrow Y$ line bundle over $Y$.
+    Set $\varphi^{\ast}L = X \times_{Y} L$.
+    Then the projection $\varphi^{\ast}L \rightarrow X$ is a line bundle over $X$.
+    Moreover, $\Gamma(\varphi): \Gamma(Y, L) \rightarrow \Gamma(X, \varphi^{\ast}L)$ is a $k$-linear map.
+    \label{Lemma 7.2}
+\end{lemma}
+\begin{proof}
+    Since $P: L \rightarrow Y$ is a line bundle over $Y$, there is an open covering $\{V_{i}\}$ of $Y$ with commutative diagrams
+    \begin{equation}
+        \begin{tikzcd}
+            P^{-1}(V_{i}) \arrow[r, "\psi_{i}", "\sim" swap] \arrow[rd, "P" swap] &
+            V_{i} \times \mathbb{A}_{k}^{1} \arrow[d, "projection"] \\
+            & V_{i}   
+        \end{tikzcd}
+    \end{equation}
+    Take $U_{i} = \varphi^{-1}(V_{i})$, then there are commutative diagrams
+    \begin{equation}
+        \begin{tikzcd}
+            & U_{i} \times \mathbb{A}_{k}^{-1} \arrow[rr] \arrow[ddl] &&
+            V_{i} \times \mathbb{A}_{k}^{-1} \arrow[ddl] \\
+            U_{i} \times P^{-1}(V_{i}) \arrow[ur, "\phi_{i}", "\sim" swap] \arrow[rr, crossing over] \arrow[d] && 
+            P^{-1}(V_{i}) \arrow[ur, "\psi_{i}", "\sim" swap] \arrow[d] & \\
+            U_{i}  \arrow[rr, "\varphi"] &&
+            V_{i} &
+        \end{tikzcd}
+    \end{equation}
+    such that all blocks are pull back.
+    As $\psi_{i} \circ \psi_{j}^{-1}$ sending $(y, t)$ to $(y, g_{ij}(y)t)$ is linear, $\phi_{i} \circ \phi_{j}^{-1}$ sending $(x, t)$ to $(x, g_{ij}(\varphi(x))t)$ is also linear.
+    Hence the projection $\varphi^{\ast}L \rightarrow X$ is a line bundle over $X$.
+\end{proof}
+\begin{example}
+    We call the projection $X \times \mathbb{A}_{k}^{1} \rightarrow X$ the trivial line bundle.
+    Then $P: L \rightarrow X$ is isomorphic to the trivial line bundle over $X$ if and only if there exists section $s\in \Gamma(X, L)$ such that $s$ does not meet the $0$-section everywhere i.e. $s(x) \neq (x, 0)$ for all $x\in X$.
+    \par
+    Given such a line bundle, note that we have canonical section sending $x$ to $(x, a)$ locally for all $a\in k$,
+    such a section does not meet $0$-section.
+    Conversely, given a section not meeting $0$-section,
+    we can construct an isomorphism $X \times \mathbb{A}_{k}^{1} \rightarrow L$ sending $(x, t)$ to $t \cdot s(x)$.
+    In fact, $\Gamma(X, X \times \mathbb{A}_{k}^{1}) = A(X)$.
+\end{example}
+\begin{example}
+    Let $V$ be a vector space over $k$ of dimension $n + 1$, $\mathbb{P}V$ parameterizing lines in $V$ through origin.
+    Set $L = \{([l], v)\in \mathbb{P}V \times V \big{|} v\in l\}$.
+    Denote coordinate of $\mathbb{P}V$ by $x_{0}, \cdots, x_{n}$.
+    Then for projection $p: L \rightarrow \mathbb{P}V$, there is a canonical isomorphism $p^{-1}(D_{+}(x_{i})) \overset{\sim}{\rightarrow} D_{+}(x_{i}) \times \mathbb{A}_{k}^{1}$ defined by $([l], v) \mapsto ([l], v_{i})$,
+    where $v_{i}$ is the $i$th coordinate of $v$.
+    In fact, for example, for all $[l] = [1, \alpha_{1}, \cdots, \alpha_{n}]\in D_{+}(x_{0})$ and $([l], v)\in p^{-1}([l])$,
+    $v$ is of the form $(v_{0}, \alpha_{1}v_{0}, \cdots, \alpha_{n}v_{0})$.
+    This line bundle $L$ with transition functions $g_{ij} = \frac{x_{i}}{x_{j}}$ is called the tautological line bundle over $\mathbb{P}_{k}^{n}$, usually denoted by $\mathcal{O}_{\mathbb{P}_{k}^{n}}(-1)$.
+\end{example}
+To introduce more intersecting properties about line bundles,
+here we give an equivalent definition of line bundle first.
+\begin{definition}
+    A line bundle is equivalence class of a collection of data 
+    \begin{itemize}
+        \item an open covering $\{U_{i}\}$ of $X$
+        \item transition functions $g_{ij}: U_{i} \cap U_{j} \rightarrow k^{\ast}$ satisfying the cocycle condition
+    \end{itemize}
+    under the equivalent relation $(\{U_{i}\}, g_{ij}) \sim (\{V_{i'}\}, g_{i'j'}')$ if there exist regular functions $s_{ii'}: U_{i} \cap V_{i'} \rightarrow k^{\ast}$ such that $g_{i'j'}'s_{ii'} = g_{ij}s_{jj'}$ for all $i, j, i', j'$.
+\end{definition}
+\begin{remark}
+    More precisely, such an equivalence would one-to-one correspond to an isomorphism class of our original definition instead of just a morphism.
+\end{remark}
+Given a line bundle $L = (\{U_{i}\}, g_{ij})$, then $L^{-1} := (\{U_{i}\}, g_{ij}^{-1})$ is a well defined line bundle.
+Given two line bundles $L_{1}$ and $L_{2}$, by taking refinement of open covering, 
+we may write $L_{1} = (\{U_{i}\}, g_{ij})$ and $L_{2} = (\{U_{i}\}, h_{ij})$.
+Then $L_{1} \otimes L_{2} := (\{U_{i}\}, g_{ij}h_{ij})$ is a well defined line bundle.
+\par
+Denote the set of isomorphism classes of line bundles over $X$ by $\picardscheme(X)$.
+With discussion above, we successfully give a group structure on $\picardscheme(X)$, called the Picard group of $X$.
+\begin{definition}
+    Let $L = (\{U_{i}\}, g_{ij})$ be a line bundle over $X$.
+    A (resp. rational) section of $L$ on $X$ is a set of regular (resp. rational) functions $\{s_{i}: U_{i} \rightarrow \mathbb{A}_{k}^{1}\}$ such that $s_{i} = g_{ij}s_{j}$ on $U_{i} \cap U_{j}$.
+\end{definition}
+\begin{example}
+    For projective space $\mathbb{P}_{k}^{n}$, denote $\mathcal{O}_{\mathbb{P}_{k}^{n}}(1) = \mathcal{O}_{\mathbb{P}_{k}^{n}}(-1)^{-1}$ and $\mathcal{O}_{\mathbb{P}_{k}^{n}}(d) = \mathcal{O}_{\mathbb{P}_{k}^{n}}(1)^{\oplus d}$,
+    then $\mathcal{O}_{\mathbb{P}_{k}^{n}}(1) = (\{D_{+}(x_{i})\}, \frac{x_{j}}{x_{i}})$.
+    Consider section $\{s_{i}\}$ given by $\frac{x_{0}}{x_{i}}$, corresponding to $x_{0}$.
+    We get that $S_{1} = \oplus_{i} kx_{i} \subseteq \Gamma(\mathbb{P}_{k}^{n}, \mathcal{O}_{\mathbb{P}_{k}^{n}}(1))$.
+\end{example}
+\begin{proposition}
+    Let $S = k[x_{0}, \cdots, x_{n}]$.
+    In fact, for all $d \ge 0$, $\Gamma(\mathbb{P}_{k}^{n}, \mathcal{O}_{\mathbb{P}_{k}^{n}}(d)) = S_{d}$.
+    Moreover, for all negative $d$, $\Gamma(\mathbb{P}_{k}^{n}, \mathcal{O}_{\mathbb{P}_{k}^{n}}(d)) = \{0\}$.
+    \label{Proposition 8.1}
+\end{proposition}
+\begin{proof}
+    Obviously, for all $t$, as $\frac{x_{t}^{d}}{x_{i}^{d}} = \frac{x_{j}^{d}}{x_{i}^{d}} \cdot \frac{x_{t}^{d}}{x_{j}^{d}}$,
+    we get $\{\frac{x_{t}^{d}}{x_{i}^{d}}\}$ is a section of $\mathcal{O}_{\mathbb{P}_{k}^{n}}(d)$.
+    Hence $S_{d} \subseteq \Gamma(\mathbb{P}_{k}^{n}, \mathcal{O}_{\mathbb{P}_{k}^{n}}(d))$.
+    On the other hand, given a section $\{s_{i}\}$.
+    Write $s_{i} = f_{i}(x_{0/i}, \cdots, x_{n/i})$, then $f_{i} = \frac{x_{j}^{d}}{x_{i}^{d}}f_{j}$.
+    Arguing about degree, we get that $f_{i} = \frac{g}{x_{i}^{d}}$ for some homogeneous polynomial $g\in k[x_{0}, \cdots, x_{n}]$ so that $\Gamma(\mathbb{P}_{k}^{n}, \mathcal{O}_{\mathbb{P}_{k}^{n}}(d)) = S_{d}$.
+    In particular, for $d$ negative, same argument tells us that the only possible $g$ is zero.
+\end{proof}
+\begin{remark}
+    There is another way to explain why there is only zero section when $d$ is negative.
+    Say $s$ is a section of $\mathcal{O}_{\mathbb{P}_{k}^{n}}(-r)$.
+    Note that $\mathcal{O}_{\mathbb{P}_{k}^{n}}(r) \otimes \mathcal{O}_{\mathbb{P}_{k}^{n}}(-r)$ is just the isomorphism class of trivial bundle,
+    $x_{t}s$ is section of the trivial bundle for all $t$.
+    While sections of trivial bundle are just $A(\mathbb{P}_{k}^{n}) = S_{0}$, as $x_{t}s$ would vanish on $V(x_{t})$, $x_{t}s$ is the zero section for all $t$.
+    Conclude that $s$ is zero section.
+\end{remark}
+\begin{proposition}
+    Let $L = (\{U_{k}\}, g_{kl})$ be a line bundle over $X$.
+    Assume $s_{0}, \cdots, s_{i}\in \Gamma(X, L)$, where $s_{i} = \{s_{ik}\}$
+    Define a rational map $\phi_{L}: X \dashrightarrow \mathbb{P}_{k}^{n}$ glued up by $U_{k} \dashrightarrow \mathbb{P}_{k}^{n}$ sending $x$ to $[s_{0k}(x), \cdots, s_{nk}(x)]$.
+    If for all $x\in X$, $s_{ik}(x) \neq 0$ for some $i, k$,
+    then $\phi_{L}$ is a well defined morphism.
+    And in this case, $L = \phi_{L}^{\ast}\mathcal{O}_{\mathbb{P}_{k}^{1}}(1)$.
+    \label{Proposition 7.2}
+\end{proposition}
+\begin{proof}
+    Clearly, $\varphi_{L}$ is a morphism, want to show that $(\{\varphi_{L}^{-1}(D_{+}(x_{i}))\}, \frac{x_{j}}{x_{i}} \circ \varphi_{L}) \sim (\{U_{k}\}, g_{kl})$.
+    In fact, for all $x\in U_{k} \cap \varphi_{L}^{-1}(D_{+}(x_{i}))$, by definition, $s_{ik}(x) \neq 0$.
+    Hence $s_{ik}$ is an invertible regular function on $U_{k} \cap \varphi_{L}^{-1}(D_{+}(x_{i}))$.
+    And $g_{kl}s_{jl} = s_{jk} = \frac{s_{jk}}{s_{ik}} \cdot s_{ik} = (\frac{x_{j}}{x_{i}} \circ \varphi_{L}) \circ s_{ik}$, done!
+\end{proof}
+\begin{example}
+    Recall that for projective spaces, we have Veronese map and Segre embedding.
+    Consider the $d$th Veronese map $v_{d}: \mathbb{P}_{k}^{n} \rightarrow \mathbb{P}_{k}^{\binom{n + d - 1}{d}}$.
+    In fact, $v_{d}$ is given by sections in $\Gamma(\mathbb{P}_{k}^{n}, \mathcal{O}_{\mathbb{P}_{k}^{n}}(d))$ that are monomial of degree $d$ with coeffcient $1$.
+    \par
+    For Segre embedding $\mathbb{P}_{k}^{n} \times \mathbb{P}_{k}^{m} \hookrightarrow \mathbb{P}_{k}^{nm + n + m}$,
+    similarly, it is given by sections in $\Gamma(\mathbb{P}_{k}^{n} \times \mathbb{P}_{k}^{m}, \mathcal{O}_{\mathbb{P}_{k}^{n}}(1) \boxtimes \mathcal{O}_{\mathbb{P}_{k}^{m}}(1))$ that are $x_{i}y_{j}$,
+    where $\mathcal{O}_{\mathbb{P}_{k}^{n}}(1) \boxtimes \mathcal{O}_{\mathbb{P}_{k}^{m}}(1) := p^{\ast}\mathcal{O}_{\mathbb{P}_{k}^{n}}(1) \otimes q^{\ast}\mathcal{O}_{\mathbb{P}_{k}^{m}}(1)$ with $p, q$ projections.
 \end{example}
 \end{document}
