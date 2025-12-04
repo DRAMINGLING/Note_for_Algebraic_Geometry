@@ -2618,4 +2618,14 @@ And $v_{Y}(f) := n$ is our desired vanishing order.
     The definition of $v_{Y}(f)$ is independent of choice of $y$.
     \label{Lemma 7.3}
 \end{lemma}
+\begin{proof}
+    For two smooth points $y_{1}$ and $y_{2}$, assume $f = h_{i}g_{i}^{n_{i}}$ in $\mathcal{O}_{X, y_{i}}$.
+    We may assume that $n_{1} \le n_{2}$.
+    As $X$ is irreducible, we can take nonempty affine subset $U \subseteq X$ such that $f = h_{i}g_{i}^{n_{i}}$ in $A(U)$.
+    By definition above, we get that $I(U \cap Y) = (g_{i})$.
+    Hence $g_{1} = ag_{2}$ and $g_{2} = bg_{1}$ for some $a,b\in A(U)$.
+    As $A(U)$ is an integral domain, we get that $ab = 1$.
+    Then $h_{1}g_{1}^{n_{1}} = h_{1}a^{n_{1}}g^{n_{1}}$ and $h_{1} = h_{2}b^{n_{1}}g_{2}^{n_{2} - n_{1}}$.
+    Note that $g_{1} \nmid h_{1}$, we get that $g_{2} \nmid h_{1}$ so that $n_{1} = n_{2}$.
+\end{proof}
 \end{document}
