@@ -2651,6 +2651,13 @@ And $v_{Y}(f) := n$ is our desired vanishing order.
     Note that $V(f)$ has finitely many irreducible components, we are done. 
 \end{proof}
 Under the assumption $\codim \singular (X) \ge 2$, with lemmas above,
-for all regular function $f$, we can define a Weil divisor $\divisor (f) = \sum_{Y} v_{Y}(f)Y$.
-
+for all rational function $f$, we can define a Weil divisor $\divisor (f) = \sum_{Y} v_{Y}(f)Y$.
+\begin{example}
+    (1)Let $S = V(xy - z^{2}) \subseteq \mathbb{A}_{k}^{3}$.
+    Then $\singular (S) = \{(0, 0, 0)\}$ is of codimension $2$.
+    As $V(x) = \{(0, a, 0) \big{|} a\in k\} \cong \mathbb{A}_{k}^{1}$ is irreducible, $\divisor (x) = v_{D}(x)D$.
+    Since $D$ is defined by $z$ in $D(y)$, we get $x = \frac{z^{2}}{y}$ and $v_{D}(x) = 2$. \\
+    (2)Let $\mathbb{P}_{k}^{n}$ be projective space.
+    Then $\divisor (\frac{x_{i}}{x_{j}}) = V(x_{i}) - V(x_{j})$. 
+\end{example}
 \end{document}
