@@ -2525,7 +2525,7 @@ In fact, $\grassmannianscheme{m}{n}$ is intersection of the quadric surfaces cut
 To introduce more intersecting properties about line bundles,
 here we give an equivalent definition of line bundle first.
 \begin{definition}
-    A line bundle is equivalence class of a collection of data 
+    A line bundle is an equivalence class of a collection of data 
     \begin{itemize}
         \item an open covering $\{U_{i}\}$ of $X$
         \item transition functions $g_{ij}: U_{i} \cap U_{j} \rightarrow k^{\ast}$ satisfying the cocycle condition
@@ -2676,6 +2676,7 @@ for all rational function $f$, we can define a Weil divisor $\divisor (f) = \sum
 Just as we did for line bundles, it is natural to give a group structure on the set of Cartier divisors, denoted by $Catier(X)$.
 We say a Cartier divisor is effective if it can be represented by $(\{U_{i}\}, f_{i})$ with $f_{i}$ all regular functions.
 We say a Cartier divisor is principal if it can be represented by $(X, f)$ with $f\in K(X)$.
+And there is also an abelian group consisting of principal divisors.
 \par
 Under the assumption $\codim \singular (X) \ge 2$,
 there is a natural group homomorphism $\pi: Catier(X) \rightarrow Weil(X)$ sending $(\{U_{i}\}, f_{i})$ to $\sum v_{Y}(D)Y$,
@@ -2689,4 +2690,85 @@ In particular, $\pi((X, f)) = \divisor (f)$.
         \item when $X$ is normal, $\pi$ is injective.
     \end{itemize}
 \end{remark}
+\begin{theorem}
+    Let $X$ be an irreducible variety.
+    Then $Catier(X)/Pr(X) \overset{\sim}{\rightarrow} \picardscheme (X)$.
+    \label{Theorem 7.1}
+\end{theorem}
+\begin{proof}
+    Let $D = (\{U_{i}\}, f_{i})$ be a Cartier divisor.
+    Set $g_{ij} = \frac{f_{i}}{f_{j}}$.
+    Note that $g_{ij}g_{jk} = \frac{f_{i}}{f_{j}} \cdot \frac{f_{j}}{f_{k}} = \frac{f_{i}}{f_{k}}$,
+    $\mathcal{L}(D) = (\{U_{i}\}, g_{ij})$ is a line bundle, called the associated line bundle of $D$.
+    And we can define map $\mathcal{L}(\cdot): Cartier(X) \rightarrow \picardscheme (X)$ by sending $D$ to $\mathcal{L}(D)$.
+    \par
+    Given a line bundle $L = (\{U_{i}\}, g_{ij})$, fix $i_{0}\in I$,
+    then for all $i\in I$, $g_{ii_{0}}: U_{i} \cap U_{i_{0}} \rightarrow \mathbb{A}_{k}^{1}$ is a regular map.
+    As $X$ is irreducible, $U_{i} \cap U_{i_{0}}$ is dense in $U_{i}$ and hence $g_{ii_{0}}$ is also a rational function on $U_{i}$.
+    Since $\frac{g_{ii_{0}}}{g_{ji_{0}}} = g_{ij}$ is a regular function on $U_{i} \cap U_{j}$ vanishing nowhere, $D = (\{U_{i}\}, g_{ii_{0}})$ is a Cartier divisor and $\mathcal{L}(D) = L$.
+    Thus $\mathcal{L}(\cdot)$ is surjective.
+    \par
+    Finally, given $D = (\{U_{i}\}, f_{i})$ with $\mathcal{L}(D)$ trivial.
+    There is a section $s = \{s_{i}\}$ of $\mathcal{L}(D)$ not meeting the zero section.
+    As $s_{i}$ is a regular function on $U_{i}$ vanishing nowhere and $\frac{f_{i}}{s_{i}} = \frac{f_{j}}{s_{j}}$ for all $i,j$, 
+    $D = (\{U_{i}\}, f_{i}) = (\{U_{i}\}, \frac{f_{i}}{s_{i}}) = (X, F)$ for some $F\in K(X)$, which is principal.
+    \par
+    Conversely, for any principal divisor $D = (X, f)$,
+    $\mathcal{L}(D) = (X, 1)$ is just the trivial line bundle.
+    Conclude that $\ker \varphi = Pr(X)$ and $Catier(X)/Pr(X) \overset{\sim}{\rightarrow} \picardscheme (X)$.
+\end{proof}
+\begin{remark}
+    When $X$ is smooth in codimension $1$ i.e. $\codim \singular (X) \ge 2$,
+    denote $Cl(X) = Weil(X)/Pr(X)$, called the class group of $X$.
+\end{remark}
+\begin{lemma}
+    Let $X$ be an irreducible variety, $D = (\{U_{i}\}, f_{i})$ a Cartier divisor, $\mathcal{L}(D)$ the associated line bundle of $X$.
+    Then $\Gamma(X, \mathcal{L}(D)) \overset{\sim}{\rightarrow} \{f\in K(X) \big{|} f = 0 \text{ or } \divisor (f) + D \text{ effective}\}$.
+    \label{Lemma 7.5}
+\end{lemma}
+\begin{proof}
+    For all nonzero section $s = \{s_{i}\}$ of $\mathcal{L}(D)$, as $\frac{s_{i}}{f_{i}} = \frac{s_{j}}{f_{j}}$ is a rational function on $X$,
+    denoted by $F$, $\divisor (F) + D = (\{U_{i}\}, s_{i})$ is an effective Cartier divisor.
+    Then we can define a map $\varphi: \Gamma(X, \mathcal{L}(X)) \rightarrow \{f\in K(X) \big{|} f = 0 \text{ or } \divisor (f) + D \text{ effective}\}$ by sending $s$ to $F$.
+    Since $s$ nonzero, $F = \varphi(s)$ also nonzero so that $\varphi$ is injective.
+    \par
+    Assume $D' := \divisor (F) + D$ is effective, say $D' = (\{U_{i}\}, s_{i})$.
+    Then $s_{i} = Ff_{i}$ is a regular function on $U_{i}$ and $s_{i} = Ff_{i} = Ff_{j}g_{ij} = Fs_{j}$.
+    Hence $s = \{s_{j}\}$ is a nonzero section of $\mathcal{L}(D)$ and $\varphi(s) = F$.
+    Conclude that $\varphi$ is bijective.
+\end{proof}
+\begin{example}
+    (1)Let $X = \mathbb{A}_{k}^{n}$ be n-dimensional affine space.
+    As all irreducible hypersurfaces of $X$ are of the form $V(F)$ for some irreducible polynomial $F$, we get all divisors on $X$ are principal.
+    Hence $\picardscheme (X) = Cl(X) = 0$. \\
+    (2)Let $X = \mathbb{P}_{k}^{n}$ be n-dimensional projective space.
+    As irreducible hypersurface $H$ of $X$ is of the form $V(F)$ for some irreducible homogeneous polynomial $F$ of degree $d$,
+    $\frac{F}{x_{0}^{d}}$ is a rational function on $X$ and $\divisor (\frac{F}{x_{0}^{d}}) = H - dH_{0}$ where $H_{0} = V(x_{0})$.
+    Hence $\picardscheme (X) = Cl(X)$ can be generated by $H_{0}$.
+    As $\mathcal{O}_{\mathcal{P}_{k}^{n}}(m)$ are nontrivial for all $m \neq 0$, conclude that $\picardscheme (X) = Cl(X) \cong \mathbb{Z}$. \\
+    (3)Let $H \subseteq \mathbb{P}_{k}^{n}$ be a hypersurface of degree $d$, defined by $F$.
+    Set $U = \mathbb{P}_{k}^{n} \setminus H = D_{+}(F)$ which is affine.
+    Note that any irreducible subvariety of $U$ of codimension $1$ is the restriction of some irreducible hypersurface of $\mathbb{P}_{k}^{n}$,
+    there is a natural surjection $\pi: \picardscheme (\mathbb{P}_{k}^{n}) \twoheadrightarrow \picardscheme (U)$.
+    \par
+    And for regular function $\frac{x_{0}^{d}}{F}$ on $U$, we get that $\divisor (\frac{x_{0}^{d}}{F}) = d(H_{0} \cap U)$ is principal.
+    Hence $\langle dH_{0} \rangle \le \ker \pi$.
+    In fact, the equality holds and $\picardscheme (U) \cong \mathbb{Z}/d\mathbb{Z}$.
+    Assume that $\mathcal{O}_{\mathbb{P}_{k}^{n}}\in \ker \pi$, then $d'(H_{0} \cap U)$ is an effective principal Cartier divisor.
+    Since $A(U) = \{\frac{f}{F^{m}} \big{|} m\in \mathbb{N} \text{ and } f\in k[x_{0}, \cdots, x_{n}] \text{ homogeneous of degree} md\}$,
+    we can write $d'(H_{0} \cap U) = \divisor (\frac{f}{F^{m}})$ so that $H_{0}$ is the only irreducible component of $V(f)$ and hence $f = x_{0}^{md}$.
+    Conclude that $\ker \pi = \langle dH_{0} \rangle$. \\
+    (4)As irreducible hypersurface $H$ of $\mathbb{P}_{k}^{n} \times \mathbb{P}_{k}^{m}$ are defined by some bihomogenous polynomial $F$ of bihomogenous $(s, t)$,
+    we get $\frac{F}{x_{0}^{s}y_{0}^{t}}$ is a rational function on $\mathbb{P}_{k}^{n} \times \mathbb{P}_{k}^{m}$ and $\divisor (\frac{F}{x_{0}^{s}y_{0}^{t}}) = H - sV_{+}(x_{0}) - tV_{+}(y_{0})$ is principal.
+    Conclude that $\picardscheme (\mathbb{P}_{k}^{n} \times \mathbb{P}_{k}^{m}) \cong \mathbb{Z} \times \mathbb{Z}$.
+\end{example}
+\begin{remark}
+    In general, for smooth projective varieties $X$ and $Y$, 
+    we do not have that $\picardscheme (X \times Y) = \picardscheme (X) \times \picardscheme (Y)$.
+    For example, for projective curve $X \not\cong \mathbb{P}_{k}^{1}$,
+    we can verify that line bundles in $\picardscheme (\Delta_{X})$ do not come from $\picardscheme (X) \times \picardscheme (X)$.
+\end{remark}
+Let $X$ be a smooth projective curve.
+Then any divisor $D$ on $X$ is a finite sum $\sum_{i} n_{i}p_{i}$ with $p_{i}$ points in $X$.
+Set $\deg D = \sum_{i} n_{i}$.
 \end{document}
