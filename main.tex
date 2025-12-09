@@ -2788,8 +2788,14 @@ In particular, $\pi((X, f)) = \divisor (f)$.
     \par
     Note that $\delta_{X}$ is isomorphic to $X$ as varieties and is defined by $\{f(x_{0}, x_{1}, x_{2}), f(y_{0}, y_{1}, y_{2}), x_{0}y_{1} - x_{1}y_{0}, x_{0}y_{2} - x_{2}y_{0}, x_{1}y_{2} - x_{2}y_{1}\}$,
     we get that $\delta_{X}$ is an irreducible subvariety of $X \times X$ of codimension $1$.
-    To better interpret $\mathcal{L}(\Delta_{X})$ as transition functions, consider $\Delta_{X} \hookrightarrow \cup_{i} (U_{i} \times U_{i}') \hookrightarrow X \times X$,
-    where $U_{i} = X \cap D_{+}(x_{i})$ and $U_{i}' = X \cap D_{+}(y_{i})$ in $\mathbb{P}_{k}^{2}$.
+    To better interpret $\mathcal{L}(\Delta_{X})$ as transition functions, consider $\Delta_{X} \hookrightarrow \cup_{i} (U_{i} \times U_{i}) \hookrightarrow X \times X$,
+    where $U_{i}$ cover $X$ with local coordinate $t_{i}$ given by previous lemma.
+    It suffices to show that $\mathcal{L}(\Delta_{X})$ on $\cup_{i} (U_{i} \times U_{i})$ does not come from $\picardscheme (X) \times \picardscheme (X)$.
+    \par
+    Suppose that $\mathcal{L}(\Delta_{X}) = L_{1} L_{2}$.
+    Then transition functions of $\mathcal{L}(\Delta_{X})$ should be of the form $\alpha_{ij}(x)\beta_{ij}(y)$.
+    while $\mathcal{L}(\Delta_{X}) = (\{U_{i} \times U_{i}'\}, \frac{t_{i} - t_{i}'}{t_{j} - t_{j}'})$, contradiciton!
+    Hence $\mathcal{L}(\Delta_{X})$ on $X \times X$ does not come from $\picardscheme (X) \times \picardscheme (X)$.
 \end{proof}
 Let $X$ be a smooth projective curve.
 Then any divisor $D$ on $X$ is a finite sum $\sum_{i} n_{i}p_{i}$ with $p_{i}$ points in $X$.
