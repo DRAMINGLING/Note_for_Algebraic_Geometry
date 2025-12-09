@@ -2583,7 +2583,7 @@ With discussion above, we successfully give a group structure on $\picardscheme(
 \end{remark}
 \begin{proposition}
     Let $L = (\{U_{k}\}, g_{kl})$ be a line bundle over $X$.
-    Assume $s_{0}, \cdots, s_{i}\in \Gamma(X, L)$, where $s_{i} = \{s_{ik}\}$
+    Assume $s_{0}, \cdots, s_{n}\in \Gamma(X, L)$, where $s_{i} = \{s_{ik}\}$
     Define a rational map $\phi_{L}: X \dashrightarrow \mathbb{P}_{k}^{n}$ glued up by $U_{k} \dashrightarrow \mathbb{P}_{k}^{n}$ sending $x$ to $[s_{0k}(x), \cdots, s_{nk}(x)]$.
     If for all $x\in X$, $s_{ik}(x) \neq 0$ for some $i, k$,
     then $\phi_{L}$ is a well defined morphism.
@@ -2732,8 +2732,7 @@ In particular, $\pi((X, f)) = \divisor (f)$.
     Then $\Gamma(X, \mathcal{L}(D)) \overset{\sim}{\rightarrow} \{f\in K(X) \big{|} f = 0 \text{ or } \divisor (f) + D \text{ effective}\}$.
     \label{Lemma 7.5}
 \end{lemma}
-\vspace{-\baselineskip} % 减少一行间距
-\vspace{-\baselineskip} % 减少一行间距
+\vspace{-1.5\baselineskip} % 减少一行间距
 \begin{proof}
     For all nonzero section $s = \{s_{i}\}$ of $\mathcal{L}(D)$, as $\frac{s_{i}}{f_{i}} = \frac{s_{j}}{f_{j}}$ is a rational function on $X$,
     denoted by $F$, $\divisor (F) + D = (\{U_{i}\}, s_{i})$ is an effective Cartier divisor.
@@ -2748,7 +2747,8 @@ In particular, $\pi((X, f)) = \divisor (f)$.
 \begin{example}
     (1)Let $X = \mathbb{A}_{k}^{n}$ be n-dimensional affine space.
     As all irreducible hypersurfaces of $X$ are of the form $V(F)$ for some irreducible polynomial $F$, we get all divisors on $X$ are principal.
-    Hence $\picardscheme (X) = Cl(X) = 0$. \\
+    Hence $\picardscheme (X) = Cl(X) = 0$.
+    Similarly, for smooth variety $X$ with $A(X)$ UFD, $\picardscheme (X) = Cl(X) = 0$. \\
     (2)Let $X = \mathbb{P}_{k}^{n}$ be n-dimensional projective space.
     As irreducible hypersurface $H$ of $X$ is of the form $V(F)$ for some irreducible homogeneous polynomial $F$ of degree $d$,
     $\frac{F}{x_{0}^{d}}$ is a rational function on $X$ and $\divisor (\frac{F}{x_{0}^{d}}) = H - dH_{0}$ where $H_{0} = V(x_{0})$.
@@ -2769,6 +2769,7 @@ In particular, $\pi((X, f)) = \divisor (f)$.
     (4)As irreducible hypersurface $H$ of $\mathbb{P}_{k}^{n} \times \mathbb{P}_{k}^{m}$ are defined by some bihomogenous polynomial $F$ of bihomogenous $(s, t)$,
     we get $\frac{F}{x_{0}^{s}y_{0}^{t}}$ is a rational function on $\mathbb{P}_{k}^{n} \times \mathbb{P}_{k}^{m}$ and $\divisor (\frac{F}{x_{0}^{s}y_{0}^{t}}) = H - sV_{+}(x_{0}) - tV_{+}(y_{0})$ is principal.
     Conclude that $\picardscheme (\mathbb{P}_{k}^{n} \times \mathbb{P}_{k}^{m}) \cong \mathbb{Z} \times \mathbb{Z}$.
+    \label{example:picard_group}
 \end{example}
 \begin{remark}
     In general, for smooth projective varieties $X$ and $Y$, 
@@ -2800,9 +2801,9 @@ In particular, $\pi((X, f)) = \divisor (f)$.
     Denote coordinate of $\mathbb{P}_{k}^{2} \times \mathbb{P}_{k}^{2}$ by $x_{0}, x_{1}, x_{2}, y_{0}, y_{1}, y_{2}$.
     Then $X \times X$ is defined by $\{f(x_{0}, x_{1}, x_{2}), f(y_{0}, y_{1}, y_{2})\}$.
     \par
-    Note that $\delta_{X}$ is isomorphic to $X$ as varieties and is defined by $\{f(x_{0}, x_{1}, x_{2}), f(y_{0}, y_{1}, y_{2}), x_{0}y_{1} - x_{1}y_{0}, x_{0}y_{2} - x_{2}y_{0}, x_{1}y_{2} - x_{2}y_{1}\}$,
+    Note that $\Delta_{X}$ is isomorphic to $X$ and is defined by $\{f(x_{0}, x_{1}, x_{2}), f(y_{0}, y_{1}, y_{2}), x_{0}y_{1} - x_{1}y_{0}, x_{0}y_{2} - x_{2}y_{0}, x_{1}y_{2} - x_{2}y_{1}\}$,
     we get that $\delta_{X}$ is an irreducible subvariety of $X \times X$ of codimension $1$.
-    To better interpret $\mathcal{L}(\Delta_{X})$ as transition functions, consider $\Delta_{X} \hookrightarrow \cup_{i} (U_{i} \times U_{i}) \hookrightarrow X \times X$,
+    To better interpret $\mathcal{L}(\Delta_{X})$ by transition functions, consider $\Delta_{X} \hookrightarrow \cup_{i} (U_{i} \times U_{i}) \hookrightarrow X \times X$,
     where $U_{i}$ cover $X$ with local coordinate $t_{i}$ given by previous lemma.
     It suffices to show that $\mathcal{L}(\Delta_{X})$ on $\cup_{i} (U_{i} \times U_{i})$ does not come from $\picardscheme (X) \times \picardscheme (X)$.
     \par
@@ -2814,4 +2815,60 @@ In particular, $\pi((X, f)) = \divisor (f)$.
 Let $X$ be a smooth projective curve.
 Then any divisor $D$ on $X$ is a finite sum $\sum_{i} n_{i}p_{i}$ with $p_{i}$ points in $X$.
 Set $\deg D = \sum_{i} n_{i}$.
+\begin{proposition}
+    If $D$ is principal, then $\deg D = 0$.
+    \label{Proposition 7.4}
+\end{proposition}
+\begin{reason}
+    For $D = \divisor (f)$ principal, $f$ would give a rational map $X \overset{f}{\dashrightarrow} \mathbb{A}_{k}^{1} \hookrightarrow \mathbb{P}_{k}^{1}$, denoted by $\varphi$.
+    By Corollary \ref{Corollary 5.5}, $\varphi$ is in fact a morphism.
+    Consider rational map $\frac{x_{0}}{x_{1}}$ on $\mathbb{P}_{k}^{1}$.
+    Then $\varphi^{\ast}(\frac{x_{0}}{x_{1}}) = \frac{x_{0}}{x_{1}} \circ \varphi = f$ and hence $\divisor (f) = \divisor (\varphi^{\ast}(\frac{x_{0}}{x_{1}})) = \varphi^{\ast}[1, 0] - \varphi^{\ast}[0, 1]$.
+    Thus $\deg D = 0$.
+\end{reason}
+\begin{corollary}
+    There is a well defined map $\deg: \picardscheme (X) \rightarrow \mathbb{Z}$ sending $\mathcal{O}_{X}(D)$ to $\deg D$.
+    \label{Corollary 7.1}
+\end{corollary}
+We call kernel of the $\deg$ map the Jacobian variety of $X$, denoted by $J(X)$.
+\begin{proposition}
+    $\deg$ is injective if and only if $X \cong \mathbb{P}_{k}^{1}$.
+    \label{Proposition 7.5}
+\end{proposition}
+\begin{proof}
+    The $\Leftarrow$ arrow have been discussed in Example \ref{example:picard_group}.
+    We only need prove for the other arrow.
+    For all $x, y\in X$, the divisor $D = [x] - [y]$ has degree $0$ and by assumption, $\mathcal{O}_{X}(D)$ is trivial.
+    Hence by Theorem \ref{Theorem 7.1}, $D = \divisor (f)$ for some rational function $f\in K(X)$.
+    \par
+    Similar to proof of Proposition \ref{Proposition 7.4}, $f$ gives a rational map $X \overset{f}{\dashrightarrow} \mathbb{A}_{k}^{1} \hookrightarrow \mathbb{P}_{k}^{1}$, 
+    denoted by $\varphi$, which by Corollary \ref{Corollary 5.5} is a morphism.
+    In addition, as $\divisor (f) = \divisor (\varphi^{\ast}(\frac{x_{0}}{x_{1}}))$, we have that $x = \varphi^{\ast}[1, 0]$ and $y = \varphi^{\ast}[0, 1]$.
+    Conclude that $X$ is of degree $1$ and hence isomorphic to $\mathbb{P}_{k}^{1}$.  
+\end{proof}
+\begin{example}
+    Let $X \subseteq \mathbb{P}_{k}^{2}$ be the subvariety defined by $x_{1}^{2}x_{2} - x_{0}^{3} + x_{0}x_{2}^{2}$, $p_{0} = [0, 1, 0]\in X$.
+    Set $H = V(x_{2})$.
+    Then $H \cap X$ is exactly $p_{0}$.
+    As $\varphi^{\ast}H = 3p_{0}$, for any irreducible hypersurface $H'$ of $\mathbb{P}_{k}^{2}$, we have $\varphi^{\ast}H' \sim 3p_{0}$ and hence $\varphi^{\ast}H'$ is an effective divisor of degree $3$.
+    In particular, if $P, Q, R$ are $3$ distinct points contained in a line $L$, then $\varphi^{\ast}L = P + Q + R \sim 3p_{0}$.
+    \par
+    Claim that there is a bijection $X \rightarrow J(X)$ sending $x$ to $x - p_{0}$.
+    For surjectivity, assume $D = \sum_{i} n_{i}p_{i}\in J(X)$.
+    As $\deg D = 0$, we can rewrite $D = \sum_{i} n_{i}(p_{i} - p_{0})$.
+    For all distinct $p$ and $q$, taking the line $L$ connecting $p$ and $q$, we have that $\varphi^{\ast}L = p + q + s \sim 3p_{0}$ for some $s\in X$.
+    \par
+    Then for all $i$ with $n_{i}$ negative, there exists some $q_{i}\in X$ such that $p_{i} + p_{0} + q_{i} \sim 3p_{0}$ so that $p_{i} - p_{0} \sim p_{0} - q_{i}$.
+    Thus we may assume that $n_{i} > 0$ for all $i$.
+    While for different $i$ and $j$, there is also $q\in X$ such that $p_{i} + p_{j} + q \sim 3p_{0}$.
+    Repeatedly running this process, we get $D \sim n(p_{1} - p_{0})$ with $n > 0$.
+    \par
+    When $n \neq 1$, since $X$ is smooth at $p_{1}$, the Zariski tangent space $T_{p_{1}}X$ is one-dimensional.
+    Hence we get $p_{2}\in X$ such that $\varphi^{\ast}T_{p_{1}}X = 2p_{1} + p_{2} \sim 3p_{0}$ so that $n(p_{1} - p_{0}) \sim (n - 2)(p_{1} - p_{0}) + (p_{0} - p_{2})$.
+    Thus by this process, we can finally decrease $n$ to $1$ so that $X \rightarrow J(X)$ is surjective.
+    \par
+    For injectivity, if $p_{1} - p_{0} \sim p_{2} - p_{0}$, then $p_{1} - p_{2}$ is principal.
+    Similar to proof of Proposition \ref{Proposition 7.5}, we would see that $\deg X = 1$ contradicting to our assumption that $\deg X = 3$.
+    Conclude that the map is bijective.
+\end{example}
 \end{document}
