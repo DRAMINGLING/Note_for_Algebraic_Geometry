@@ -1088,21 +1088,8 @@ From now on, by a morphism of varieties, we mean a regular map.
     We say that a very general fiber of $f$ satisfies property $\mathcal{P}$ if there exist countably many proper closed subset $V_{i} \subseteq Y$ such that for all $y\in \cup_{i} V_{i}$,
     fiber $f^{-1}(y)$ satisfies property $\mathcal{P}$.
 \end{definition}
-\begin{lemma}
-    Let $X, Y$ be irreducible varieties, $f: X \rightarrow Y$ a dominant morphism.
-    Assume that $U$ is an open dense subset of $Y$ and $V \subseteq f^{-1}(U)$ is an open dense subset of $X$.
-    Then a general fiber of $f$ is finite if and only if a general fiber of $f\big{|}_{V}$ is finite.
-    \label{Lemma 4.1}
-\end{lemma}
-\begin{proof}
-    The $\leftquotes \Rightarrow \rightquotes$ arrow is trivial since for all $y\in U$, $f\big{|}_{V}^{-1}(y) \subseteq f^{-1}(y)$.
-    For the converse, since a finite fiber of $f\big{|}_{V}$ is finite, $\dim X = \dim V = \dim U = \dim Y$.
-    Take $W = V^{c}$, then $W$ is a proper subset of $X$ and hence $\dim W < dim X$.
-    As $f\big{|}_{W}: W \rightarrow \overline{f(W)}$ is dominant, $\dim \overline{f(W)} \le \dim W < \dim X = \dim Y$ so that $\overline{f(W)}$ is a proper subset.
-    Now take $\overline{f(W)}^{c} \cap U$, we would see that for all $y\in \overline{f(W)}^{c} \cap U$, $f^{-1}(y) \subseteq V$, done!
-\end{proof}
 \begin{theorem}
-    Let $X, Y$ be irreducible varieties, $f: X \rightarrow Y$ a dominant morphism.
+    Let $X, Y$ be irreducible affine varieties, $f: X \rightarrow Y$ a dominant morphism.
     Then a general fiber of $f$ is finite if and only if the corresponding field extension $f^{\ast}: K(Y) \hookrightarrow K(X)$ is a finite extension.
     \label{Theorem 4.5}
 \end{theorem}
@@ -1110,7 +1097,6 @@ From now on, by a morphism of varieties, we mean a regular map.
     In this case, $\dim X = \dim Y$ and for general $y$, $\sharp f^{-1}(y) \le [K{X} : K(Y)]$ taking equality when $\characteristic k = 0$.
 \end{remark}
 \begin{proof}
-    Firstly prove for affine case.
     Assume $X \subseteq \mathbb{A}_{k}^{n}$ and $Y \subseteq \mathbb{A}_{k}^{m}$.
     Consider graph $\Gamma_{f}$ of $f$, there is a commutative diagram
     \begin{equation}
@@ -1158,16 +1144,35 @@ From now on, by a morphism of varieties, we mean a regular map.
             Y_{n} = Y \arrow[u, hookrightarrow]
         \end{tikzcd}
     \end{equation}
-    By induction, we successfully prove the affine case.
-    \par
-    For general case, take affine open dense subset $U \subseteq Y$ and affine open dense subset $V \subseteq f^{-1}(U)$.
-    Then $f\big{|}_{V}: V \rightarrow U$ is a dominant morphism between affine varieties.
-    Hence a general fiber of $f\big{|}_{V}$ is finite if and only if $K(U) = K(Y)$ is finite over $K(V) = K(X)$.
-    Then by Lemma \ref{Lemma 4.1}, done!
+    By induction, we complete the proof.
 \end{proof}
 \begin{remark}
     When we replace $X$ by $\Gamma_{f}$, we in fact transfer imformation about $f$ into $I(X)$ while the new $f$ becomes trivial.
 \end{remark}
+\begin{lemma}
+    Let $X, Y$ be irreducible varieties, $f: X \rightarrow Y$ a dominant morphism.
+    Assume that $U$ is an affine open dense subset of $Y$ and $V \subseteq f^{-1}(U)$ is an affine open dense subset of $X$.
+    Then a general fiber of $f$ is finite if and only if a general fiber of $f\big{|}_{V}$ is finite.
+    \label{Lemma 4.1}
+\end{lemma}
+\begin{proof}
+    The $\leftquotes \Rightarrow \rightquotes$ arrow is trivial since for all $y\in U$, $f\big{|}_{V}^{-1}(y) \subseteq f^{-1}(y)$.
+    For the converse, since a general fiber of $f\big{|}_{V}$ is finite, by Theorem \ref{Theorem 4.5}, $\dim X = \dim V = \dim U = \dim Y$.
+    Take $W = V^{c}$, then $W$ is a proper subset of $X$ and hence $\dim W < dim X$.
+    As $f\big{|}_{W}: W \rightarrow \overline{f(W)}$ is dominant, $\dim \overline{f(W)} \le \dim W < \dim X = \dim Y$ so that $\overline{f(W)}$ is a proper subset.
+    Now take $\overline{f(W)}^{c} \cap U$, we would see that for all $y\in \overline{f(W)}^{c} \cap U$, $f^{-1}(y) \subseteq V$, done!
+\end{proof}
+\begin{corollary}
+    Let $X, Y$ be irreducible varieties, $f: X \rightarrow Y$ a dominant morphism.
+    Then a general fiber of $f$ is finite if and only if the corresponding field extension $f^{\ast}: K(Y) \hookrightarrow K(X)$ is a finite extension.
+    \label{Corollary 4.5}
+\end{corollary}
+\begin{proof}
+    Take affine open dense subset $U \subseteq Y$ and affine open dense subset $V \subseteq f^{-1}(U)$.
+    Then $f\big{|}_{V}: V \rightarrow U$ is a dominant morphism between affine varieties.
+    Hence a general fiber of $f\big{|}_{V}$ is finite if and only if $K(U) = K(Y)$ is finite over $K(V) = K(X)$.
+    Then by Lemma \ref{Lemma 4.1}, done!
+\end{proof}
 \begin{example}
     For the case that $\characteristic k = p$,
     take morphism $f: X = \mathbb{A}_{k}^{1} \rightarrow Y = \mathbb{A}_{k}^{1}$ sending $x$ to $x^{p}$.
@@ -1176,7 +1181,7 @@ From now on, by a morphism of varieties, we mean a regular map.
 \begin{corollary}
     Let $X$ be an irreducible variety of dimension $n$.
     Then there exists a dominant morphism $f: X \rightarrow \mathbb{P}_{k}^{n}$ with all fibers finite.
-    \label{Corollary 4.5}
+    \label{Corollary 4.6}
 \end{corollary}
 \begin{proof}
     We may assume that $X \subseteq \mathbb{P}^{N}$ is a closed subset for some $N \ge n$.
@@ -1199,7 +1204,7 @@ From now on, by a morphism of varieties, we mean a regular map.
 \begin{corollary}
     Let $X, Y$ be varieties.
     Then $\dim X \times Y = \dim X + \dim Y$.
-    \label{Corollary 4.6}
+    \label{Corollary 4.7}
 \end{corollary}
 \begin{proof}
     May assume that $X, Y$ irreducible.
@@ -1213,12 +1218,12 @@ From now on, by a morphism of varieties, we mean a regular map.
     Then \\
     (1)If $X, Y$ are irreducible, then any nonempty irreducible component of $X \cap Y$ has dimension $\ge \dim X + \dim Y - n$. \\
     (2)If $X, Y$ are closed and $\dim X + \dim Y \ge n$, then $X \cap Y$ is nonempty.
-    \label{Corollary 4.7}
+    \label{Corollary 4.8}
 \end{corollary}
 \begin{proof}
     (1)Consider $p: \mathbb{A}_{k}^{n + 1} \rightarrow \mathbb{P}_{k}^{n}$ sending to $(x_{0}, \cdots, x_{n})$ to $[x_{0}, \cdots, x_{n}]$.
     Then for all $x\in \mathbb{P}_{k}^{n}$, denote $C^{0}(X) = p^{-1}(X)$ of dimension $\dim X + 1$ and $C^{0}(X \cap Y) = C^{0}(X) \cap C^{0}(Y)$.
-    Note that $C^{0}(X) \cap C^{0}(Y) = (C^{0}(X) \times C^{0}(Y)) \cap \Delta_{\mathbb{A}_{k}^{n + 1}}$ and by Corollary \ref{Corollary 4.6}, $\dim (C^{0}(X) \times C^{0}(Y)) = \dim X + \dim Y + 2$,
+    Note that $C^{0}(X) \cap C^{0}(Y) = (C^{0}(X) \times C^{0}(Y)) \cap \Delta_{\mathbb{A}_{k}^{n + 1}}$ and by Corollary \ref{Corollary 4.7}, $\dim (C^{0}(X) \times C^{0}(Y)) = \dim X + \dim Y + 2$,
     we get that $\dim C^{0}(X \cap Y) \ge \dim X + \dim Y - n + 1$ so that $\dim X \cap Y \ge \dim X + \dim Y - n$.
     \par
     (2)Take $\overline{C^{0}(X)} = C^{0}(X) \cup \{0\}$.
@@ -1322,7 +1327,7 @@ From now on, by a morphism of varieties, we mean a regular map.
     Then \\
     (1)for all $y\in \im \varphi$, any irreducible component of $\varphi^{-1}(y)$ has dimension $\ge \dim X - \dim Y$. \\
     (2)there exists nonempty open subset $U \subseteq Y$ such that for all $y\in U$, $\varphi^{-1}(y)$ is of pure dimension $\dim X - \dim Y$.
-    \label{Corollary 4.8}
+    \label{Corollary 4.9}
 \end{corollary}
 \begin{proof}
     (1)For all irreducible component $X'$ of $\varphi^{-1}(y)$,
@@ -1541,7 +1546,7 @@ From now on, by a morphism of varieties, we mean a regular map.
 \end{theorem}
 \begin{proof}
     We may assume $X$ is irreducible and $\varphi$ is dominant.
-    By Corollary \ref{Corollary 4.8}, there exists nonempty open subset $U \subseteq Y$ such that for all $y\in Y$,
+    By Corollary \ref{Corollary 4.9}, there exists nonempty open subset $U \subseteq Y$ such that for all $y\in Y$,
     fiber at $y$ is of dimension $\dim X - \dim Y \ge 0$ hence nonempty.
     Thus $U \subseteq \im(\varphi)$.
     \par
