@@ -1694,14 +1694,14 @@ Easy to $D_{\theta}$ satisfies Leibniz's Law and hence is a derivation.
 \begin{reason}
     By taking affine cover, we may assume $X$ is affine.
     Then $X \subseteq \mathbb{A}_{k}^{N}$ for some $N$.
-    For all $x\in X$, $T_{x}X = \{(a_{1}, \cdots, a_{n}) \big{|} \sum_{i} a_{i}\frac{\partial F}{\partial x_{1}}, \forall F\in I(X)\}$.
+    For all $x\in X$, $T_{x}X = \{(a_{1}, \cdots, a_{n}) \big{|} \sum_{i} a_{i}\frac{\partial F}{\partial x_{i}}(x) = 0, \forall F\in I(X)\}$.
     Assume $I(X) = (F_{1}, \cdots, F_{n})$.
     Then
     \begin{equation}
         \begin{split}
             & X_{r} = \{x\in X \big{|} \dim_{k} \ker (\frac{\partial F_{i}}{x_{j}}(x)) \ge r\} \\
             \iff & \rank(\frac{\partial F_{i}}{\partial x_{j}}(x)) \le N - r \\
-            \iff & \text{ for all $(N - r + 1)$-minor, determinants vanish}
+            \iff & \text{ for all $(N - r + 1)$-minor, determinant vanishes}
         \end{split}
     \end{equation}
     \vspace{-\baselineskip} % 减少一行间距
