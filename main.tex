@@ -658,20 +658,21 @@ Consider the closure of $\Gamma_{\pi_{0}}$ in $\mathbb{P}_{k}^{n} \times \mathbb
     Consider projection maps
     \begin{equation}
         \begin{tikzcd} 
-            & V(\{x_{i}y_{j} - x_{j}y_{i}\}) \subseteq \mathbb{P}_{n}^{n} \times \mathbb{P}_{k}^{n - 1} \arrow[dr, "p_{2}"] \arrow[dl, "p_{1}" swap] & \\
+            & V(\{x_{i}y_{j} - x_{j}y_{i}\}) \subseteq \mathbb{P}_{k}^{n} \times \mathbb{P}_{k}^{n - 1} \arrow[dr, "p_{2}"] \arrow[dl, "p_{1}" swap] & \\
             \mathbb{P}_{k}^{n} && \mathbb{P}_{k}^{n - 1}
         \end{tikzcd}
     \end{equation}
     For every $\beta = [b_{1}, \cdots, b_{n}]\in \mathbb{P}_{k}^{n - 1}$, 
     its preimage $p_{2}^{-1}(\beta)$ is the closed subset cut out by $x_{i}b_{j} - x_{j}b_{i}$.
-    It is clear that $p_{2}^{-1}(\beta)$ is the line connecting $0$ and $[0, b_{1}, \cdots, b_{n}]$.
+    It is clear that $p_{1} \circ p_{2}^{-1}(\beta)$ is the line connecting $0$ and $[0, b_{1}, \cdots, b_{n}]$.
     \par
     For each $U_{i} = D_{+}(y_{i}) \subseteq \mathbb{P}_{k}^{n - 1}$, 
-    we also have $p_{2}^{-1}(U_{i}) \cong \mathbb{P}_{k}^{1} \times U_{i}$ since $x_{i}y_{j} - x_{j}y_{i} = y_{i}(x_{i}\frac{y_{j}}{y_{i}} - x_{j})$ for all $j$ and hence 
+    since $x_{i}y_{j} - x_{j}y_{i} = y_{i}(x_{i}\frac{y_{j}}{y_{i}} - x_{j})$ for all $j$, we have that
     \begin{equation}
         \begin{split}
-            p_{2}^{-1}(V_{i}) & = \{[x_{0}, x_{i}\frac{y_{1}}{y_{i}}, \cdots, x_{i}\frac{y_{n}}{y_{i}}]\} \\
-            & \cong \{[x_{0}, x_{1}] \times (\frac{y_{1}}{y_{i}}, \cdots, \frac{y_{n}}{y_{i}})\} \\
+            p_{2}^{-1}(U_{i}) & \cong p_{1} \circ p_{2}^{-1}(U_{i}) \\
+            & = \{[x_{0}, x_{i}\frac{y_{1}}{y_{i}}, \cdots, x_{i}\frac{y_{n}}{y_{i}}]\} \\
+            & \cong \{[x_{0}, x_{i}] \times (\frac{y_{1}}{y_{i}}, \cdots, \frac{y_{n}}{y_{i}})\} \\
             & = \mathbb{P}_{k}^{1} \times U_{i}
         \end{split}
     \end{equation}
