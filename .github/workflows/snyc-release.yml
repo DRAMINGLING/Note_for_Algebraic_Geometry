@@ -33,12 +33,12 @@ jobs:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
           # 构造Release文件下载URL
-          DOWNLOAD_URL="https://github.com/${SOURCE_REPO_OWNER}/${SOURCE_REPO_NAME}/releases/download/${RELEASE_TAG}/main.pdf"
+          DOWNLOAD_URL="https://github.com/${SOURCE_REPO_OWNER}/${SOURCE_REPO_NAME}/releases/download/${release}/main.pdf"
           # 下载文件到本地，命名为main.pdf
           wget --no-check-certificate $DOWNLOAD_URL -O main.pdf
           # 验证文件是否下载成功
           if [ ! -f "main.pdf" ]; then
-            echo "Error: main.pdf not found in Release ${RELEASE_TAG}"
+            echo "Error: main.pdf not found in Release ${release}"
             exit 1
           fi
 
