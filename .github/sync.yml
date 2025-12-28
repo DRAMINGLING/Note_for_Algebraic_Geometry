@@ -1,4 +1,4 @@
 # .github/sync.yml
 # 将指定的文件同步到目标仓库的 main 分支
-<你的GitHub用户名>/<目标仓库名>: 
-  - 你生成的PDF文件名.pdf
+DRAMINGLING/Documents: 
+  - main.pdf
