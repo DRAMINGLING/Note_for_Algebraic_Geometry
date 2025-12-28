@@ -16,18 +16,20 @@ jobs:
       - name: 检出源仓库代码
         uses: actions/checkout@v4
 
-      # ==================== 步骤2：下载Release中的main.pdf文件 ====================
-      - name: 下载Release资产（main.pdf）
-        uses: dawidd6/action-download-artifact@v6
+      # 步骤2：下载Release中的main.pdf资产（修正核心步骤）
+      - name: 下载Release中的main.pdf资产
+        uses: dassiorleando/gh-download-release-asset@v1
         with:
-          # 【需修改】源仓库的所有者/仓库名（例：octocat/源仓库名）
+          # 【需修改】源仓库所有者/仓库名（例：DRAMINGLING/Note_for_Algebraic_Varieties）
           repo: DRAMINGLING/Note_for_Algebraic_Varieties
-          # 【需修改】Release的标签（例：v1.0.0，或用动态值 github.event.release.tag_name）
+          # 【需修改】Release标签（静态值或动态值，例：v1.0.0 或 ${{ github.event.release.tag_name }}）
           tag: ${{ github.event.release.tag_name || 'release' }}
-          # 仅下载main.pdf（精准匹配）
-          name: main.pdf
+          # 要下载的资产文件名（精准匹配）
+          file: main.pdf
           # 下载到临时目录
-          path: ./tmp-pdf
+          dest: ./tmp-pdf
+          # 鉴权Token（源仓库的只读Token，可选，公开仓库可省略）
+          token: ${{ github.token }}
 
       # ==================== 步骤3：检出目标Documents仓库 ====================
       - name: 检出目标Documents仓库
