@@ -6,45 +6,62 @@ on:
     types: [published]  # 源仓库发布时触发
 
 jobs:
-  push-pdf:
+  deploy-pdf:
     runs-on: ubuntu-latest
     steps:
-      - name: Download PDF from release
+      # 1. 下载 Release 中的 main.pdf
+      - name: Download PDF from Release
         run: |
-          RELEASE_TAG="${{ github.event.release.release }}"
-          PDF_URL="https://github.com/${{ github.repository }}/releases/download/${RELEASE_TAG}/main.pdf"
+          # 使用 GitHub 的静态下载链接格式
+          # 格式：https://github.com/<owner>/<repo>/releases/download/<tag>/<asset>
+          # 变量说明：
+          # - github.repository: 当前仓库的 owner/repo
+          # - github.event.release.tag_name: 本次 Release 的标签
+          curl -L -o main.pdf \
+            "https://github.com/${{ github.repository }}/releases/download/${{ github.event.release.release }}/main.pdf"
           
-          # 下载PDF并重命名为目标名称
-          curl -L -o "Note for Algebraic Varieties.pdf" "${PDF_URL}"
-          
-          if [ ! -f "Note for Algebraic Varieties.pdf" ]; then
-            echo "Error: PDF not downloaded!"
-            exit 1
-          fi
-          
-          echo "File downloaded and renamed successfully"
-          ls -la "Note for Algebraic Varieties.pdf"
+          # 验证文件是否成功下载
+          ls -la main.pdf
 
-      - name: Push to Documents Repository
-        uses: cpina/github-action-push-to-another-repository@v1.8.0
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.UPDATE_TEX_FILE }}
+      # 2. 重命名并准备目录
+      - name: Rename and prepare PDF directory
+        run: |
+          # 将文件重命名为 "Note for Algebraic Varieties.pdf"
+          mv main.pdf "Note for Algebraic Varieties.pdf"
+          
+          # 创建目标目录并移动重命名后的文件
+          mkdir -p ./pdf
+          mv "Note for Algebraic Varieties.pdf" ./pdf/
+          
+          # 验证文件是否已正确重命名和放置
+          ls -la ./pdf/
+
+      # 3. 推送到目标仓库
+      - name: Deploy to Documents Repository
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # ⚠️ 修改为目标仓库信息
-          target-repository: DRAMINGLING/Documents
-          target-branch: main
-          source-directory: '.'
+          # ⚠️ 需要修改的变量 1：目标仓库的全名（owner/repo）
+          repository-name: "DRAMINGLING/Documents"  # 替换为实际的目标仓库，例如 "octocat/Documents"
           
-          # ⚠️ 指定目标目录，可以使用根目录或子目录
-          destination-directory: 'Algebraic Varieties'
+          # ⚠️ 需要修改的变量 2：目标分支
+          branch: main  # 替换为目标仓库的分支（默认为 main）
           
-          # ⚠️ 只推送重命名后的PDF文件
-          file-filter: 'Note for Algebraic Varieties.pdf'
+          # ⚠️ 需要修改的变量 3：包含 PDF 的目录
+          folder: ./pdf  # 包含重命名后 PDF 的目录
           
-          # ⚠️ 自定义提交信息
-          commit-message: "Add 'Note for Algebraic Varieties' PDF from release ${{ github.event.release.tag_name }}"
+          # ⚠️ 需要修改的变量 4：目标目录（在目标仓库中的路径）
+          target-folder: .  # 将文件放在目标仓库根目录，如需子目录可修改，如 "pdfs/"
           
-          # 如果需要，创建目标目录
-          create-target-directory-if-needed: true
+          # 使用前面保存在 Secret 中的 PAT 进行认证
+          token: ${{ secrets.UPDATE_TEX_FILE }}
           
-          force: true
+          # 可选：提交信息
+          commit-message: "Add/update Note for Algebraic Varieties from release ${{ github.event.release.tag_name }}"
+          
+          # 可选：是否清理目标分支中不在 folder 中的文件（默认为 true）
+          clean: false  # 设为 false 以避免删除目标仓库中的其他文件
+
+      # 4. （可选）清理临时文件
+      - name: Clean up
+        run: |
+          rm -rf ./pdf
