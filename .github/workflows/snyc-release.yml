@@ -9,59 +9,116 @@ jobs:
   deploy-pdf:
     runs-on: ubuntu-latest
     steps:
-      # 1. 下载 Release 中的 main.pdf
+      # 1. 检出当前仓库（解决"not in a git directory"错误）
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          # 仅检出最新的commit，不需要完整历史
+          fetch-depth: 1
+
+      # 2. 下载 Release 中的 main.pdf
       - name: Download PDF from Release
         run: |
-          # 使用 GitHub 的静态下载链接格式
-          # 格式：https://github.com/<owner>/<repo>/releases/download/<tag>/<asset>
-          # 变量说明：
-          # - github.repository: 当前仓库的 owner/repo
-          # - github.event.release.tag_name: 本次 Release 的标签
-          curl -L -o main.pdf \
-            "https://github.com/${{ github.repository }}/releases/download/${{ github.event.release.release }}/main.pdf"
+          # 使用 GitHub API 获取 release 资产信息
+          # 先获取 release 的资产信息，找到 main.pdf 的下载 URL
+          echo "正在下载 Release ${{ github.event.release.tag_name }} 中的 PDF 文件..."
           
-          # 验证文件是否成功下载
+          # 使用 API 获取 release 资产信息
+          ASSET_INFO=$(curl -s \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ github.event.release.tag_name }}")
+          
+          # 提取 main.pdf 的下载 URL
+          DOWNLOAD_URL=$(echo "$ASSET_INFO" | jq -r '.assets[] | select(.name=="main.pdf") | .url')
+          
+          if [ -z "$DOWNLOAD_URL" ] || [ "$DOWNLOAD_URL" = "null" ]; then
+            echo "错误：在 Release 中未找到 main.pdf 文件"
+            exit 1
+          fi
+          
+          # 使用 API 下载文件
+          curl -L \
+            -H "Accept: application/octet-stream" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -o "main.pdf" \
+            "$DOWNLOAD_URL"
+          
+          echo "✅ PDF 文件下载完成"
           ls -la main.pdf
 
-      # 2. 重命名并准备目录
+      # 3. 重命名并准备目录
       - name: Rename and prepare PDF directory
         run: |
-          # 将文件重命名为 "Note for Algebraic Varieties.pdf"
-          mv main.pdf "Note for Algebraic Varieties.pdf"
+          # 检查文件是否存在且有效
+          if [ ! -f "main.pdf" ]; then
+            echo "错误：main.pdf 文件不存在"
+            exit 1
+          fi
           
-          # 创建目标目录并移动重命名后的文件
-          mkdir -p ./pdf
-          mv "Note for Algebraic Varieties.pdf" ./pdf/
+          # 验证是否为 PDF 文件
+          file main.pdf | grep -q "PDF document"
+          if [ $? -ne 0 ]; then
+            echo "警告：文件可能不是有效的 PDF"
+          fi
           
-          # 验证文件是否已正确重命名和放置
-          ls -la ./pdf/
+          # 创建目标目录
+          mkdir -p pdf-output
+          
+          # 重命名并移动文件
+          mv main.pdf pdf-output/"Note for Algebraic Varieties.pdf"
+          
+          echo "✅ 文件已重命名为: Note for Algebraic Varieties.pdf"
+          ls -la pdf-output/
 
-      # 3. 推送到目标仓库
-      - name: Deploy to Documents Repository
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          # ⚠️ 需要修改的变量 1：目标仓库的全名（owner/repo）
-          repository-name: "DRAMINGLING/Documents"  # 替换为实际的目标仓库，例如 "octocat/Documents"
+      # 4. 使用 GitHub CLI 推送到目标仓库（替代 JamesIves/github-pages-deploy-action）
+      - name: Push PDF to target repository
+        env:
+          TARGET_REPO: "DRAMINGLING/Documents"  # ⚠️ 修改为目标仓库
+          TARGET_BRANCH: "main"                   # ⚠️ 修改为目标分支
+        run: |
+          # 安装必要的工具
+          sudo apt-get update
           
-          # ⚠️ 需要修改的变量 2：目标分支
-          branch: main  # 替换为目标仓库的分支（默认为 main）
+          # 配置 git
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # ⚠️ 需要修改的变量 3：包含 PDF 的目录
-          folder: ./pdf  # 包含重命名后 PDF 的目录
+          # 克隆目标仓库
+          echo "克隆目标仓库 $TARGET_REPO..."
+          git clone --depth 1 \
+            "https://x-access-token:${{ secrets.UPDATE_TEX_FILE }}@github.com/$TARGET_REPO.git" \
+            target-repo
           
-          # ⚠️ 需要修改的变量 4：目标目录（在目标仓库中的路径）
-          target-folder: .  # 将文件放在目标仓库根目录，如需子目录可修改，如 "pdfs/"
+          cd target-repo
           
-          # 使用前面保存在 Secret 中的 PAT 进行认证
-          token: ${{ secrets.UPDATE_TEX_FILE }}
+          # 切换到目标分支
+          git checkout $TARGET_BRANCH || git checkout -b $TARGET_BRANCH
           
-          # 可选：提交信息
-          commit-message: "Add/update Note for Algebraic Varieties from release ${{ github.event.release.tag_name }}"
+          # 将 PDF 文件复制到目标仓库
+          echo "复制 PDF 文件到目标仓库..."
+          cp ../pdf-output/"Note for Algebraic Varieties.pdf" ./
           
-          # 可选：是否清理目标分支中不在 folder 中的文件（默认为 true）
-          clean: false  # 设为 false 以避免删除目标仓库中的其他文件
+          # 提交更改
+          git add "Note for Algebraic Varieties.pdf"
+          
+          # 检查是否有更改需要提交
+          if git diff --cached --quiet; then
+            echo "没有更改需要提交"
+          else
+            # 提交更改
+            git commit -m "Add/update Note for Algebraic Varieties from release ${{ github.event.release.tag_name }}"
+            
+            # 推送更改
+            echo "推送更改到目标仓库..."
+            git push origin $TARGET_BRANCH
+            echo "✅ 文件已成功推送到目标仓库"
+          fi
+          
+          # 清理
+          cd ..
+          rm -rf target-repo
 
-      # 4. （可选）清理临时文件
+      # 5. 清理临时文件
       - name: Clean up
         run: |
-          rm -rf ./pdf
+          rm -rf pdf-output
