@@ -49,7 +49,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Sync PDF to Documents
-        uses: champ-oss/file-sync@v1 # 使用专门的同步Action[citation:1]
+        uses: champ-oss/file-sync@v2 # 使用专门的同步Action[citation:1]
         with:
           # 使用你创建的PAT，并保存在仓库的Secrets中，例如命名为 `REPO_B_PAT`
           token: ${{ secrets.UPDATE_TEX_FILE }}
