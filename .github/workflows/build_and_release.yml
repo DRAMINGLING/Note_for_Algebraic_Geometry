@@ -47,3 +47,16 @@ jobs:
           replace_assets: true # 覆盖已存在的资源文件（实现覆盖Release的关键）
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Sync PDF to Documents
+        uses: champ-oss/file-sync@v1 # 使用专门的同步Action[citation:1]
+        with:
+          # 使用你创建的PAT，并保存在仓库的Secrets中，例如命名为 `REPO_B_PAT`
+          token: ${{ secrets.UPDATE_TEX_FILE }}
+          # 目标仓库（格式：owner/repo-name）
+          repo: DRAMINGLING/Documents
+          # 要同步的文件列表。格式：源路径=目标路径
+          files: |
+            main.pdf = Note for Algebraic Varieties.pdf
+          target-branch: main
+          commit-message: "chore: Update compiled PDF from source repo"
