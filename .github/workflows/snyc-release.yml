@@ -80,19 +80,16 @@ jobs:
           # 检查文件是否已存在且有更改
           TARGET_FILENAME="${{ github.event.inputs.target_filename || 'Note for Algebraic Varieties' }}.pdf"
           
-          if git diff --quiet -- "$TARGET_FILENAME"; then
-            echo "文件未更改，无需提交"
-          else
-            echo "检测到文件更改，准备提交..."
-            git add "$TARGET_FILENAME"
+          echo "检测到文件更改，准备提交..."
+          git add "$TARGET_FILENAME"
             
-            # 生成提交信息
-            COMMIT_MSG="Sync: Update $TARGET_FILENAME from source release"
+          # 生成提交信息
+          COMMIT_MSG="Sync: Update $TARGET_FILENAME from source release"
             
-            git commit -m "$COMMIT_MSG"
-            git push origin main  # ⚠️ 修改：如果目标仓库使用其他分支，请修改此处
-            echo "文件已成功提交并推送到目标仓库"
-          fi
+          git commit -m "$COMMIT_MSG"
+          git push origin main  # ⚠️ 修改：如果目标仓库使用其他分支，请修改此处
+          echo "文件已成功提交并推送到目标仓库"
+          
         
         env:
           # 使用个人访问令牌进行认证
