@@ -1,4 +1,4 @@
-name: 推送Release的main.pdf到Documents仓库
+name: sync release
 
 # 触发条件：可选（按需选择）
 on:
