@@ -1,124 +1,72 @@
-name: Sync Releases
+name: 推送Release的main.pdf到Documents仓库
 
+# 触发条件：可选（按需选择）
 on:
-  workflow_dispatch:  # 手动触发
+  # 1. 手动触发（推荐测试用）
+  workflow_dispatch:
+  # 2. 当有新Release发布时自动触发
   release:
-    types: [published]  # 源仓库发布时触发
+    types: [published]
 
 jobs:
-  deploy-pdf:
+  push-pdf:
     runs-on: ubuntu-latest
     steps:
-      # 1. 检出当前仓库（解决"not in a git directory"错误）
-      - name: Checkout source repository
+      # ==================== 步骤1：拉取源仓库代码（获取Release上下文） ====================
+      - name: 检出源仓库代码
+        uses: actions/checkout@v4
+
+      # ==================== 步骤2：下载Release中的main.pdf文件 ====================
+      - name: 下载Release资产（main.pdf）
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          # 【需修改】源仓库的所有者/仓库名（例：octocat/源仓库名）
+          repo: DRAMINGLING/Note_for_Algebraic_Varieties
+          # 【需修改】Release的标签（例：v1.0.0，或用动态值 github.event.release.tag_name）
+          tag: ${{ github.event.release.tag_name || 'release' }}
+          # 仅下载main.pdf（精准匹配）
+          name: main.pdf
+          # 下载到临时目录
+          path: ./tmp-pdf
+
+      # ==================== 步骤3：检出目标Documents仓库 ====================
+      - name: 检出目标Documents仓库
         uses: actions/checkout@v4
         with:
-          # 仅检出最新的commit，不需要完整历史
-          fetch-depth: 1
+          # 【需修改】目标仓库的HTTPS地址（例：https://github.com/octocat/Documents.git）
+          repository: DRAMINGLING/Documents
+          # 【需修改】目标仓库的分支（例：main/master）
+          ref: main
+          # 目标仓库的本地检出目录
+          path: ./target-repo
+          # 【核心】用于推送的Token（需提前在GitHub设置Personal Access Token，权限含repo）
+          token: ${{ secrets.UPDATE_TEX_FILE }}
 
-      # 2. 下载 Release 中的 main.pdf
-      - name: Download PDF from Release
+      # ==================== 步骤4：复制PDF到目标仓库并推送 ====================
+      - name: 复制PDF到目标仓库
         run: |
-          # 使用 GitHub API 获取 release 资产信息
-          # 先获取 release 的资产信息，找到 main.pdf 的下载 URL
-          echo "正在下载 Release ${{ github.event.release.tag_name }} 中的 PDF 文件..."
-          
-          # 使用 API 获取 release 资产信息
-          ASSET_INFO=$(curl -s \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ github.event.release.tag_name }}")
-          
-          # 提取 main.pdf 的下载 URL
-          DOWNLOAD_URL=$(echo "$ASSET_INFO" | jq -r '.assets[] | select(.name=="main.pdf") | .url')
-          
-          if [ -z "$DOWNLOAD_URL" ] || [ "$DOWNLOAD_URL" = "null" ]; then
-            echo "错误：在 Release 中未找到 main.pdf 文件"
-            exit 1
-          fi
-          
-          # 使用 API 下载文件
-          curl -L \
-            -H "Accept: application/octet-stream" \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            -o "main.pdf" \
-            "$DOWNLOAD_URL"
-          
-          echo "✅ PDF 文件下载完成"
-          ls -la main.pdf
+          # 确保目标仓库目录存在（可选：指定子目录，如docs/pdf）
+          mkdir -p ./target-repo
+          # 复制下载的main.pdf到目标仓库（可修改目标文件名，如main-v1.0.0.pdf）
+          cp ./tmp-pdf/main.pdf ./target-repo/Note for Algebraic Varieties.pdf
+          # 进入目标仓库目录
+          cd ./target-repo
+          # 配置Git用户（Action默认无配置）
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          # 检查变更
+          git add .
+          git commit -m "chore: 同步源仓库Release的main.pdf（标签：${{ github.event.release.tag_name || 'release' }}）" || echo "无文件变更，无需提交"
 
-      # 3. 重命名并准备目录
-      - name: Rename and prepare PDF directory
-        run: |
-          # 检查文件是否存在且有效
-          if [ ! -f "main.pdf" ]; then
-            echo "错误：main.pdf 文件不存在"
-            exit 1
-          fi
-          
-          # 验证是否为 PDF 文件
-          file main.pdf | grep -q "PDF document"
-          if [ $? -ne 0 ]; then
-            echo "警告：文件可能不是有效的 PDF"
-          fi
-          
-          # 创建目标目录
-          mkdir -p pdf-output
-          
-          # 重命名并移动文件
-          mv main.pdf pdf-output/"Note for Algebraic Varieties.pdf"
-          
-          echo "✅ 文件已重命名为: Note for Algebraic Varieties.pdf"
-          ls -la pdf-output/
-
-      # 4. 使用 GitHub CLI 推送到目标仓库（替代 JamesIves/github-pages-deploy-action）
-      - name: Push PDF to target repository
-        env:
-          TARGET_REPO: "DRAMINGLING/Documents"  # ⚠️ 修改为目标仓库
-          TARGET_BRANCH: "main"                   # ⚠️ 修改为目标分支
-        run: |
-          # 安装必要的工具
-          sudo apt-get update
-          
-          # 配置 git
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # 克隆目标仓库
-          echo "克隆目标仓库 $TARGET_REPO..."
-          git clone --depth 1 \
-            "https://x-access-token:${{ secrets.UPDATE_TEX_FILE }}@github.com/$TARGET_REPO.git" \
-            target-repo
-          
-          cd target-repo
-          
-          # 切换到目标分支
-          git checkout $TARGET_BRANCH || git checkout -b $TARGET_BRANCH
-          
-          # 将 PDF 文件复制到目标仓库
-          echo "复制 PDF 文件到目标仓库..."
-          cp ../pdf-output/"Note for Algebraic Varieties.pdf" ./
-          
-          # 提交更改
-          git add "Note for Algebraic Varieties.pdf"
-          
-          # 检查是否有更改需要提交
-          if git diff --cached --quiet; then
-            echo "没有更改需要提交"
-          else
-            # 提交更改
-            git commit -m "Add/update Note for Algebraic Varieties from release ${{ github.event.release.tag_name }}"
-            
-            # 推送更改
-            echo "推送更改到目标仓库..."
-            git push origin $TARGET_BRANCH
-            echo "✅ 文件已成功推送到目标仓库"
-          fi
-          
-          # 清理
-          cd ..
-          rm -rf target-repo
-
-      # 5. 清理临时文件
-      - name: Clean up
-        run: |
-          rm -rf pdf-output
+      # ==================== 步骤5：推送到目标仓库（使用Action封装，避免原生Git） ====================
+      - name: 推送到Documents仓库
+        uses: ad-m/github-push-action@master
+        with:
+          # 目标仓库的本地路径
+          directory: ./target-repo
+          # 【需修改】目标仓库分支（与步骤3的ref一致）
+          branch: main
+          # 强制推送（可选，谨慎使用）
+          force: true
+          # 使用指定Token推送
+          github_token: ${{ secrets.UPDATE_TEX_FILE }}
