@@ -7,60 +7,61 @@ on:
   # 2. 当有新Release发布时自动触发
   release:
     types: [published]
-
+       
 jobs:
-  push-pdf:
+  sync-pdf:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # 授予写入仓库内容的权限
     steps:
-      - name: 1. 设置环境变量（需修改的核心配置）
-        id: set-env
+      - name: 1. 定义环境变量（需修改以下变量为实际值）
+        id: vars
         run: |
-          # ========== 需要用户修改的变量 ==========
-          # 源仓库信息（一般无需修改，因为工作流在该仓库运行）
-          echo "SOURCE_OWNER=DRAMINGLING" >> $GITHUB_ENV
-          echo "SOURCE_REPO=Note_for_Algebraic_Varieties" >> $GITHUB_ENV
-          
-          # 目标仓库信息（必须修改为你的Documents仓库信息）
-          echo "TARGET_OWNER=DRAMINGLING" >> $GITHUB_ENV  # 替换为你的GitHub用户名
-          echo "TARGET_REPO=Documents" >> $GITHUB_ENV     # 替换为你的目标仓库名
-          
-          # PDF文件存储路径（可选修改：Documents仓库中存储PDF的目录）
-          echo "PDF_TARGET_DIR=Algebraic_Varieties" >> $GITHUB_ENV  # 目标仓库中的子目录，不存在会自动创建
-          
-          # 提交信息（可选修改）
-          echo "COMMIT_MESSAGE=Update main.pdf from Note_for_Algebraic_Varieties release" >> $GITHUB_ENV
-          # =======================================
+          echo "SOURCE_OWNER=DRAMINGLING" >> $GITHUB_ENV          # 源仓库所有者（必填修改）
+          echo "SOURCE_REPO=Note_for_Algebraic_Varieties" >> $GITHUB_ENV  # 源仓库名称（必填修改）
+          echo "RELEASE_TAG=release" >> $GITHUB_ENV              # 目标 Release 标签（如需修改请调整）
+          echo "SOURCE_FILE_NAME=main.pdf" >> $GITHUB_ENV        # 源 Release 中的文件名（必填修改）
+          echo "TARGET_OWNER=DRAMINGLING" >> $GITHUB_ENV         # 目标仓库所有者（必填修改）
+          echo "TARGET_REPO=Documents" >> $GITHUB_ENV            # 目标仓库名称（必填修改）
+          echo "TARGET_FILE_NAME=Note for Algebraic Varieties.pdf" >> $GITHUB_ENV  # 目标文件名（必填修改）
+          echo "TARGET_BRANCH=main" >> $GITHUB_ENV               # 目标仓库分支（如需修改请调整）
 
-      - name: 2. 下载release中的main.pdf文件
-        uses: dsaltares/fetch-gh-release-asset@master
+      - name: 2. 获取 Release 中目标文件的下载 URL
+        id: get-release-asset
+        uses: octokit/request-action@v2.x
         with:
-          repo: ${{ env.SOURCE_OWNER }}/${{ env.SOURCE_REPO }}
-          tag: release
-          file: main.pdf
-          target: ./main.pdf
-          token: ${{ secrets.UPDATE_TEX_FILE }}  # 使用指定的secret名称
+          route: GET /repos/{owner}/{repo}/releases/tags/{tag}
+          owner: ${{ env.SOURCE_OWNER }}
+          repo: ${{ env.SOURCE_REPO }}
+          tag: ${{ env.RELEASE_TAG }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.UPDATE_TEX_FILE }}
+        outputs:
+          asset_url: ${{ fromJson(steps.get-release-asset.outputs.data).assets[0].url }}  # 假设该 Release 仅包含 main.pdf 一个资产
 
-      - name: 3. 克隆目标Documents仓库
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ env.TARGET_OWNER }}/${{ env.TARGET_REPO }}
-          token: ${{ secrets.UPDATE_TEX_FILE }}  # 用于克隆私有仓库（若为公有也需要）
-          path: target-repo  # 克隆到target-repo目录
-
-      - name: 4. 准备目标目录并复制PDF文件
+      - name: 3. 下载 Release 中的 PDF 文件
+        id: download-pdf
         run: |
-          # 创建目标目录（若不存在）
-          mkdir -p ./target-repo/${{ env.PDF_TARGET_DIR }}
-          # 复制下载的PDF到目标目录
-          cp ./main.pdf ./target-repo/${{ env.PDF_TARGET_DIR }}/main.pdf
+          # 下载文件并保存为临时文件
+          curl -L \
+            -H "Accept: application/octet-stream" \
+            -H "Authorization: token ${{ secrets.UPDATE_TEX_FILE }}" \
+            ${{ steps.get-release-asset.outputs.asset_url }} \
+            -o temp.pdf
 
-      - name: 5. 提交并推送文件到Documents仓库
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: 4. 将 PDF 文件推送到目标仓库（根目录）
+        uses: octokit/request-action@v2.x
         with:
-          repository: ./target-repo  # 指定仓库目录
-          commit_message: ${{ env.COMMIT_MESSAGE }}
-          file_pattern: ${{ env.PDF_TARGET_DIR }}/main.pdf  # 仅提交该文件
-          push_options: --force-with-lease  # 安全推送（避免覆盖未同步的更改）
-          branch: main  # 目标仓库的主分支（若为master需修改）
+          route: PUT /repos/{owner}/{repo}/contents/{path}
+          owner: ${{ env.TARGET_OWNER }}
+          repo: ${{ env.TARGET_REPO }}
+          path: ${{ env.TARGET_FILE_NAME }}  # 目标仓库根目录的文件名
+          message: "Sync Note for Algebraic Varieties PDF from release tag"  # 提交信息
+          content: ${{ steps.download-pdf.outputs.content_b64 }}  # 文件Base64编码内容
+          branch: ${{ env.TARGET_BRANCH }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.UPDATE_TEX_FILE }}
+
+      - name: 辅助步骤：将下载的PDF转为Base64
+        id: encode-pdf
+        run: |
+          CONTENT_B64=$(base64 -w 0 temp.pdf)
+          echo "content_b64=$CONTENT_B64" >> $GITHUB_OUTPUT
