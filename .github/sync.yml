@@ -1,4 +1,5 @@
 # .github/sync.yml
-# 将指定的文件同步到目标仓库的 main 分支
-DRAMINGLING/Documents: 
-  - main.pdf
+<DRAMINGLING>/<Documents>:
+  - source: main.pdf      # 源文件路径（相对于当前仓库根目录）
+    dest: Note for Algebraic Varieties.pdf   # 目标路径和文件名
+    branch: main            # 目标分支（可选，默认为配置的default branch）
