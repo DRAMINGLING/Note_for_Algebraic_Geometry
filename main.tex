@@ -124,10 +124,10 @@ Also, some trivial proofs are omitted.
 \subsection{Spectrum}
 \begin{definition}
     Let $A$ be a ring.
-    The spectrum of A is the set of all prime ideals of A, denoted by $\spec A$.
+    The spectrum of $A$ is the set of all prime ideals of $A$, denoted by $\spec A$.
 \end{definition}
 \begin{definition}
-    Let A be a ring, $I \subseteq A$ ideal.
+    Let $A$ be a ring, $I \subseteq A$ ideal.
     Define set $V(I) = \{\mathfrak{p}\in \spec A \big{|} I \subseteq \mathfrak{p}\}$ and $D(I) = \spec A \setminus V(I)$.
     In particular, for each $f\in A$, define $V(f) = V((f))$ and $D(f) = D((f))$.
 \end{definition}
@@ -135,10 +135,12 @@ Also, some trivial proofs are omitted.
     Obviously, if $i \subseteq I$, then $V(I) \supseteq V(J)$.
 \end{remark}
 \begin{proposition}[\textbf{\emph{Zariski Topology}}]
-    Let A be a ring.
-    Then the above definitions satisfy: \\
-    (1)$\{V(I) \big{|} I \subseteq A \text{ ideal}\}$ form the closed subsets of a topology on $\spec A$ called the Zariski topology. \\
-    (2)$\{D(f) \big{|} f\in A\}$ form a basis of the topology, called standard open subsets.
+    Let $A$ be a ring.
+    Then the above definitions satisfy that
+    \begin{itemize}
+        \item $\{V(I) \big{|} I \subseteq A \text{ ideal}\}$ form the closed subsets of a topology on $\spec A$, called the Zariski topology.
+        \item $\{D(f) \big{|} f\in A\}$ form a topological basis, called standard open subsets.
+    \end{itemize}
     \label{Proposition 1.1}
 \end{proposition}
 \begin{remark}
