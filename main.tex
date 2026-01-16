@@ -121,7 +121,10 @@
 
 In the whole note, all rings mentioned are commutative rings with identity.
 Also, some trivial proofs are omitted.
+
 \subsection{Spectrum}
+\label{subsection:Schemes_Spectrum}
+
 \begin{definition}
     Let $A$ be a ring.
     The spectrum of $A$ is the set of all prime ideals of $A$, denoted by $\spec A$.
@@ -198,15 +201,18 @@ Also, some trivial proofs are omitted.
 \end{reason}
 Since $D(f) \cong \spec(A_{f})$ as topological spaces, we immediately get the following corollary.
 \begin{corollary}
-    Let A be a ring, $f\in A$.
+    Let $A$ be a ring, $f\in A$.
     Then $D(f)$ is quasi-compact as a topological space.
     \label{Corollary 1.1}
 \end{corollary}
+
 \subsection{Sheaves}
+\label{subsection:Schemes_Sheaves}
+
 \begin{definition}
-    Let X be a topological space and $\mathfrak{C}$ be a category.
+    Let $X$ be a topological space and $\mathfrak{C}$ be a category.
     Assume $op(X)$ is the category of open subsets of X with morphisms are inclusions.
-    A presheaf on X valued on $\mathcal{C}$ (or say of $\mathfrak{C}$) is a contravariant functor $\mathcal{F}: op(X) \longrightarrow \mathfrak{C}$.
+    A presheaf on $X$ valued on $\mathcal{C}$ (or say of $\mathfrak{C}$) is a contravariant functor $\mathcal{F}: op(X) \longrightarrow \mathfrak{C}$.
 \end{definition}
 \begin{remark}
     Though we can consider this general definition of presheaf, we would only consider presheaves at least valued on $Ab$,
@@ -214,61 +220,61 @@ Since $D(f) \cong \spec(A_{f})$ as topological spaces, we immediately get the fo
     In addition, we need these presheaves map $\varnothing$ to $\{0\}$.
 \end{remark}
 \begin{definition}
-    Let X be a topological space, $\mathcal{F}$ presheaf of abelian groups on X.
+    Let $X$ be a topological space, $\mathcal{F}$ presheaf of abelian groups on $X$.
     For $V \subseteq V$, we call the correspondence homomorphism $\mathcal{F}(U) \longrightarrow \mathcal{F}(V)$ a restriction map, denoted by $\cdot \rho_{UV}$.
-    Elements in $\mathcal{F}(U)$ is called a section of $\mathcal{F}$ on U.
+    Elements in $\mathcal{F}(U)$ is called a section of $\mathcal{F}$ on $U$.
     In particular, if $U = X$, we call elements of $\mathcal{F}(X)$ global sections, otherwise local sections.
 \end{definition}
 \begin{remark}
-    For convenience, for $s\in \mathcal{F}(U)$, we would write $s\big{|}_V$ to denote image of s instead of $\rho_{UV}(s)$.
+    For convenience, for $s\in \mathcal{F}(U)$, we would write $s\big{|}_V$ to denote image of $s$ instead of $\rho_{UV}(s)$.
     Also, sometimes $\mathcal{F}(U)$ can be rewritten as $\Gamma(U, \mathcal{F})$.
 \end{remark}
 \begin{definition}
-    Let X be a topological space, $\mathcal{F}$ presheaf of abelian groups on X.
-    $\mathcal{F}$ is a sheaf on X if it satisfies that \\
-    (1)For each open subset U with open covering $\{U_{i}\}_{i\in I}$ and $s\in \mathcal{F}(U)$, 
-    if $s\big{|}_{U_{i}} = 0$ for all i, then $s = 0$. \\
-    (2)For each open subset U with open covering $\{U_{i}\}_{i\in I}$,
-    if there exists $s_{i}\in \mathcal{F}(U_{i})$ for all i, satisfying $s_{i}\big{|}_{U_{i} \cap U_{j}} = s_{j}\big{|}_{U_{i} \cap U_{j}}$ for all i,j,
-    then there exists $s\in \mathcal{F}(U)$ such that $s\big{|}_{U_{i}} = s_{i}$ for all i.
+    Let $X$ be a topological space, $\mathcal{F}$ presheaf of abelian groups on $X$.
+    $\mathcal{F}$ is a sheaf on $X$ if it satisfies that \\
+    (1)For each open subset $U$ with open covering $\{U_{i}\}_{i\in I}$ and $s\in \mathcal{F}(U)$, 
+    if $s\big{|}_{U_{i}} = 0$ for all $i$, then $s = 0$. \\
+    (2)For each open subset $U$ with open covering $\{U_{i}\}_{i\in I}$,
+    if there exists $s_{i}\in \mathcal{F}(U_{i})$ for all $i$, satisfying $s_{i}\big{|}_{U_{i} \cap U_{j}} = s_{j}\big{|}_{U_{i} \cap U_{j}}$ for all $i,j$,
+    then there exists $s\in \mathcal{F}(U)$ such that $s\big{|}_{U_{i}} = s_{i}$ for all $i$.
 \end{definition}
 \begin{remark}
-    The two conditions in fact give a exact sequence for each open subset U with open covering $\{U_{i}\}_{i\in I}$.
+    The two conditions in fact give a exact sequence for each open subset $U$ with open covering $\{U_{i}\}_{i\in I}$.
     \begin{equation*}
         0 \longrightarrow \mathcal{F}(U) \longrightarrow \prod_{i\in I} \mathcal{F}(U_{i}) \longrightarrow \prod_{i,j\in I} \mathcal{F}(U_{i} \cap U_{j})
     \end{equation*}
 \end{remark}
 \begin{example}
-    (1)Let X be a topological space.
-    Then $U \longmapsto \{\text{continuous functions $U \longrightarrow \mathbb{R}$}\}$ give a sheaf on X. \\
+    (1)Let $X$ be a topological space.
+    Then $U \longmapsto \{\text{continuous functions $U \longrightarrow \mathbb{R}$}\}$ give a sheaf on $X$. \\
     (2)Let $X = \mathbb{R}^{n}$.
-    Then $U \longmapsto \{\text{$C^{\infty}$-functions $U \longrightarrow \mathbb{R}$}\}$ gives a sheaf on X. \\
-    (3)Let X be a topological space and A be an abelian group.
-    Suppose A is topological space with discrete topology.
-    Then $U \longmapsto \{\text{locally constant functions $U \longrightarrow A$}\}$ gives a sheaf on X, which is called the constant sheaf of A on X.
+    Then $U \longmapsto \{\text{$C^{\infty}$-functions $U \longrightarrow \mathbb{R}$}\}$ gives a sheaf on $X$. \\
+    (3)Let $X$ be a topological space and $A$ be an abelian group.
+    View $A$ as a topological space with discrete topology.
+    Then $U \longmapsto \{\text{locally constant functions $U \longrightarrow A$}\}$ gives a sheaf on $X$, which is called the constant sheaf of $A$ on $X$.
 \end{example}
 \begin{definition}
-    Let X be a topological space, $\mathcal{F}$ (pre)sheaf of abelian groups on X.
-    For $x\in X$, define the stalk of $\mathcal{F}$ at x to be $\mathcal{F}_{x} = \underset{\underset{U\ni x}{\longrightarrow}}{\lim} \mathcal{F}(U)$.
-    More concretely, an element of $\mathcal{F}_{x}$ is represented by a pair $(U, s) = s_{x}$ where U is an open neighbourhood of x and $s\in \mathcal{F}(U)$, called a germ.
-    Two germs $(U, s)$ and $(V, t)$ represent the same element if there exists open neighbourhood W of x such that $W \subseteq U \cap V$ and $s\big{|}_{W} = t\big{|}_{W}$.
+    Let $X$ be a topological space, $\mathcal{F}$ (pre)sheaf of abelian groups on $X$.
+    For $x\in X$, define the stalk of $\mathcal{F}$ at $x$ to be $\mathcal{F}_{x} = \underset{\underset{U\ni x}{\longrightarrow}}{\lim} \mathcal{F}(U)$.
+    More concretely, an element of $\mathcal{F}_{x}$ is represented by a pair $(U, s) = s_{x}$ where $U$ is an open neighbourhood of x and $s\in \mathcal{F}(U)$, called a germ.
+    Two germs $(U, s)$ and $(V, t)$ represent the same element if there exists open neighbourhood $W$ of $x$ such that $W \subseteq U \cap V$ and $s\big{|}_{W} = t\big{|}_{W}$.
 \end{definition}
 \begin{proposition}
-    Let X be a topological space, $\mathcal{F}$ sheaf of abelian groups on X.
-    Suppose U is an open subset of X and $s,t\in \mathcal{F}(U)$.
+    Let $X$ be a topological space, $\mathcal{F}$ sheaf of abelian groups on $X$.
+    Suppose $U$ is an open subset of $X$ and $s,t\in \mathcal{F}(U)$.
     Then $s = t$ if and only if $s_{x} = t_{x}$ for all $x\in U$.
     \label{Proposition 1.5}
 \end{proposition}
 \begin{proof}
-    "$\Rightarrow$": Obviously.
+    $\leftquotes \Rightarrow \rightquotes$: Obviously.
     \par
-    "$\Leftarrow$": Since for all $x\in U$, we have $s_{x} = t_{x}$,
-    there exists open neighbourhood $W_{x}$ of x such that $W_{x} \subseteq U$ and $s\big{|}_{W_{x}} = t\big{|}_{W_{x}}$.
-    Note that $\{W_{x}\}_{x\in U}$ form an open covering of U.
+    $\leftquotes \Leftarrow \rightquotes$: Since for all $x\in U$, we have $s_{x} = t_{x}$,
+    there exists open neighbourhood $W_{x}$ of $x$ such that $W_{x} \subseteq U$ and $s\big{|}_{W_{x}} = t\big{|}_{W_{x}}$.
+    Note that $\{W_{x}\}_{x\in U}$ form an open covering of $U$.
     By property of sheaf, we get $s = t$.
 \end{proof}
 \begin{definition}
-    Let X be a topological space, $\mathcal{F}, \mathcal{G}$ (pre)sheaves of abelian groups on X.
+    Let $X$ be a topological space, $\mathcal{F}, \mathcal{G}$ (pre)sheaves of abelian groups on $X$.
     A morphism $\varphi$ from $\mathcal{F}$ to $\mathcal{G}$ is a family of group homomorphisms $\varphi(U): \mathcal{F}(U) \longrightarrow \mathcal{G}(U)$ such that for $V \subseteq U$,
     there is a commutative diagram
     \begin{equation*}
@@ -284,12 +290,12 @@ Since $D(f) \cong \spec(A_{f})$ as topological spaces, we immediately get the fo
     By property of direct limit, morphism $\varphi$ gives homomorphism $\varphi_{x}: \mathcal{F}_{x} \longrightarrow \mathcal{G}_{x}$ for all $x\in X$.
 \end{remark}
 \begin{definition}
-    Let X be a topological space, $\varphi: \mathcal{F} \longrightarrow \mathcal{G}$ morphism of (pre)sheaves of abelian groups on X.
-    We say $\varphi$ is isomorphic if there exists morphism $\psi: \mathcal{G} \longrightarrow \mathcal{F}$ such that for each open subsets U, 
+    Let $X$ be a topological space, $\varphi: \mathcal{F} \longrightarrow \mathcal{G}$ morphism of (pre)sheaves of abelian groups on $X$.
+    We say $\varphi$ is isomorphic if there exists morphism $\psi: \mathcal{G} \longrightarrow \mathcal{F}$ such that for each open subsets $U$, 
     $\psi(U)\varphi(U) = \identity_{\mathcal{F}(U)}$ and $\varphi(U)\psi(U) = \identity_{\mathcal{G}(U)}$.
 \end{definition}
 \begin{proposition}
-    Let X be a topological space, $\varphi: \mathcal{F} \longrightarrow \mathcal{G}$ morphism of sheaves of abelian groups on X.
+    Let $X$ be a topological space, $\varphi: \mathcal{F} \longrightarrow \mathcal{G}$ morphism of sheaves of abelian groups on $X$.
     Then $\varphi$ is isomorphic if and only if $\varphi_{x}$ is isomorphic for all $x\in X$.
     \label{Proposition 1.6}
 \end{proposition}
@@ -298,16 +304,16 @@ Since $D(f) \cong \spec(A_{f})$ as topological spaces, we immediately get the fo
     there exists $s\in \mathcal{F}(U)$ such that $\varphi(V)(s) = t$.
     Thus $\varphi_{x}((U, s)) = (U, t)$, get $\varphi_{x}$ is surjective.
     For all $(U, s)\in \ker(\varphi_{x})$, $(U, \varphi(U)(s)) = 0$ in $\mathcal{G}_{x}$.
-    Then there exists open neighbourhood V of x such that $V \subseteq U$ and $\varphi(U)(s)\big{|}_{V} = 0$.
+    Then there exists open neighbourhood $V$ of $x$ such that $V \subseteq U$ and $\varphi(U)(s)\big{|}_{V} = 0$.
     By commutative diagram, $\varphi(U)(s)\big{|}_{V} = \varphi(V)(s\big{|}_{V})$.
     Since $\varphi(V)$ is isomorphic, get $s\big{|}_{V} = 0$ and so $(U, s) = 0$ in $\mathcal{F}_{x}$.
     Get $\varphi_{x}$ is isomorphic.
     \par
-    "$\Leftarrow$": For each open subset U, want to show that $\varphi(U)$ is isomorphic.
+    "$\Leftarrow$": For each open subset $U$, want to show that $\varphi(U)$ is isomorphic.
     For $s\in \ker{\varphi(U)}$, $\varphi(U)(s) = 0$.
     Then for all $x\in U$, $(U, \varphi(U)(s)) = 0$ in $\mathcal{G}_{x}$.
     As $(U, \varphi(U)(s)) = \varphi_{x}((U, s))$ and $\varphi_{x}$ is isomorphic, get $(U, s) = 0$ in $\mathcal{F}_{x}$.
-    Thus there exists open neighbourhood $W_{x}$ of x such that $W_{x} \subseteq U$ and $s\big{|}_{W_{x}} = 0$.
+    Thus there exists open neighbourhood $W_{x}$ of $x$ such that $W_{x} \subseteq U$ and $s\big{|}_{W_{x}} = 0$.
     By property of sheaf, get $s = 0$ and so $\varphi(U)$ is injective.
     \par
     For all $t\in \mathcal{G}(U)$, $(U, t)$ is an element of $\mathcal{G}_{x}$ for all $x\in U$.
@@ -319,33 +325,38 @@ Since $D(f) \cong \spec(A_{f})$ as topological spaces, we immediately get the fo
     By property of sheaf, get $\varphi(U)(s) = t$ and so $\varphi(U)$ is isomorphic.
 \end{proof}
 \begin{definition}
-    Let X be a topological space, $\varphi: \mathcal{F} \longrightarrow \mathcal{G}$ morphism of presheaves of abelian groups on X. \\
-    (1)Define the kernel of $\varphi$ to be $\ker(\varphi): op(X) \longrightarrow Ab\quad U \longmapsto \ker(\varphi(U))$. \\
-    (2)Define the image of $\varphi$ to be $im(\varphi): op(X) \longrightarrow Ab\quad U \longmapsto im(\varphi(U))$. \\
-    (3)Define the cokernel of $\varphi$ to be $coker(\varphi): op(X) \longrightarrow Ab\quad U \longmapsto coker(\varphi(U))$.
+    Let $X$ be a topological space, $\varphi: \mathcal{F} \longrightarrow \mathcal{G}$ morphism of presheaves of abelian groups on $X$.
+    We have several notions
+    \begin{itemize}
+        \item Define the kernel of $\varphi$ to be $\ker(\varphi): op(X) \longrightarrow Ab\quad U \longmapsto \ker(\varphi(U))$.
+        \item Define the image of $\varphi$ to be $im(\varphi): op(X) \longrightarrow Ab\quad U \longmapsto im(\varphi(U))$.
+        \item Define the cokernel of $\varphi$ to be $coker(\varphi): op(X) \longrightarrow Ab\quad U \longmapsto coker(\varphi(U))$.
+    \end{itemize}
 \end{definition}
 \begin{remark}
     The definition of cokernel in fact induce the definition of quotient presheaf.
 \end{remark}
 \begin{definition}[\textbf{\emph{Sheafification}}]
-    Let X be a topological space, $\mathcal{F}$ presheaf of abelian groups on X.
-    Define a sheaf $\mathcal{F}^{+}$ of abelian groups on X by $U \longmapsto \mathcal{F}^{+}(U)$, 
+    Let $X$ be a topological space, $\mathcal{F}$ presheaf of abelian groups on $X$.
+    Define a sheaf $\mathcal{F}^{+}$ of abelian groups on $X$ by $U \longmapsto \mathcal{F}^{+}(U)$, 
     where $\mathcal{F}^{+}(U) = \{(s_{x})_{x\in U} \big{|} \text{ for all $x\in U$, $\exists$ \text{open} $V_{x}\ni x$ and $t(x)\in \mathcal{F}(V_{x})$ such that $t(x)_{y} = s_{y}$, $\forall y\in V_{x}$}\}$ is a subset of $\prod_{x\in U} \mathcal{F}_{x}$.
 \end{definition}
 \begin{proposition}
-    Let X be a topological space, $\mathcal{F}$ presheaf of abelian groups on X.
-    Show that there is a natural morphism of presheaves $\varphi: \mathcal{F} \longrightarrow \mathcal{F}^{+}$ satisfies that \\
-    (1)$\varphi_{x}$ is identity homomorphism. \\
-    (2)If $\mathcal{F}$ is sheaf, then $\varphi$ is isomorphism. \\
-    (3)For any morphism of presheaves $\psi: \mathcal{F} \longrightarrow \mathcal{G}$ where $\mathcal{G}$ is a sheaf,
-    there exists unique morphism $\phi: \mathcal{F}^{+} \longrightarrow \mathcal{G}$ such that the following diagram commutes.
-    \begin{equation*}
-        \begin{tikzcd}
-            \mathcal{F} \arrow[rr, "\psi"] \arrow[dr, "\varphi"] &&
-            \mathcal{G} \\
-            & \mathcal{F}^{+} \arrow[ur, "\phi"] &
-        \end{tikzcd}
-    \end{equation*}
+    Let $X$ be a topological space, $\mathcal{F}$ presheaf of abelian groups on X.
+    Show that there is a natural morphism of presheaves $\varphi: \mathcal{F} \longrightarrow \mathcal{F}^{+}$ satisfies that
+    \begin{itemize}
+        \item $\varphi_{x}$ is identity homomorphism.
+        \item If $\mathcal{F}$ is sheaf, then $\varphi$ is isomorphism.
+        \item For any morphism of presheaves $\psi: \mathcal{F} \longrightarrow \mathcal{G}$ where $\mathcal{G}$ is a sheaf,
+        there exists unique morphism $\phi: \mathcal{F}^{+} \longrightarrow \mathcal{G}$ such that the following diagram commutes.
+        \begin{equation}
+            \begin{tikzcd}
+                \mathcal{F} \arrow[rr, "\psi"] \arrow[dr, "\varphi"] &&
+                \mathcal{G} \\
+                & \mathcal{F}^{+} \arrow[ur, "\phi"] &
+            \end{tikzcd}
+        \end{equation}
+    \end{itemize}
     \label{Proposition 1.7}
 \end{proposition}
 \begin{reason}
@@ -498,7 +509,10 @@ Similar to the theory of abstract, we will define something basic like affine va
 \begin{reason}
     By definition of stalk and property of direct limit, we immediately get the isomorphism.
 \end{reason}
+
 \subsection{Schemes}
+\label{subsection:Schemes_Schemes}
+
 \begin{definition}[\textbf{\emph{Ringed Spaces}}]
     Let X be a topological space, $\mathcal{O}_{X}$ sheaf of rings on X.
     Then pair $(X, \mathcal{O}_{X})$ is called a ringed space.
