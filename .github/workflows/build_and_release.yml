@@ -34,7 +34,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: release
-          name: Algebraic Varieties
+          name: Algebraic Geometry
           body: |
             Automated release.
             This PDF was automatically built from the LaTeX source.
