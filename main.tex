@@ -405,7 +405,7 @@ Since $D(f) \cong \spec(A_{f})$ as topological spaces, we immediately get the fo
 \end{example}
 \subsection{Varieties}
 \begin{example}[\textbf{\emph{Affine Varieties}}]
-    Let k be an algebraically closed field, $V \subseteq k^{n}$ irreducible closed subset.
+    Let $k$ be an algebraically closed field, $V \subseteq k^{n}$ irreducible closed subset.
     Suppose $\mathfrak{p}$ is the corresponding prime ideal of $\mathfrak{p}$ in $\spec(k[x_{1}, \cdots, x_{n}])$.
     Define affine coordinate ring of V to be $k[V] = k[x_{1}, \cdots, x_{n}]/\mathfrak{p}$.
     Then $k[V]$ is a finitely generated k-algebra and an integral domain.
@@ -414,7 +414,7 @@ Since $D(f) \cong \spec(A_{f})$ as topological spaces, we immediately get the fo
     We call such a pair $(V, \mathcal{O}_{V})$ affine variety.
 \end{example}
 \begin{proposition}
-    Let k be an algebraically closed field, $V \subseteq k^{n}$ irreducible closed subset.
+    Let $k$ be an algebraically closed field, $V \subseteq k^{n}$ irreducible closed subset.
     Then \\
     (1)$\mathcal{O}_{V}(V) = k[V]$. \\
     (2)For all $f\in k[V]$, $\mathcal{O}_{V}(D(f)) = k[V]_{f}$. \\
@@ -423,13 +423,13 @@ Since $D(f) \cong \spec(A_{f})$ as topological spaces, we immediately get the fo
     \label{Proposition 1.9}
 \end{proposition}
 \begin{example}[\textbf{\emph{Gluing Affine Varieties}}]
-    Let k be an algebraically closed field.
-    A abstract prevariety over k is a pair $(X, \mathcal{O}_{X})$, where X is an irreducible topological space and $\mathcal{O}_{X}$ is a sheaf of abelian groups on X,
+    Let $k$ be an algebraically closed field.
+    A abstract prevariety over $k$ is a pair $(X, \mathcal{O}_{X})$, where X is an irreducible topological space and $\mathcal{O}_{X}$ is a sheaf of abelian groups on X,
     satisfying that there exists finite open covering $\{U_{i}\}$ of X such that $(U_{i}, \mathcal{O}\big{|}_{U_{i}}) \cong (V_{i}, \mathcal{O}_{V_{i}})$ where $(V_{i}, \mathcal{O}_{V_{i}})$ is an affine variety.
     The isomorphism is a pair $(f_{i}, f_{i}^{\sharp})$, where $f_{i}: U_{I} \longrightarrow V_{i}$ is a homeomorphism of topological spaces and $f_{i}^{\sharp}: \mathcal{O}_{V_{i}} \longrightarrow f_{\ast}\mathcal{O}_{X}\big{|}_{U_{i}}$ is an isomorphism of sheaves. 
 \end{example}
 \begin{example}[\textbf{\emph{Affine Line with Two Origins}}]
-    Let k be an algebraically closed field.
+    Let $k$ be an algebraically closed field.
     Assume $U_{1}, U_{2}$ are two affine line $\mathbb{A}_{k}^{1}$.
     Glue them on $U_{1} \setminus \{O_{1}\}$ and $U_{2} \setminus \{O_{2}\}$ and get an abstract variety X.
     We call X affine line with two origins.
@@ -437,7 +437,7 @@ Since $D(f) \cong \spec(A_{f})$ as topological spaces, we immediately get the fo
     Thus we say X is some kind of not separated, which is the case we want to avoid.
 \end{example}
 \begin{example}[\textbf{\emph{Product of Prevarieties}}]
-    Let k be an algebraically closed field, X abstract prevariety over k.
+    Let $k$ be an algebraically closed field, X abstract prevariety over $k$.
     Suppose that $\{U_{i}\}_{i\in I}$ are affine open subsets of X.
     Consider $X \times X$ as a prevariety, glued by $\{U_{i} \times U_{j}\}_{i,j\in I}$,
     where $U_{i} \times U_{j}$ is still isomorphic to affine variety refer to Hartshorne exercise I 3.15.
@@ -786,12 +786,12 @@ To give a appropriate sheaf of rings on $\proj(S)$, we need the following lemma
 \end{proof}
 Now with well defined affine and projective scheme, we can restate definition of affine and projective abstract variety.
 \begin{definition}[\textbf{\emph{Affine Abstract Varieties}}]
-    Let k be an algebraically closed field.
-    An affine abstract variety over k is a scheme of the form $\spec(k[x_{0}, \cdots, x_{n}]/\mathfrak{p})$ for some $\mathfrak{p}\in \spec(k[x_{0}, \cdots, x_{n}])$.
+    Let $k$ be an algebraically closed field.
+    An affine abstract variety over $k$ is a scheme of the form $\spec(k[x_{0}, \cdots, x_{n}]/\mathfrak{p})$ for some $\mathfrak{p}\in \spec(k[x_{0}, \cdots, x_{n}])$.
 \end{definition}
 \begin{definition}[\textbf{\emph{Projective Abstract Varieties}}]
-    Let k be an algebraically closed field.
-    A projective abstract variety over k is a scheme of the form $\proj(k[x_{0}, \cdots, x_{n}]/\mathfrak{p})$ for some $\mathfrak{p}\in \proj(k[x_{0}, \cdots, x_{n}])$.
+    Let $k$ be an algebraically closed field.
+    A projective abstract variety over $k$ is a scheme of the form $\proj(k[x_{0}, \cdots, x_{n}]/\mathfrak{p})$ for some $\mathfrak{p}\in \proj(k[x_{0}, \cdots, x_{n}])$.
 \end{definition}
 
 \section{Morphisms of Schemes}
@@ -906,7 +906,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     Define the set of B-points of X to be $X(B) = Mor_{Spec(A)}(Spec(B), X)$. 
 \end{definition}
 \begin{example}
-    (1)Let k be a field, $l/K$ field extension, X a k-scheme.
+    (1)Let $k$ be a field, $l/K$ field extension, X a k-scheme.
     Then an l-point of X
     \begin{equation*}
         \begin{tikzcd}[sep = tiny]
@@ -934,7 +934,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
             & \mathbb{R} &
         \end{tikzcd}
     \end{equation*}
-    (3)Let k be a field, X a k-scheme.
+    (3)Let $k$ be a field, X a k-scheme.
     Assume that $k[\varepsilon] = k[t]/(t^{2})$ and $\spec(k[\varepsilon]) = \{(\overline{t})\}$.
     Then a $k[\varepsilon]$-point of X
     \begin{equation*}
@@ -1245,10 +1245,10 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
 \begin{example}
     (1)Let $f: \spec(B) \longrightarrow \spec A$ be a morphism of affine schemes.
     Then f is of finite type if and only if the associated ring homomorphisms $\varphi: A \longrightarrow B$ is of finite type. \\
-    (2)Let k be an algebraically closed field k.
-    Affine or projective abstract varieties over k is of finite type over $\spec k$. \\
-    (3)Let k be an algebraically closed field k.
-    k-morphisms between affine or projective abstract varieties over k is locally of finite type. \\
+    (2)Let $k$ be an algebraically closed field k.
+    Affine or projective abstract varieties over $k$ is of finite type over $\spec k$. \\
+    (3)Let $k$ be an algebraically closed field k.
+    k-morphisms between affine or projective abstract varieties over $k$ is locally of finite type. \\
     (4)An open immersion is always locally of finite type but not quasi-compact in general.
     For example, we can take $Y = \spec(k[x_{1}, x_{2}, \cdots])$, $X = Y \setminus \{(0)\}$ and $i: X \hookrightarrow Y$,
     then $i^{-1}(Y) = X$ is not quasi-compact.
@@ -1799,7 +1799,7 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
     then this is an example that is integral but neither geometrically irreducible nor geometrically reduced.
 \end{remark}
 \begin{proposition}
-    Let k be a perfect field, X integral k-scheme, K function field of X.
+    Let $k$ be a perfect field, X integral k-scheme, K function field of X.
     Then the following conditions are equivalent \\
     (1)X is geometrically integral. \\
     (2)The ring $K \otimes_{k} \overline{k}$ is an integral scheme. \\
@@ -1825,8 +1825,8 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
 \begin{theorem}[\textbf{\emph{Noetherian Normalization Theorem}}]
     Let A be an algebra of finite type over a field k.
     Then \\
-    (1)There exists $y_{1}, \cdots, y_{r}\in A$ algebraically independent over k such that A is integral over $k[y_{1}, \cdots, y_{r}]$. \\
-    (2)If A is integral domain, then $\dim(A)$ equals to the transcandence degree of $\fraction(A)$ over k, which by (1) is r.
+    (1)There exists $y_{1}, \cdots, y_{r}\in A$ algebraically independent over $k$ such that A is integral over $k[y_{1}, \cdots, y_{r}]$. \\
+    (2)If A is integral domain, then $\dim(A)$ equals to the transcandence degree of $\fraction(A)$ over $k$, which by (1) is r.
     In addition, for all prime ideal $\mathfrak{p}\in \spec A$, we have that $\dim(A) = \dim(A/\mathfrak{p}) + ht(\mathfrak{p})$.
     \label{Theorem 3.4}
 \end{theorem}
@@ -1881,10 +1881,10 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
 \end{theorem}
 \begin{proof}
     (1): By Proposition \ref{Proposition 3.13}, $\dim(X)$ equals to the supremum of dimension of affine open subsets.
-    While for all affine open subset $U = \spec A$ of X, we have that A is of finite type over k, $\dim(U) = \dim(A)$ and $\fraction(A) = K$.
+    While for all affine open subset $U = \spec A$ of X, we have that A is of finite type over $k$, $\dim(U) = \dim(A)$ and $\fraction(A) = K$.
     By Noetherian Normalization Theorem, get $\dim(U) = tr\dim(K/k)$ and so $\dim(X) = tr\dim(K/k)$.
     \par
-    (2): Since U is also integral scheme with function field K of finite type over k, by (1), $\dim(U) = \dim(X)$. 
+    (2): Since U is also integral scheme with function field K of finite type over $k$, by (1), $\dim(U) = \dim(X)$. 
     \par
     (3): For all closed point $x\in X$, take affine open neighbourhood $U = \spec A$ of x.
     Then x corresponds to a prime ideal $\mathfrak{p}_{x}$ of A and $\mathcal{O}_{X, x} = A_{\mathfrak{p}}$.
@@ -1898,9 +1898,9 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
     \label{Corollary 3.1}
 \end{corollary}
 \begin{proof}
-    Since X is of finite type over k, get X is noetherian and so X has finite decomposition of irreducible components $\{X_{i}\}$.
+    Since X is of finite type over $k$, get X is noetherian and so X has finite decomposition of irreducible components $\{X_{i}\}$.
     Then $\dim(X) = \max_{i}\{\dim(X_{i})\}$.
-    While $\dim(X_{i}) = \dim((X_{i})_{red})$ where $(X_{i})_{red}$ is integral scheme of finite type over k.
+    While $\dim(X_{i}) = \dim((X_{i})_{red})$ where $(X_{i})_{red}$ is integral scheme of finite type over $k$.
     By Proposition \ref{Theorem 3.5}, get $\dim(X)$ finite.
 \end{proof}
 \begin{definition}[\textbf{\emph{Pure Schemes}}]
@@ -1928,11 +1928,11 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
     If suffices to show that there exists some closed point in U for all affine open subset $U = \spec A$of X.
     Take $x\in U$ such that x corresponds to maximal ideal $\mathfrak{m}_{x}\subseteq A$.
     Want to show that x is a closed point in X.
-    Since X is of finite type over k, get X is noetherian and so that X has finite decomposition of irreducible components.
+    Since X is of finite type over $k$, get X is noetherian and so that X has finite decomposition of irreducible components.
     Suppose that $x\in X_{i}$ where $X_{i}$ is some irreducible component.
     Only need to show that x is closed point in $X_{i}$. 
     \par
-    Note that $X_{i}$ with reduced closed subscheme structure is integral scheme of finite type over k.
+    Note that $X_{i}$ with reduced closed subscheme structure is integral scheme of finite type over $k$.
     Replace X by $X_{i}$.
     If there is another point $y\in \overline{\{x\}}$, then for all open neighbourhood V of y, $x\in V$.
     Take $V = \spec(B)$ to be affine and assume that x,y correspond to prime ideals $\mathfrak{q}_{x}$ and $\mathfrak{q}_{y}$ respectively.
@@ -1948,7 +1948,7 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
     \label{Corollary 3.2}
 \end{corollary}
 \begin{proof}
-    Since X is of finite type over k, X is noetherian.
+    Since X is of finite type over $k$, X is noetherian.
     Thus X has finitely many irreducible components.
     Assume other irreducible components are $Z_{1}, \cdots, Z_{n}$ and $\Sigma_{1} \subseteq Z_{1}, \cdots, \Sigma_{n} \subseteq Z_{n}$ are subsets of closed points respectively.
     If all closed points of Z are in some other irreducible component, then the subset of all closed points in X is $\cup_{i = 1}^{n} \Sigma_{i}$.
@@ -2038,8 +2038,8 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
 \end{proof}
 With this definition, we can state definition of abstract variety over general field k.
 \begin{definition}[\textbf{\emph{Abstract Varieties}}]
-    Let k be a field.
-    An abstract variety over k is a separated and integral scheme of finite type over k.
+    Let $k$ be a field.
+    An abstract variety over $k$ is a separated and integral scheme of finite type over $k$.
 \end{definition}
 \begin{proposition}
     Let $f: X \longrightarrow Y$ be a morphism of schemes.
@@ -2164,10 +2164,10 @@ With this definition, we can state definition of abstract variety over general f
 \begin{example}
     (1)Closed immersion is always proper. \\
     (2)Open immersion is not proper in general, since it is not quasi-compact in general. \\
-    (3)Let k be an algebraically closed field.
+    (3)Let $k$ be an algebraically closed field.
     Then $\mathbb{A}_{k}^{1} \longrightarrow k$ is not proper, since $\mathbb{A}_{k}^{1} \times_{k} \mathbb{A}_{k}^{1} \longrightarrow \mathbb{A}_{k}^{1}$ is not closed.
     The image of $\spec(k[x, y]/(xy - 1))$ is $\mathbb{A}_{k}^{1} \setminus \{(x)\}$.
-    Will see that projective abstract k-varieties are proper over k.
+    Will see that projective abstract k-varieties are proper over $k$.
 \end{example}
 \begin{proposition}
     Let $f: X \longrightarrow Y$ be a morphism of schemes.
@@ -2493,7 +2493,7 @@ With this definition, we can state definition of abstract variety over general f
     We say that X and Y are k-birational if their function fields are k-isomorphic.
 \end{definition}
 \begin{corollary}
-    Let X,Y be two normal and complete curves over k.
+    Let X,Y be two normal and complete curves over $k$.
     If X,Y are k-birational, then X,Y are k-isomorphic.
     \label{Corollary 5.2}
 \end{corollary}
@@ -2521,7 +2521,7 @@ With this definition, we can state definition of abstract variety over general f
 \begin{proposition}
     Let X be an integral scheme, K function field of X.
     Then the natural morphism $\pi: \widetilde{X} \longrightarrow X$ is affine and surjective.
-    If moreover X is of finite type over k for some field k, $\pi$ is finite.
+    If moreover X is of finite type over $k$ for some field k, $\pi$ is finite.
     \label{Proposition 5.2}
 \end{proposition}
 \begin{proof}
@@ -2531,7 +2531,7 @@ With this definition, we can state definition of abstract variety over general f
     Obviously $\pi: \spec(\widetilde{A}) \longrightarrow \spec A$ is affine.
     And since $\widetilde{A}$ is integral over A, by Cohen-Seidenberg Theorem, get $\pi$ is surjective.
     \par
-    If moreover A is of finite type over k, by noetherian normalization Theorem, get there exists $x_{1}, \cdots, x_{r}\in A$ algebraically independent over k such that A is integral over $k[x_{1}, \cdots, x_{r}]$.
+    If moreover A is of finite type over $k$, by noetherian normalization Theorem, get there exists $x_{1}, \cdots, x_{r}\in A$ algebraically independent over $k$ such that A is integral over $k[x_{1}, \cdots, x_{r}]$.
     Thus K is a finite extension over $k(x_{1}, \cdots, x_{r})$ and $\widetilde{A}$ is the integral closure of $k[x_{1}, \cdots, x_{r}]$ in K.
     The proof of the fact that $\widetilde{A}$ is of finite type over $k[x_{1}, \cdots, x_{r}]$ is similar to the proof in \emph{Algebraic Nunber Theory}, Milne, p35.
     Thus $\widetilde{A}$ is finite over $k[x_{1}, \cdots, x_{n}]$ and so that $\widetilde{A}$ is finite over A.
@@ -2585,14 +2585,14 @@ With this definition, we can state definition of abstract variety over general f
     Thus $D(P)$ is zero map so that D induces an isomorphism $J/J^{2} \overset{\sim}{\longrightarrow} V^{\ast}$.
 \end{proof}
 \begin{theorem}[\textbf{Jacobson Criterion}]
-    Let k be a field and $X = \spec(k[x_{1}, \cdots, x_{n}]/I)$ be an affine k-variety where $I = (P_{1}, \cdots, P_{r})$, $x\in X$ closed point with $k(x) = k$.
+    Let $k$ be a field and $X = \spec(k[x_{1}, \cdots, x_{n}]/I)$ be an affine k-variety where $I = (P_{1}, \cdots, P_{r})$, $x\in X$ closed point with $k(x) = k$.
     Then X is regular at x if and only if the Jacobson matrix $J_{x} = (\frac{\partial P_{i}}{\partial x_{j}}(x))_{i,j}$ is of rank $n - \dim(X)$.
     \label{Theorem 5.3}
 \end{theorem}
 \begin{remark}
     More generally, for closed point $x\in X$ with residue field $k(x)$.
     If $J_{x}$ is of rank $n - \dim(X)$, then X is regular at x.
-    On the other hand, only when $k(x)$ is separable over k can we get $J_{x}$ is of rank $n - \dim(X)$ if X is regular at x.
+    On the other hand, only when $k(x)$ is separable over $k$ can we get $J_{x}$ is of rank $n - \dim(X)$ if X is regular at x.
 \end{remark}
 \begin{proof}
     Let $f: X \longrightarrow \mathbb{A}_{k}^{n}$ be the closed immersion, $y = f(x)$.
@@ -2617,7 +2617,7 @@ With this definition, we can state definition of abstract variety over general f
     Thus X is regular at x if and only if the Jacobson matrix $J_{x} = (\frac{\partial P_{i}}{\partial x_{j}}(x))_{i,j}$ is of rank $n - \dim(X)$.
 \end{proof}
 \begin{example}
-    Let k be an algebraically field and $X = \spec(k[x_{1}, \cdots, x_{m}])/(P)$ be an affine k-variety where P is irreducible.
+    Let $k$ be an algebraically field and $X = \spec(k[x_{1}, \cdots, x_{m}])/(P)$ be an affine k-variety where P is irreducible.
     Now $\dim(X) = n - 1$.
     And X is regular at closed point $x\in X$ if and only if at least one $\frac{\partial P}{\partial x_{j}}(x) \neq 0$.
 \end{example}
@@ -2877,7 +2877,7 @@ With this definition, we can state definition of abstract variety over general f
 \end{proposition}
 \begin{proof}
     (1): Can assume that $X = \spec A$ affine.
-    As X is of finite type over k, A is of the form $k[x_{1}, \cdots, x_{r}]/I$.
+    As X is of finite type over $k$, A is of the form $k[x_{1}, \cdots, x_{r}]/I$.
     Thus $X_{k} = \spec(A \otimes_{k} K) \cong \spec(K[x_{1}, \cdots, x_{r}])/I$ so that the Jacobson matrixes at $x\in X$ and $x_{K}\in X_{K}$ are same.
     Note that $X_{K} \longrightarrow X$ is given by $\spec K \longrightarrow \spec k$ under base change $X \longrightarrow \spec k$, $X_{K} \longrightarrow X$ is flat.
     Assume x corresponds to maximal ideal $\mathfrak{m}$ of A.
@@ -2890,7 +2890,7 @@ With this definition, we can state definition of abstract variety over general f
     Consider $X' = X \times_{k} k(x)$.
     Take affine open neighbourhood $U = \spec A$ of x in X.
     Then $\spec(A \otimes_{k} k(x))$ is an affine open subset of $X'$.
-    While A is of finite type over k, by Noetherian Normalization Theorem, there exists $X_{1}, \cdots, x_{r}\in A$ algebraically independent over k such that A is integral over $k[x_{1}, \cdots, x_{r}]$.
+    While A is of finite type over $k$, by Noetherian Normalization Theorem, there exists $X_{1}, \cdots, x_{r}\in A$ algebraically independent over $k$ such that A is integral over $k[x_{1}, \cdots, x_{r}]$.
     It is easy to show that $(x_{1}, \cdots, x_{r})$ is a maximal ideal of A so that $(x_{1}, \cdots, x_{r}) \otimes_{k} k(x)$ is a maximal ideal of $A \otimes_{k} k(x)$.
     Thus we can take the closed point $x'$ corresponding to $(x_{1}, \cdots, x_{r}) \otimes_{k} k(x)$ with residue field equal to $k(x)$.
     By (1), it suffices to prove that X is regular at x if and only if $X'$ is regular at $x'$.
@@ -2902,15 +2902,15 @@ With this definition, we can state definition of abstract variety over general f
 \end{proof}
 \begin{definition}
     Let X be a scheme of finite type over field k, $\overline{k}$ algebraic closure of k.
-    We say that X is smooth (or say nonsingular) over k if $X_{\overline{k}} = X \times_{k} \overline{k}$ is regular.
+    We say that X is smooth (or say nonsingular) over $k$ if $X_{\overline{k}} = X \times_{k} \overline{k}$ is regular.
 \end{definition}
 \begin{example}
-    Let k be a field.
-    Then $\mathbb{A}_{k}^{n}$ and $\mathbb{P}_{k}^{n}$ are smooth over k.
+    Let $k$ be a field.
+    Then $\mathbb{A}_{k}^{n}$ and $\mathbb{P}_{k}^{n}$ are smooth over $k$.
 \end{example}
 \begin{remark}
-    By Proposition \ref{Proposition 5.9} (2), it is easy to see that if k is perfect, then smoothness over k is equivalent to regularity over k.
-    In addition, X is smooth over k if and only if for all $K/k$ field extension, $X_{k} = X \times_{k} K$ is regular.
+    By Proposition \ref{Proposition 5.9} (2), it is easy to see that if k is perfect, then smoothness over $k$ is equivalent to regularity over $k$.
+    In addition, X is smooth over $k$ if and only if for all $K/k$ field extension, $X_{k} = X \times_{k} K$ is regular.
 \end{remark}
 \begin{definition}
     Let $f: X \longrightarrow Y$ be a morphism of finite type between locally noetherian schemes.
