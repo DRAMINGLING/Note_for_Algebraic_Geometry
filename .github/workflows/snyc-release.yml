@@ -10,7 +10,7 @@ on:
       target_filename:
         description: '目标文件名（不含扩展名）'
         required: true
-        default: 'Note for Algebraic Varieties'
+        default: 'Note for Algebraic Geometry'
 
   workflow_run:
     workflows: ["Build LaTeX and Release PDF"]
@@ -40,7 +40,7 @@ jobs:
         with:
           # ⚠️ 修改：以下变量需要根据实际情况修改
           # 源仓库信息
-          repository: "DRAMINGLING/Note_for_Algebraic_Varieties"  # ⚠️ 修改：修改为您的源仓库
+          repository: "DRAMINGLING/Note_for_Algebraic_Geometry"  # ⚠️ 修改：修改为您的源仓库
           tag: "${{ github.event.inputs.source_tag || 'release' }}"  # 从输入获取或使用默认值'release'
           fileName: "main.pdf"  # ⚠️ 修改：要下载的文件名
           tarBall: false
@@ -55,7 +55,7 @@ jobs:
           find ./downloaded-assets -name "*.pdf" -type f | while read file; do
             echo "找到文件: $file"
             # 使用输入的文件名，如果没有输入则使用默认值
-            TARGET_FILENAME="${{ github.event.inputs.target_filename || 'Note for Algebraic Varieties' }}"
+            TARGET_FILENAME="${{ github.event.inputs.target_filename || 'Note for Algebraic Geometry' }}"
             # 复制并重命名文件到目标仓库目录
             cp "$file" "./target-repo/${TARGET_FILENAME}.pdf"
             echo "文件已复制并重命名为: ${TARGET_FILENAME}.pdf"
@@ -83,7 +83,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           # 检查文件是否已存在且有更改
-          TARGET_FILENAME="${{ github.event.inputs.target_filename || 'Note for Algebraic Varieties' }}.pdf"
+          TARGET_FILENAME="${{ github.event.inputs.target_filename || 'Note for Algebraic Geometry' }}.pdf"
           
           echo "检测到文件更改，准备提交..."
           git add "$TARGET_FILENAME"
