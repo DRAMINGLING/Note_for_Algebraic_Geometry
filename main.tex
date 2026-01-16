@@ -443,21 +443,24 @@ Since $D(f) \cong \spec(A_{f})$ as topological spaces, we immediately get the fo
     where $U_{i} \times U_{j}$ is still isomorphic to affine variety refer to Hartshorne exercise I 3.15.
 \end{example}
 \begin{definition}
-    Let k be an algebraically closed field, X abstract prevariety over k.
-    X is a abstract variety if $\delta = \{(x, x) \big{|} x\in X\}$ is closed in $X \times X$. 
+    Let $k$ be an algebraically closed field, $X$ abstract prevariety over $k$.
+    $X$ is an abstract variety if $\delta = \{(x, x) \big{|} x\in X\}$ is closed in $X \times X$. 
 \end{definition}
-\subsection{Structure Sheaf}
+
+\subsection{The structure sheaf}
+\label{subsection:Schemes_The_structure_sheaf}
+
 From now on, we would consider sheaves of rings.
 The above propositions about sheaves of abelian groups are still right for sheaves of rings.
 Here we don't need to repeat the proofs and just acknowledge them.
 Similar to the theory of abstract, we will define something basic like affine variety first.
 \begin{definition}
-    Let A be a ring, $X = \spec A$ spectrum.
+    Let $A$ be a ring, $X = \spec A$ spectrum.
     Define the structure sheaf $\mathcal{O}_{X}$ of rings on X to be $U \longrightarrow \mathcal{O}_{X}(U)$, 
     where $\mathcal{O}_{X}(U) = \{(a_{\mathfrak{p}})_{\mathfrak{p}\in U} \big{|} \forall \mathfrak{p}\in U, \exists f(\mathfrak{p})\in (A \setminus \mathfrak{p}) \text{ and } b(\mathfrak{p})\in A_{f(\mathfrak{p})} \text{ such that $D(f(\mathfrak{p})) \subseteq U$ and $b(\mathfrak{p})_{\mathfrak{q}} = a_{\mathfrak{q}}$, $\forall \mathfrak{q}\in D(f(\mathfrak{p}))$}\}$ is a subset of $\prod_{\mathfrak{p}\in U} A_{\mathfrak{p}}$.
 \end{definition}
 \begin{theorem}
-    Let A be a ring, $\mathcal{O}_{Spec(A)}$ structure sheaf.
+    Let $A$ be a ring, $\mathcal{O}_{\spec A}$ structure sheaf.
     Then for all $f\in A$ and $g\in rad(f)$, we have an isomorphism $A_{f} \overset{\sim}{\longrightarrow} \mathcal{O}_{X}(D(f))$ and the following diagram commutes
     \begin{equation*}
         \begin{tikzcd}
@@ -471,7 +474,7 @@ Similar to the theory of abstract, we will define something basic like affine va
 \end{theorem}
 \begin{reason}
     Construct the isomorphism as $\frac{a}{f^{n}} \longmapsto (\frac{a}{f^{n}})_{\mathfrak{p}\in D(f)}$.
-    The hardest part is to show this map is surjective, which need some commutative algebra to prove.
+    The harder part is to show this map is surjective, which need some commutative algebra to prove.
     For all $(a_{\mathfrak{p}})_{\mathfrak{p}\in D(f)}$, $\{D(f(\mathfrak{p}))\}$ form an open covering of $D(f)$.
     By Corollary \ref{Corollary 1.1}, $D(f)$ is quasi-compact and so there exists finitely many $\mathfrak{p}_{i}\in D(f)$ such that $D(f(\mathfrak{p}_{i}))$ cover $D(f)$.
     \par
@@ -484,7 +487,7 @@ Similar to the theory of abstract, we will define something basic like affine va
     But $\annihilator_{A}(\Delta_{ij}) \subseteq \mathfrak{m}_{ij}$, get $s\in \mathfrak{m}_{ij}$, contradiction!
     \par
     Thus $f_{i}f_{j}\in rad(\annihilator_{A}(\Delta_{ij}))$ and there exists $k_{ij}\in \mathbb{M}$ such that $(f_{i}f_{j})^{k_{ij}}\Delta_{ij} = 0$.
-    Note that there are finitely many i, we can take a supremum k and so $(f_{i}f_{j})^{k}\Delta_{ij} = 0$ for all $i,j$.
+    Note that there are finitely many $i$, we can take a supremum $k$ And so $(f_{i}f_{j})^{k}\Delta_{ij} = 0$ for all $i,j$.
     Let $a_{i}' = a_{i}f_{i}^{k}$ and $f_{i}' = f_{i}^{n_{i} + k}$.
     Can replace $\frac{a_{i}}{f_{i}^{n_{i}}}$ by $\frac{a_{i}'}{f_{i}'}$.
     Then $a_{i}'f_{j}' - a_{j}'f_{i}' = 0$.
