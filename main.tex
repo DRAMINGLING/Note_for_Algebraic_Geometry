@@ -363,7 +363,7 @@ Since $D(f) \cong \spec(A_{f})$ as topological spaces, we immediately get the fo
     The construction of $\varphi$ is just $\varphi(U): s \longmapsto (s_{x})_{x\in U}$.
 \end{reason}
 \begin{definition}
-    Let X be a topological space, $\varphi: \mathcal{F} \longrightarrow \mathcal{G}$ morphism of sheaves of abelian groups on X. \\
+    Let $X$ be a topological space, $\varphi: \mathcal{F} \longrightarrow \mathcal{G}$ morphism of sheaves of abelian groups on X. \\
     (1)Define the kernel of $\varphi$ to be $\ker(\varphi): op(X) \longrightarrow Ab\quad U \longmapsto \ker(\varphi(U))$. \\
     (2)Define the image of $\varphi$ to be sheafification of $op(X) \longrightarrow Ab\quad U \longmapsto im(\varphi(U))$, denoted by $im(\varphi)$. \\
     (3)Define the cokernel of $\varphi$ to be sheafification of $op(X) \longrightarrow Ab\quad U \longmapsto coker(\varphi(U))$, denoted by $coker(\varphi)$.
@@ -372,12 +372,12 @@ Since $D(f) \cong \spec(A_{f})$ as topological spaces, we immediately get the fo
     The definition of cokernel in fact induce the definition of quotient sheaf.
 \end{remark}
 \begin{definition}
-    Let X be a topological space, $\varphi: \mathcal{F} \longrightarrow \mathcal{G}$ morphism of sheaves of abelian groups on X. \\
+    Let $X$ be a topological space, $\varphi: \mathcal{F} \longrightarrow \mathcal{G}$ morphism of sheaves of abelian groups on X. \\
     (1)We say that $\varphi$ is injective if $\ker(\varphi) = 0$. \\
     (2)We say that $\varphi$ is surjective if $im(\varphi) = \mathcal{G}$
 \end{definition}
 \begin{proposition}
-    Let X be a topological space, $\varphi: \mathcal{F} \longrightarrow \mathcal{G}$ morphism of sheaves of abelian groups on X.
+    Let $X$ be a topological space, $\varphi: \mathcal{F} \longrightarrow \mathcal{G}$ morphism of sheaves of abelian groups on X.
     Then \\
     (1)$\varphi$ is injective if and only if $\varphi(U)$ is injective for all open subset U. \\
     (2)$\varphi$ is injective if and only if $\varphi_{x}$ is injective for all $x\in X$. \\
@@ -517,7 +517,7 @@ Similar to the theory of abstract, we will define something basic like affine va
 \label{subsection:Schemes_Schemes}
 
 \begin{definition}[\textbf{\emph{Ringed Spaces}}]
-    Let X be a topological space, $\mathcal{O}_{X}$ sheaf of rings on X.
+    Let $X$ be a topological space, $\mathcal{O}_{X}$ sheaf of rings on X.
     Then pair $(X, \mathcal{O}_{X})$ is called a ringed space.
 \end{definition}
 \begin{definition}[\textbf{\emph{Locally Ringed Spaces}}]
@@ -530,7 +530,7 @@ Similar to the theory of abstract, we will define something basic like affine va
     For open subset $U \subseteq X$, $x\in U$ and $s\in \mathcal{O}_{X}(U)$, define $f(x)$ to be the image of $f_{x}$ in residue field $k(x)$.
 \end{remark}
 \begin{example}
-    Let A be a ring.
+    Let $A$ be a ring.
     Then $(Spec(A), \mathcal{O}_{Spec(A)})$ is a locally ringed space.
     For all $\mathfrak{p}\in \spec A$, $k(\mathfrak{p}) = \fraction(A/\mathfrak{p})$.
     If moreover A is an integral domain and $\eta = (0)$ is the generic point, then $k(\eta) = \fraction(A)$.
@@ -861,7 +861,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     Get a morphism f of schemes from X to Y and $f\big{|}_{U_{i}} = f_{i}$.
 \end{proof}
 \begin{lemma}
-    Let X be a scheme, $x\in X$.
+    Let $X$ be a scheme, $x\in X$.
     Then there exists a morphism of schemes $\spec(\mathcal{O}_{X, x}) \longrightarrow X$.
     \label{Lemma 2.4}
 \end{lemma}
@@ -902,7 +902,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     In particular, if $S = \spec A$ is an affine scheme, we write A-scheme for short.
 \end{definition}
 \begin{definition}
-    Let A be a ring, B an A-algebra, X an A-scheme.
+    Let $A$ be a ring, B an A-algebra, X an A-scheme.
     Define the set of B-points of X to be $X(B) = Mor_{Spec(A)}(Spec(B), X)$. 
 \end{definition}
 \begin{example}
@@ -955,7 +955,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     Moreover, here $k(x) = k$.
 \end{example}
 \begin{definition}[\textbf{\emph{Tangent Spaces}}]
-    Let X be a scheme.
+    Let $X$ be a scheme.
     Assume that $x\in X$ with $k(x) = k$ for some field k.
     Define the tangent space of X at x to be $T_{x}(X) = \hom_{k}(\mathfrak{m}_{x}/\mathfrak{m}_{x}^{2}, k)$, 
     which is the dual space of $\mathfrak{m}_{x}/\mathfrak{m}_{x}^{2}$ as a k-vector space.
@@ -965,7 +965,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
 \end{remark}
 \subsection{Open Immersions and Closed Immersions}
 \begin{definition}
-    Let X be a scheme.
+    Let $X$ be a scheme.
     An open subscheme of X is an open subset $U \subseteq X$ equipped with sheaf $\mathcal{O}_{X}\big{|}_{U}$.
 \end{definition}
 \begin{definition}[\textbf{\emph{Open Immersions}}]
@@ -1005,11 +1005,11 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     Thus $f^{\sharp}$ is surjective.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 \end{proof}
 \begin{definition}
-    Let X be a scheme.
+    Let $X$ be a scheme.
     For $f\in \mathcal{O}_(X)(X)$, define $X_{f}$ to be the set of all $x\in X$ such that $f(x)\neq 0$.
 \end{definition}
 \begin{lemma}
-    Let X be a scheme.
+    Let $X$ be a scheme.
     Then for all $f\in \mathcal{O}_{X}(X)$ and $x\in X$, we have \\
     (1)$X_{f}$ is open in X. \\
     (2)Suppose that X can be covered by finitely many affine open subsets $\{U_{i}\}_{i\in I}$ satisfying that each $U_{i} \cap U_{j}$ is also covered by finitely many affine open subsets.
@@ -1062,7 +1062,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     As the last row is a local homomorphism, we get the result.
 \end{proof}
 \begin{proposition}[\textbf{\emph{Criterion of Affineness}}]
-    Let X be a scheme.
+    Let $X$ be a scheme.
     Suppose that there are finitely many elements $f_{1}, \cdots, f_{r}\in \mathcal{O}_{X}$ such that $(f_{1}, \cdots, f_{r}) = (1) = \mathcal{O}_{X}(X)$ and each open set $X_{f_{i}}$ is affine.
     Then X is affine.
     \label{Proposition 2.1} 
@@ -1185,7 +1185,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     Or equivalently, for all affine open subset $U = \spec(B) \subseteq f^{-1}(V)$, B is an A-algebra of finite type.
 \end{definition}
 \begin{lemma}
-    Let A be a ring, B an A-algebra.
+    Let $A$ be a ring, B an A-algebra.
     Then \\
     (1)Suppose that $\spec(B)$ covered by $\{D(b_{i})\}_{i\in I}$, where $b_{i}\in B$.,
     satisfying that each $B_{b_{i}}$ is an A-algebra of finite type.
@@ -1299,7 +1299,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     \label{Proposition 2.5} 
 \end{proposition}
 \begin{lemma}
-    Let A be a ring, B an A-algebra via ring homomorphism $\varphi: A \longrightarrow B$.
+    Let $A$ be a ring, B an A-algebra via ring homomorphism $\varphi: A \longrightarrow B$.
     Suppose that $\spec A$ is covered by $\{D(a_{i})\}_{i\in I}$ such that each $B_{\varphi(a_{i})}$ is finite over $A_{a_{i}}$.
     Then B is finite over A.
     \label{Lemma 2.11}
@@ -1448,7 +1448,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     \label{Proposition 2.8}
 \end{proposition}
 \begin{example}
-    Let X be an affine or projective abstract variety over algebraically closed field k, $l/k$ field extension.
+    Let $X$ be an affine or projective abstract variety over algebraically closed field k, $l/k$ field extension.
     Then $X \times_{k} l$ is affine or projective abstract "variety" over l and $(X \times_{k} l)(l) = X(l)$.
 \end{example}
 \begin{definition}
@@ -1545,7 +1545,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     \label{remark:noetherian_affine_scheme_not_noetherian_ring_in_general}
 \end{remark}
 \begin{proposition}
-    Let X be a topological space.
+    Let $X$ be a topological space.
     Then \\
     (1)If X is noetherian, then all open or closed subsets of X is also noetherian. \\
     (2)X is noetherian if and only if all open subsets of X are quasi-compact. \\
@@ -1553,12 +1553,12 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     \label{Proposition 3.1}
 \end{proposition}
 \begin{definition}
-    Let X be a topological space.
+    Let $X$ be a topological space.
     We say that X is irreducible if X is nonempty and X cannot be covered by two proper closed subsets.
     Or equivalently, X is nonempty and any 2 nonempty open subsets intersect.
 \end{definition}
 \begin{proposition}
-    Let X be a topological space.
+    Let $X$ be a topological space.
     Then \\
     (1)If X is irreducible, then every nonempty open subset of X is also irreducible. \\
     (2)Let $Y \subseteq X$ be a topological subspace.
@@ -1566,7 +1566,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     \label{Proposition 3.2}
 \end{proposition}
 \begin{theorem}
-    Let X be a noetherian topological space.
+    Let $X$ be a noetherian topological space.
     Then every nonempty closed subset Y of X can be uniquely written as a finite union $Y = \cup_{i} Y_{i}$, where $Y_{i}$ is irreducible closed subset and $Y_{i} \not\supseteq Y_{j}$ for all $i \neq j$.
     The decomposition of Y is called the irreducible components of Y.
     \label{Theorem 3.1}
@@ -1591,11 +1591,11 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
 \end{remark}
 \subsection{Noetherian Schemes}
 \begin{definition}[\textbf{\emph{Locally Noetherian Schemes}}]
-    Let X be a scheme.
+    Let $X$ be a scheme.
     We say that X is locally noetherian if for all affine open subset $U = \spec A$ of X, A is noetherian.
 \end{definition}
 \begin{lemma}
-    Let X be a locally noetherian scheme.
+    Let $X$ be a locally noetherian scheme.
     Then the minimal irreducible closed subsets of X are closed points.
     \label{Lemma 3.1}
 \end{lemma}
@@ -1609,7 +1609,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     Get $x = y$, thus V is one-point set.
 \end{proof}
 \begin{definition}[\textbf{\emph{Noetherian Schemes}}]
-    Let X be a scheme.
+    Let $X$ be a scheme.
     We say that X is noetherian if X can be covered by finitely many affine open subset $U = \spec A$ of X with A is noetherian.
 \end{definition}
 \begin{remark}
@@ -1618,12 +1618,12 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     Example can be taken the same as Remark \ref{remark:noetherian_affine_scheme_not_noetherian_ring_in_general}.
 \end{remark}
 \begin{proposition}
-    Let X be a noetherian scheme, $U \subseteq X$ open subset.
+    Let $X$ be a noetherian scheme, $U \subseteq X$ open subset.
     Then U is noetherian as scheme.
     \label{Proposition 3.3}
 \end{proposition}
 \begin{proposition}
-    Let X be a noetherian scheme.
+    Let $X$ be a noetherian scheme.
     If $i: U \hookrightarrow X$ is an open immersion, then i is of finite type.
     \label{Proposition 3.4}
 \end{proposition}
@@ -1646,7 +1646,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     Thus k-morphism between affine or projective abstract varieties is of finite type.
 \end{remark}
 \begin{theorem}
-    Let X be a scheme.
+    Let $X$ be a scheme.
     Suppose that X admits an affine open covering $\{U_{i} = Sepc(A_{i})\}$ with each $A_{i}$ noetherian.
     Then X is locally noetherian.
     \label{Theorem 3.2}
@@ -1672,7 +1672,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
 \end{proof}
 \subsection{Reduced and Integral Schemes}
 \begin{definition}[\textbf{\emph{Reduced Schemes}}]
-    Let X be a scheme.
+    Let $X$ be a scheme.
     A scheme X is called reduced if for all $x\in X$, the local ring $\mathcal{O}_{X, x}$ are reduced.
 \end{definition}
 \begin{remark}
@@ -1680,7 +1680,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     Thus, geometrically, reducedness means that function is determined by its values at each points.
 \end{remark}
 \begin{proposition}
-    Let X be a scheme.
+    Let $X$ be a scheme.
     Then X is reduced if and only if for all open subset $U \subseteq X$, $\mathcal{O}_{X}(U)$ is reduced.
     \label{Proposition 3.6}
 \end{proposition}
@@ -1698,23 +1698,23 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     As $(U, s) = (V, s\big{|}_{V})$, $\mathcal{O}_{X, x}$ is reduced.
 \end{proof}
 \begin{example}
-    (1)Let A be a ring.
+    (1)Let $A$ be a ring.
     Then $\spec A$ is reduced if and only if A is reduced. \\
-    (2)Let A be a ring.
+    (2)Let $A$ be a ring.
     Consider $A_{red} = A/rad(0)$.
     There is a closed immersion $\spec(A_{red}) \longrightarrow \spec A$.
     Reduced scheme can also be defined for abtrary scheme, see in Hartshorne exercise II 2.3. \\
-    (3)Let A be a ring.
+    (3)Let $A$ be a ring.
     Then reduced closed subscheme of $\spec A$ is given by some radical ideal $rad(I)$ of A.
     For general case, if V is a closed subset of scheme X, then there exists unique structure of reduced closed subscheme on V gluing by reduced closed subscheme $V \cap V_{i}$ of affine open subset $V_{i}$.
     Details can be seen in Hartshorne Chapter II example 3.2.6, p86.
 \end{example}
 \begin{definition}[\textbf{\emph{Integral Schemes}}]
-    Let X be a scheme.
+    Let $X$ be a scheme.
     We say that X is integral if X is irreducible and reduced.
 \end{definition}
 \begin{proposition}
-    Let X be a scheme.
+    Let $X$ be a scheme.
     If X is noetherian and connected, then X is integral if and only if for all $x\in X$, $\mathcal{O}_{X, x}$ is integral domain.
     \label{Proposition 3.7}
 \end{proposition}
@@ -1749,7 +1749,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     \label{Proposition 3.8}
 \end{proposition}
 \begin{proposition}
-    Let X be a nonempty scheme.
+    Let $X$ be a nonempty scheme.
     Then X is integral if and only if for all nonempty open subset U of X, $\mathcal{O}_{X}(U)$ is integral domain.
     \label{Proposition 3.9}
 \end{proposition}
@@ -1758,11 +1758,11 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     For "$\Leftarrow$", it suffices to show that all affine open subsets are irreducible, which comes from Proposition \ref{Proposition 3.8}.
 \end{reason}
 \begin{example}
-    Let A be an integral domain.
+    Let $A$ be an integral domain.
     Then $\mathbb{A}_{A}^{n}$ and $\mathbb{P}_{A}^{n}$ are integral.
 \end{example}
 \begin{proposition}
-    Let X be an irreducible scheme.
+    Let $X$ be an irreducible scheme.
     Then X contains a unique point $\eta$ such that $\overline{\{\eta\}} = X$ called the generic point of X.
     If moreover X is integral, then $\mathcal{O}_{X, \eta}$ is a field called the function field of X.
     \label{Proposition 3.10}
@@ -1783,7 +1783,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
 \subsection{Geometrically Global Properties}
 Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overline{k}} = X \times_{k} \overline{k}$.
 \begin{definition}
-    Let X be a k-scheme for some field k.
+    Let $X$ be a k-scheme for some field k.
     We say that X is geometrically integral (resp. geometrically irreducible, geometrically reduced) if $X_{\overline{k}}$ is integral (resp. irreducible, reduced).
 \end{definition}
 \begin{remark}
@@ -1823,7 +1823,7 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
     then there also exists $\mathfrak{P}_{2}\in \spec(B)$ over $\mathfrak{p}_{2}$ such that $\mathfrak{P}_{1} \subsetneq \mathfrak{P}_{2}$.
 \end{remark}
 \begin{theorem}[\textbf{\emph{Noetherian Normalization Theorem}}]
-    Let A be an algebra of finite type over a field k.
+    Let $A$ be an algebra of finite type over a field k.
     Then \\
     (1)There exists $y_{1}, \cdots, y_{r}\in A$ algebraically independent over $k$ such that A is integral over $k[y_{1}, \cdots, y_{r}]$. \\
     (2)If A is integral domain, then $\dim(A)$ equals to the transcandence degree of $\fraction(A)$ over $k$, which by (1) is r.
@@ -1831,7 +1831,7 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
     \label{Theorem 3.4}
 \end{theorem}
 \begin{definition}
-    Let X be a nonempty topological space.
+    Let $X$ be a nonempty topological space.
     Define the dimension of X is the supremum of n for which there exists $V_{0} \supsetneq V_{1} \supsetneq \cdots \supsetneq V_{n}$ sequence of irreducible closed subsets of X.
 \end{definition}
 \begin{proposition}
@@ -1843,7 +1843,7 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
     Comes from the fact irreducible closed subset one-to-one corresponds to prime ideal of A.
 \end{reason}
 \begin{proposition}
-    Let X be a topological space.
+    Let $X$ be a topological space.
     Then \\
     (1) For all subset $Y \subseteq X$ with induced topology, then $\dim(Y) \le \dim(X)$. \\
     (2) Suppose that X is irreducible and finite-dimensional.
@@ -1853,26 +1853,26 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
     \label{Proposition 3.13}
 \end{proposition}
 \begin{example}
-    (1)Let X be an irreducible scheme.
+    (1)Let $X$ be an irreducible scheme.
     If $\dim(X) = 0$, then underlying topological space of X is a one-point set. \\
-    (2) Let X be a noetherian scheme.
+    (2) Let $X$ be a noetherian scheme.
     If $\dim(X) = 0$, then irreducible components of X are all one-point sets and disjoint. \\
-    (3)Let A be a noetherian ring.
+    (3)Let $A$ be a noetherian ring.
     Then $\dim(\mathbb{A}_{A}^{n}) = \dim(\mathbb{P}_{A}^{n}) = \dim(A) + n$. \\
     (4)$\dim(X) = \dim(X_{red})$. \\
-    (5)Let X be a scheme, $U \subseteq X$ dense open subset.
+    (5)Let $X$ be a scheme, $U \subseteq X$ dense open subset.
     It can happen that $\dim(U) = \dim(X)$ even when X is noetherian integral scheme.
     For instance, take $X = \spec A$ for some discrete valuation ring A. 
 \end{example}
 \begin{definition}
-    Let X be a topological space, $Y \subseteq X$ irreducible closed.
+    Let $X$ be a topological space, $Y \subseteq X$ irreducible closed.
     Define the codimension $codim_{X}(Y)$ to be the supremum of n for which there exists $V_{0} \supsetneq V_{1} \supsetneq \cdots \supsetneq V_{n} = Y$ sequence of irreducible closed subsets of X.
 \end{definition}
 \begin{remark}
     Obviously, $\dim(X) \ge \dim(Y) + codim_{X}(Y)$.
 \end{remark}
 \begin{theorem}
-    Let X be an integral scheme of finite type over field k, $K$ function field of X.
+    Let $X$ be an integral scheme of finite type over field k, $K$ function field of X.
     Then \\
     (1)$\dim(X) = tr\dim(K/k) < \infty$ \\
     (2)For all nonempty open subset U of X, $\dim(X) = \dim(U)$. \\
@@ -1892,7 +1892,7 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
     Thus by Noetherian Normalization Theorem, $\dim(\mathcal{O}_{X, x}) = \dim(A) = \dim(U) = \dim(X)$. 
 \end{proof}
 \begin{corollary}
-    Let X be a scheme of finite type over field k. 
+    Let $X$ be a scheme of finite type over field k. 
     Then $\dim(X) < \infty$.
     If moreover X is irreducible, then $\dim(X) = \dim(U)$ for all nonempty open subset U of X.
     \label{Corollary 3.1}
@@ -1904,11 +1904,11 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
     By Proposition \ref{Theorem 3.5}, get $\dim(X)$ finite.
 \end{proof}
 \begin{definition}[\textbf{\emph{Pure Schemes}}]
-    Let X be a noetherian scheme.
+    Let $X$ be a noetherian scheme.
     We say that X is pure (or say equidimensional) if all irreducible components of X have the same finite dimension.
 \end{definition}
 \begin{proposition}
-    Let X be a scheme of finite type over field k.
+    Let $X$ be a scheme of finite type over field k.
     Suppose X is pure.
     Then \\
     (1)For all nonempty open subset U of X, $\dim(U) = \dim(X)$. \\
@@ -1919,7 +1919,7 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
     The proof is similar to proof of Theorem \ref{Theorem 3.5} and Corollary \ref{Corollary 3.1}.
 \end{reason}
 \begin{theorem}
-    Let X be a scheme of finite type over field k.
+    Let $X$ be a scheme of finite type over field k.
     Then the set of all closed points of X is dense in X.
     \label{Theorem 3.6}
 \end{theorem}
@@ -1942,7 +1942,7 @@ Now let $X$ be a $k$-scheme for some field $k$, we are interested in $X_{\overli
     So it is obviously that the set of all closed points of X is dense in X.
 \end{proof}
 \begin{corollary}
-    Let X be a scheme of finite type over field k.
+    Let $X$ be a scheme of finite type over field k.
     Assume Z is an irreducible component of X.
     Then there exists closed point $x\in Z$ such that x is not in any other irreducible component of X.
     \label{Corollary 3.2}
@@ -2319,7 +2319,7 @@ With this definition, we can state definition of abstract variety over general f
     For instance, finite induce EGA's projective but not Hartshorne's projective.
 \end{remark}
 \begin{lemma}
-    Let A be a ring, B an A-algebra, S a graded A-algebra.
+    Let $A$ be a ring, B an A-algebra, S a graded A-algebra.
     Then $S \otimes_{A} B$ is a graded B-algebra graded by $(S \otimes_{A} B)_{d} = S_{d} \otimes B$.
     In addition, we have that $\proj(S \otimes_{A} B) = \proj(S) \times_{A} B$.
     \label{Lemma 4.3}
@@ -2386,16 +2386,16 @@ With this definition, we can state definition of abstract variety over general f
 
 \subsection{Normal Schemes}
 \begin{definition}
-    Let X be a scheme.
+    Let $X$ be a scheme.
     We say that X is normal at $x\in X$ if the local ring $\mathcal{O}_{X, x}$ is integrally closed domain.
     In particular, we say that X is normal if X is normal at x for all $x\in X$.
 \end{definition}
 \begin{example}
-    Let A be an integral domain.
+    Let $A$ be an integral domain.
     Then $\spec A$ is normal if and only if A is integrally closed.
 \end{example}
 \begin{theorem}[\textbf{\emph{Algebraic Hartogs}}]
-    Let A be a noetherian integrally closed domain, $K = \fraction(A)$.
+    Let $A$ be a noetherian integrally closed domain, $K = \fraction(A)$.
     Then $A = \cap_{\mathfrak{p}\in \spec A, ht(\mathfrak{p}) \le 1} A_{\mathfrak{p}} \subseteq K$.
     \label{Theorem 5.1}
 \end{theorem}
@@ -2403,7 +2403,7 @@ With this definition, we can state definition of abstract variety over general f
     In algebraic geometry, this fact can be translated into that functions defined in codim 1 are defined everywhere.
 \end{remark}
 \begin{corollary}
-    Let X be a noetherian normal scheme.
+    Let $X$ be a noetherian normal scheme.
     Assume that $Z \subseteq X$ is a closed subset and all irreducible components of Z are of codimension $\ge 2$.
     Then the restriction $\mathcal{O}_{X}(X) \longrightarrow \mathcal{O}_{X}(X \setminus Z)$ is isomorphic.
     \label{Corollary 5.1}
@@ -2419,11 +2419,11 @@ With this definition, we can state definition of abstract variety over general f
     Thus by Theorem \ref{Theorem 5.1} $A \subseteq \mathcal{O}_{X}(X \setminus Z) \subseteq \cap_{\mathfrak{p}\in \spec A, ht(\mathfrak{p}) \le 1} A_{\mathfrak{p}} = A$, done!
 \end{proof}
 \begin{definition}
-    Let X be a scheme, $x\in X$.
+    Let $X$ be a scheme, $x\in X$.
     We say that x is of codimension r if codimension of the irreducible closed subset $\overline{\{x\}}$ is r.
 \end{definition}
 \begin{proposition}
-    Let X be a scheme, $x\in X$.
+    Let $X$ be a scheme, $x\in X$.
     Then x is of codimension r if and only if $\dim(\mathcal{O}_{X, x}) = r$.
     \label{Proposition 5.1}
 \end{proposition}
@@ -2515,11 +2515,11 @@ With this definition, we can state definition of abstract variety over general f
     Morphism $\pi: \widetilde{X} \longrightarrow X$ is given by $x \longmapsto t^{2} - 1$ and $y \longmapsto t(t^{2} - 1)$. 
 \end{example}
 \begin{remark}
-    (1)Let A be an integral domain, $K = \fraction(A)$, $L/K$ field extension.
+    (1)Let $A$ be an integral domain, $K = \fraction(A)$, $L/K$ field extension.
     Since we can define the integral closure $\widetilde{A}_{L}$ of A in L, we can also define the normalization of $Sepc(A)$ in L to be $\spec(\widetilde{A}_{L})$.
 \end{remark}
 \begin{proposition}
-    Let X be an integral scheme, K function field of X.
+    Let $X$ be an integral scheme, K function field of X.
     Then the natural morphism $\pi: \widetilde{X} \longrightarrow X$ is affine and surjective.
     If moreover X is of finite type over $k$ for some field k, $\pi$ is finite.
     \label{Proposition 5.2}
@@ -2538,19 +2538,19 @@ With this definition, we can state definition of abstract variety over general f
 \end{proof}
 \subsection{Regular Schemes}
 \begin{definition}
-    Let X be a locally noetherian scheme.
+    Let $X$ be a locally noetherian scheme.
     We say that X is regular at $x\in X$ if the local ring $\mathcal{O}_{X, x}$ is regular.
     If not, then x is called a singular point of X.
     In particular, we say that X is regular if X is regular at all points.
 \end{definition}
 \begin{example}
-    (1)Let X be a normal and locally noetherian scheme.
+    (1)Let $X$ be a normal and locally noetherian scheme.
     Since discrete valuation ring is regular local ring, all points of codimension 1 in X are nonsingular points. \\
     (2)Let $X = \spec(k[x, y, z]/(z^{2} - xy))$.
     Then X is normal and noetherian but not regular at $(\overline{x}, \overline{y}, \overline{z})$.
 \end{example}
 \begin{proposition}
-    Let X be a locally noetherian scheme.
+    Let $X$ be a locally noetherian scheme.
     If X is regular at closed points, then X is regular.
     \label{Proposition 5.3}
 \end{proposition}
@@ -2564,7 +2564,7 @@ With this definition, we can state definition of abstract variety over general f
     Since X is regular at y, X is also regular at x.
 \end{proof}
 \begin{remark}
-    Let X be a locally noetherian scheme, $x\in X$ closed point.
+    Let $X$ be a locally noetherian scheme, $x\in X$ closed point.
     Recall that $T_{X, x} = \hom_{k(x)}(\mathfrak{m}_{x}/\mathfrak{m}_{x}^{2}, k(x))$.
     Thus X is regular at x if and only if $\dim_{k(x)}(T_{X, x}) = \dim(\mathcal{O}_{X, x})$.
 \end{remark}
@@ -2666,7 +2666,7 @@ With this definition, we can state definition of abstract variety over general f
     \label{Corollary 5.3}
 \end{corollary}
 \begin{lemma}
-    Let A be a reduced noetherian ring, $a\in A$ zero-divisor.
+    Let $A$ be a reduced noetherian ring, $a\in A$ zero-divisor.
     Then a is in a minimal prime ideal of A.
     \label{Lemma 5.3}
 \end{lemma}
@@ -2707,7 +2707,7 @@ With this definition, we can state definition of abstract variety over general f
     While $\mathcal{O}_{Y, y}$ is principal ideal domain, get $\mathcal{O}_{X, x}$ free so that is flat.
 \end{proof}
 \begin{theorem}
-    Let A be a noetherian ring, $a\in A$ not invertible.
+    Let $A$ be a noetherian ring, $a\in A$ not invertible.
     Then each minimal prime ideal of A containing a has height $\le 1$ and "$=$" holds if a is not a zero-divisor.
     \label{Theorem 5.7}
 \end{theorem}
@@ -2715,7 +2715,7 @@ With this definition, we can state definition of abstract variety over general f
     Geometrically, for $X = \spec A$ affine scheme and $a\in A$ not invertible, each irreducible component of $V(a)$ has codimension $\le 1$ and "$=$" holds if a is not a zeo-divisor.
 \end{remark}
 \begin{corollary}
-    Let A be a noetherian local ring, $\mathfrak{m} \subseteq A$ maximal ideal, $a\in \mathfrak{m}$.
+    Let $A$ be a noetherian local ring, $\mathfrak{m} \subseteq A$ maximal ideal, $a\in \mathfrak{m}$.
     Then $\dim(A/(a)) \ge \dim(A) - 1$ and "$=$" holds if a is not a zero-divisor.
     \label{Corollary 5.4}
 \end{corollary}
@@ -2867,7 +2867,7 @@ With this definition, we can state definition of abstract variety over general f
     Thus $\mathbf{m}_{y} \otimes_{\mathcal{O}_{Y, y}} \mathcal{O}_{X, x} = \mathfrak{m}_{x}$ so that $\mathfrak{m}_{x}/\mathfrak{m}_{x}^{2} \cong \mathfrak{m}_{y}/\mathfrak{m}_{y}^{2} \otimes_{k(y)} k(x)$.
 \end{proof}
 \begin{proposition}
-    Let X be a k-scheme of finite type. \\
+    Let $X$ be a k-scheme of finite type. \\
     (1)Let $K/k$ be a field extension, $x\in X$ closed point with residue field k.
     Assume $x_{K}\in X_{K} = X \times_{k} K$ is a closed point over x with residue field K.
     Then X is regular at x if and only if $X_{K}$ is regular at $x_{K}$. \\
@@ -2901,7 +2901,7 @@ With this definition, we can state definition of abstract variety over general f
     Thus X is regular at x if and only if X' is regular at x' as Remark 5.3.
 \end{proof}
 \begin{definition}
-    Let X be a scheme of finite type over field k, $\overline{k}$ algebraic closure of k.
+    Let $X$ be a scheme of finite type over field k, $\overline{k}$ algebraic closure of k.
     We say that X is smooth (or say nonsingular) over $k$ if $X_{\overline{k}} = X \times_{k} \overline{k}$ is regular.
 \end{definition}
 \begin{example}
@@ -2951,12 +2951,12 @@ With this definition, we can state definition of abstract variety over general f
 \subsection{Modules over Ringed Space}
 \label{subsection:Modules over Ringed Space}
 \begin{definition}
-    Let X be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space.
+    Let $X$ be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space.
     A sheaf of $\mathcal{O}_{X}$-modules is a sheaf of abelian groups $\mathcal{F}$ on X such that for all $U \subseteq X$ open, 
     $\mathcal{F}(U)$ is a module over $\mathcal{O}_{X}(U)$ which is compatible with restriction maps.
 \end{definition}
 \begin{definition}
-    Let X be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space, $\mathcal{F},\mathcal{G}$ two $\mathcal{O}_{X}$-modules.
+    Let $X$ be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space, $\mathcal{F},\mathcal{G}$ two $\mathcal{O}_{X}$-modules.
     A morphism $\varphi$ from $\mathcal{F}$ to $\mathcal{G}$ is a morphism of sheaves compatible with the module structure i.e. for all $U \subseteq X$ open, 
     $\varphi(U): \mathcal{F}(U) \longrightarrow \mathcal{G}(U)$ is a homomorphism of $\mathcal{O}_{X}(U)$-modules.
 \end{definition}
@@ -2965,28 +2965,28 @@ With this definition, we can state definition of abstract variety over general f
     Can also define submodule, quotient module and direct sum.
 \end{remark}
 \begin{definition}
-    Let X be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space.
+    Let $X$ be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space.
     An sheaf ideal on X is an $\mathcal{O}_{X}$-submodule of $\mathcal{O}_{X}$.
 \end{definition}
 \begin{definition}[\textbf{\emph{Tensor Products}}]
-    Let X be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space, $\mathcal{F},\mathcal{G}$ two $\mathcal{O}_{X}$-modules.
+    Let $X$ be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space, $\mathcal{F},\mathcal{G}$ two $\mathcal{O}_{X}$-modules.
     Define tensor product $\mathcal{F} \otimes_{\mathcal{O}_{X}} \mathcal{G}$ to be the sheafification of $U \longmapsto \mathcal{F}(U) \otimes_{\mathcal{O}_{X}(U)} \mathcal{G}(U)$.
 \end{definition}
 \begin{remark}
     The stalk of $\mathcal{F} \otimes_{\mathcal{O}_{X}} \mathcal{G}$ at $x\in X$ is just $\mathcal{F}_{x} \otimes_{\mathcal{O}_{X, x}} \mathcal{G}_{x}$.
 \end{remark}
 \begin{definition}[\textbf{\emph{Free $\mathcal{O}_{X}$-modules}}]
-    Let X be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space, $\mathcal{F}$ an $\mathcal{O}_{X}$-module.
+    Let $X$ be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space, $\mathcal{F}$ an $\mathcal{O}_{X}$-module.
     We say that $\mathcal{F}$ is free if $\mathcal{F}$ is isomorphic to a direct sum of $\mathcal{O}_{X}$.
     In addition, we say that $\mathcal{F}$ is free of rank r if $\mathcal{F} \cong \mathcal{O}_{X}^{r}$.
 \end{definition}
 \begin{definition}[\textbf{\emph{Locally Free $\mathcal{O}_{X}$-modules}}]
-    Let X be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space, $\mathcal{F}$ an $\mathcal{O}_{X}$-module.
+    Let $X$ be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space, $\mathcal{F}$ an $\mathcal{O}_{X}$-module.
     We say that $\mathcal{F}$ is locally free if X can be covered by open subsets $\{U_{i}\}_{i\in I}$ such that $\mathcal{F}\big{|}_{U_{i}}$ is free as $\mathcal{O}_{U_{i}}$-module.
     In addition, we say that $\mathcal{F}$ is locally free of rank r if X can be covered by open subsets $\{U_{i}\}_{i\in I}$ such that $\mathcal{F}\big{|}_{U_{i}} \cong \mathcal{O}_{U_{i}}^{r}$ as $\mathcal{O}_{U_{i}}$-module.
 \end{definition}
 \begin{definition}[\textbf{\emph{Invertible $\mathcal{O}_{X}$-modules}}]
-    Let X be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space, $\mathcal{F}$ an $\mathcal{O}_{X}$-module.
+    Let $X$ be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space, $\mathcal{F}$ an $\mathcal{O}_{X}$-module.
     We say that $\mathcal{F}$ is invertible if it is locally free of rank 1.
 \end{definition}
 \begin{remark}
@@ -3000,14 +3000,14 @@ With this definition, we can state definition of abstract variety over general f
 \end{lemma}
 \subsection{Quasi-coherent and Coherent Sheaves}
 \begin{definition}
-    Let A be a ring, $X = \spec A$, $M\in Mod_{A}$.
+    Let $A$ be a ring, $X = \spec A$, $M\in Mod_{A}$.
     Define an $\mathcal{O}_{X}$-module $\widetilde{M}$ on X by the same process as $\mathcal{O}_{X}$ replacing A by M.
 \end{definition}
 \begin{remark}
     The definition gives a fully faithful functor from $Mod_{A}$ to category of $\mathcal{O}_{Spec(A)}$-modules $M \longmapsto \widetilde{M}$.
 \end{remark}
 \begin{proposition}
-    Let A be a ring, $X = \spec A$, $M\in Mod_{A}$.
+    Let $A$ be a ring, $X = \spec A$, $M\in Mod_{A}$.
     Then \\
     (1)$\widetilde{M}(X) = M$, \\
     (2)$\widetilde{M}(D(f)) = M_{f} = M \otimes_{A} A_{f}$ \\
@@ -3015,7 +3015,7 @@ With this definition, we can state definition of abstract variety over general f
     \label{Proposition 6.1}
 \end{proposition}
 \begin{proposition}
-    Let A be a ring, $X = \spec A$.
+    Let $A$ be a ring, $X = \spec A$.
     Then \\
     (1)Let $M_{i}$ be $A$-modules. 
     Then $\widetilde{\oplus_{i} M_{i}} \cong \oplus_{i} \widetilde{M_{i}}$. \\
@@ -3028,17 +3028,17 @@ With this definition, we can state definition of abstract variety over general f
     \label{Proposition 6.2}
 \end{proposition}
 \begin{definition}[\textbf{\emph{Quasi-coherent Sheaves}}]
-    Let X be a scheme, $\mathcal{F}$ a sheaf of abelian groups on X.
+    Let $X$ be a scheme, $\mathcal{F}$ a sheaf of abelian groups on X.
     We say that $\mathcal{F}$ is quasi-coherent if for all affine open subset $U = \spec A \subseteq X$,
     $\mathcal{F}\big{|}_{U} \cong \widetilde{M}$ for some $A$-module M.
 \end{definition}
 \begin{definition}[\textbf{\emph{Coherent Sheaves}}]
-    Let X be a noetherian scheme, $\mathcal{F}$ a sheaf of abelian groups on X.
+    Let $X$ be a noetherian scheme, $\mathcal{F}$ a sheaf of abelian groups on X.
     We say that $\mathcal{F}$ is coherent if for all affine open subset $U = \spec A \subseteq X$,
     $\mathcal{F}\big{|}_{U} \cong \widetilde{M}$ for some finite $A$-module M.
 \end{definition}
 \begin{theorem}
-    Let X be a scheme, $\mathcal{F}$ an $\mathcal{O}_{X}$-module.
+    Let $X$ be a scheme, $\mathcal{F}$ an $\mathcal{O}_{X}$-module.
     Suppose X admits an affine open subset covering $\{U_{i} = \spec(A_{i})\}_{i}$ such that for all i, $\mathcal{F}\big{|}_{U_{i}} \cong \widetilde{M_{i}}$ for some $A_{i}$-module $M_{i}$.
     Then $\mathcal{F}$ is quasi-coherent.
     If moreover X is noetherian and $M_{i}$ are finite over $A_{i}$, then $\mathcal{F}$ is coherent.
@@ -3077,7 +3077,7 @@ With this definition, we can state definition of abstract variety over general f
     Thus $\mathcal{F}$ is coherent.
 \end{proof}
 \begin{proposition}
-    Let X be a scheme.
+    Let $X$ be a scheme.
     Then \\
     (1)Kernel, image and cokernel of morphism of quasi-coherent sheaves are still quasi-coherent. \\
     (2)Direct sum of quasi-coherent sheaves is quasi-coherent. \\
@@ -3088,7 +3088,7 @@ With this definition, we can state definition of abstract variety over general f
     If X is moreover noetherian, then (1) and (3) still hold for coherent and (2) is also ok if the direct sum is finite.
 \end{remark}
 \begin{proposition}
-    Let X be an affine scheme.
+    Let $X$ be an affine scheme.
     Then for all exact sequence of quasi-coherent sheaves 
     \begin{equation*}
         0 \longrightarrow \mathcal{F} \longrightarrow \mathcal{G} \longrightarrow \mathcal{H} \longrightarrow 0
@@ -3101,7 +3101,7 @@ With this definition, we can state definition of abstract variety over general f
     \label{Proposition 6.4}
 \end{proposition}
 \begin{proposition}
-    Let X be a scheme, $\mathcal{F}$ an $\mathcal{O}_{X}$-module.
+    Let $X$ be a scheme, $\mathcal{F}$ an $\mathcal{O}_{X}$-module.
     Then $\mathcal{F}$ is quasi-coherent if and only if for all $x\in X$, 
     there exists open neighbourhood $U\ni x$ such that there is an exact sequence
     \begin{equation*}
@@ -3145,15 +3145,15 @@ With this definition, we can state definition of abstract variety over general f
     For coherent, the same argument would make sense.
 \end{proof}
 \begin{example}
-    (1)Let X be a scheme.
+    (1)Let $X$ be a scheme.
     Then locally free $\mathcal{O}_{X}$-modules are quasi-coherent. \\
-    (2)Let X be a noetherian scheme.
+    (2)Let $X$ be a noetherian scheme.
     Then locally free $\mathcal{O}_{X}$-modules of rank $< \infty$ are coherent. \\
     (3)Let $i: Y \longrightarrow X$ be a closed immersion with X,Y noetherian.
     Then $i_{\ast}\mathcal{O}_{Y}$ is coherent on X. \\
-    (4)Let X be an integral noetherian scheme with function field K.
+    (4)Let $X$ be an integral noetherian scheme with function field K.
     Then constant sheaf $K_{X}$ is quasi-coherent but not coherent in general. \\
-    (5)Let X be a scheme, $U \subseteq X$ open subset with inclusion $j: U \longrightarrow X$, $\mathcal{F}$ sheaf on U.
+    (5)Let $X$ be a scheme, $U \subseteq X$ open subset with inclusion $j: U \longrightarrow X$, $\mathcal{F}$ sheaf on U.
     Define $j_{!}\mathcal{F}$ to be the sheafification of $V \longmapsto
     \left\{
         \begin{aligned}
@@ -3243,7 +3243,7 @@ With this definition, we can state definition of abstract variety over general f
     Thus $f^{-1}(D(g)) = X_{h}$ so that $(f_{\ast}\mathcal{F})(D(g)) = \mathcal{F}(X_{h})$.
     It suffices to show that $\mathcal{F}(X_{h}) = f_{\ast}\mathcal{F}(Y)_{g} = \mathcal{F}(X) \otimes_{A} A_{g}$.
     Note that $B \otimes_{A} A_{g} \cong B_{h}$, we have $\mathcal{F}(X) \otimes_{A} A_{g} \cong \mathcal{F}(X)_{h}$.
-    Cover X be affine open subsets $\{U_{i}\}$.
+    Cover $X$ be affine open subsets $\{U_{i}\}$.
     As either X is noetherian or f is quasi-compact and separated, the covering is finite.
     There is a commutative diagram with exact rows,
     \begin{equation*}
@@ -3311,7 +3311,7 @@ For instance, if $M = \oplus_{d \ge 0} M_{d}$ and $N = \oplus_{d \ge d_{0}} M_{d
     Note that there is a canonical isomorphism $S(n)_{(f)} \longrightarrow S_{(f)}\quad s \longmapsto f^{-n}s$, done! 
 \end{proof}
 \begin{lemma}[\textbf{\emph{qcqs Lemma}}]
-    Let X be a scheme, $\mathcal{F}$ quasi-coherent sheaf on X, $\mathcal{L}$ invertible sheaf on X, $s\in \mathcal{L}(X)$.
+    Let $X$ be a scheme, $\mathcal{F}$ quasi-coherent sheaf on X, $\mathcal{L}$ invertible sheaf on X, $s\in \mathcal{L}(X)$.
     Assume that X is either noetherian or quasi-compact and separated over $\spec(\mathbb{Z})$.
     Then \\
     (1)Let $f\in \mathcal{F}(X)$.
@@ -3344,7 +3344,7 @@ For instance, if $M = \oplus_{d \ge 0} M_{d}$ and $N = \oplus_{d \ge d_{0}} M_{d
     Take $n_{0} = m + p$, done! 
 \end{proof}
 \begin{definition}
-    Let X be a scheme, $\mathcal{F}$ an $\mathcal{O}_{X}$-module.
+    Let $X$ be a scheme, $\mathcal{F}$ an $\mathcal{O}_{X}$-module.
     We say that $\mathcal{F}$ is generated by global sections (or say globally generated) if there exists a family of global sections $\{s_{i}\}$ such that for all $x\in X$,
     $\{(s_{i})_{x}\}$ generate $\mathcal{F}_{x}$.
 \end{definition}
@@ -3358,7 +3358,7 @@ For instance, if $M = \oplus_{d \ge 0} M_{d}$ and $N = \oplus_{d \ge d_{0}} M_{d
     Then all quasi-coherent sheaves on X are generated by global sections.
 \end{example}
 \begin{definition}
-    Let A be a ring and X be a projective scheme over A with commutative diagram
+    Let $A$ be a ring and $X$ be a projective scheme over A with commutative diagram
     \begin{equation*}
         \begin{tikzcd}
             X \arrow[r, "i"] \arrow[dr] &
@@ -3383,7 +3383,7 @@ For instance, if $M = \oplus_{d \ge 0} M_{d}$ and $N = \oplus_{d \ge d_{0}} M_{d
     As $P \cong Q$, done!
 \end{proof}
 \begin{theorem}[\textbf{\emph{Serre's Theorem}}]
-    Let A be a noetherian ring and X be a projective scheme over A with commutative diagram, 
+    Let $A$ be a noetherian ring and $X$ be a projective scheme over A with commutative diagram, 
     \begin{equation*}
         \begin{tikzcd}
             X \arrow[r, "i"] \arrow[dr] &
@@ -3407,7 +3407,7 @@ For instance, if $M = \oplus_{d \ge 0} M_{d}$ and $N = \oplus_{d \ge d_{0}} M_{d
     Thus $\mathcal{F}(n)$ is generated by these extensions.
 \end{proof}
 \begin{corollary}
-    Let A be a noetherian ring and X be a projective scheme over A with commutative diagram, 
+    Let $A$ be a noetherian ring and $X$ be a projective scheme over A with commutative diagram, 
     \begin{equation*}
         \begin{tikzcd}
             X \arrow[r, "i"] \arrow[dr] &
@@ -3429,7 +3429,7 @@ For instance, if $M = \oplus_{d \ge 0} M_{d}$ and $N = \oplus_{d \ge d_{0}} M_{d
     Define a graded $C$-module $\Gamma_{\ast}(\mathcal{F}) = \oplus_{n\in \mathbb{Z}} \Gamma(X, \mathcal{F}(n))$.
 \end{definition}
 \begin{proposition}
-    Let A be a ring, $S = A[x_{0}, \cdots, x_{d}]$ with $d > 0$ and $X = \proj(S) = \mathbb{P}_{A}^{d}$.
+    Let $A$ be a ring, $S = A[x_{0}, \cdots, x_{d}]$ with $d > 0$ and $X = \proj(S) = \mathbb{P}_{A}^{d}$.
     Then $\Gamma_{\ast}(\mathcal{O}_{X}) = S$.
     \label{Proposition 6.9}
 \end{proposition}
@@ -3468,7 +3468,7 @@ For instance, if $M = \oplus_{d \ge 0} M_{d}$ and $N = \oplus_{d \ge d_{0}} M_{d
     By gluing lemma of morphism, get $\widetilde{M} \overset{\sim}{\longrightarrow} \mathcal{F}$ isomorphic.
 \end{proof}
 \begin{theorem}
-    Let A be a ring, $S = A[x_{0}, \cdots, x_{d}]$ with $d > 0$ and $X = \proj(S) = \mathbb{P}_{A}^{d}$.
+    Let $A$ be a ring, $S = A[x_{0}, \cdots, x_{d}]$ with $d > 0$ and $X = \proj(S) = \mathbb{P}_{A}^{d}$.
     Then any closed subscheme Z of X is of the form $\proj(S/I)$ for uniquely determined homogeneous ideal I.
     \label{Theorem 6.5}
 \end{theorem}
@@ -3482,7 +3482,7 @@ For instance, if $M = \oplus_{d \ge 0} M_{d}$ and $N = \oplus_{d \ge d_{0}} M_{d
 \end{proof}
 \subsection{Ample and Very Ample Invertible Sheaves}
 \begin{proposition}
-    Let A be a ring, X an A-scheme, $Y = \proj(A[x_{0}, \cdots, x_{d}]) = \mathbb{P}_{A}^{d}$.
+    Let $A$ be a ring, X an A-scheme, $Y = \proj(A[x_{0}, \cdots, x_{d}]) = \mathbb{P}_{A}^{d}$.
     Then \\
     (1)Let $f: X \longrightarrow Y$ be an A-morphism.
     Then $f^{\ast}\mathcal{O}_{Y}(1)$ is an invertible sheaf on X, generated by $d + 1$ global sections. \\
@@ -3523,7 +3523,7 @@ For instance, if $M = \oplus_{d \ge 0} M_{d}$ and $N = \oplus_{d \ge d_{0}} M_{d
     by the exercise, we immediately get that (d),(e),(f) also holds for immersion.
 \end{remark}
 \begin{definition}[\textbf{\emph{Quasi-projective}}]
-    Let A be a ring, X an A-scheme.
+    Let $A$ be a ring, X an A-scheme.
     We say that X is quasi-projective over A if $X \longrightarrow \spec A$ factors as 
     \begin{equation*}
         \begin{tikzcd}
@@ -3545,7 +3545,7 @@ In Midterm24.pdf, there is also a definition of immersion which is a little diff
     \label{Proposition 6.12}
 \end{proposition}
 \begin{definition}[\textbf{\emph{Very Ample Invertible Sheaves}}]
-    Let A be a ring, X an A-scheme, $\mathcal{L}$ an invertible sheaf on X.
+    Let $A$ be a ring, X an A-scheme, $\mathcal{L}$ an invertible sheaf on X.
     We say that $\mathcal{L}$ is very ample relative to A if there exists A-immersion $f: X \longrightarrow \mathbb{P}_{A}^{d}$ such that $\mathcal{L} \cong \mathcal{O}_{X}(1) = f^{\ast}\mathcal{O}_{\mathbb{P}_{A}^{d}}(1)$.
 \end{definition}
 \begin{remark}
@@ -3554,7 +3554,7 @@ In Midterm24.pdf, there is also a definition of immersion which is a little diff
     Thus X is projective over A if and only if X is proper over A and admits a very ample invertible sheaf.
 \end{remark}
 \begin{definition}[\textbf{\emph{Ample Invertible Sheaves}}]
-    Let X be a noetherian scheme, $\mathcal{L}$ an invertible sheaf on X.
+    Let $X$ be a noetherian scheme, $\mathcal{L}$ an invertible sheaf on X.
     We say that $\mathcal{L}$ is ample if for all coherent sheaf $\mathcal{F}$ on X,
     there exists $n_{0} > 0$ such that for all $n \ge n_{0}$, $\mathcal{F} \otimes_{\mathcal{O}_{X}} \mathcal{L}^{n}$ is generated by global sections.
 \end{definition}
@@ -3563,7 +3563,7 @@ In Midterm24.pdf, there is also a definition of immersion which is a little diff
     a very ample invertible sheaf $\mathcal{L}$ on X is ample.
     In fact, can remove proper by reducing to proper case with the following nontrivial fact which is Hartshorne exercise ii 5.15.
     \par
-    Fact: Let X be a noetherian scheme, $U \subseteq X$ open subset, $\mathcal{F}$ coherent sheaf on U.
+    Fact: Let $X$ be a noetherian scheme, $U \subseteq X$ open subset, $\mathcal{F}$ coherent sheaf on U.
     Then there exists coherent sheaf on X whose restriction to U is just $\mathcal{F}$.
 \end{remark}
 \begin{example}
@@ -3574,7 +3574,7 @@ In Midterm24.pdf, there is also a definition of immersion which is a little diff
     Then $\mathcal{O}_{X}(n)$ is very ample/ample if and only if $n > 0$.
 \end{example}
 \begin{lemma}
-    Let X be a noetherian scheme, $\mathcal{L}$ ample invertible sheaf on X.
+    Let $X$ be a noetherian scheme, $\mathcal{L}$ ample invertible sheaf on X.
     For all $x\in X$, there exists $n > 0$ and $s\in \mathcal{L}^{n}(X)$ such that $x\in X_{s} \subseteq X$ and $X_{s}$ is an affine open subset.
     \label{Lemma 6.5}
 \end{lemma}
@@ -3590,7 +3590,7 @@ In Midterm24.pdf, there is also a definition of immersion which is a little diff
     Thus $X_{s} = X_{s} \cap U$ is affine.
 \end{proof}
 \begin{theorem}
-    Let A be a noetherian ring and X be a scheme of finite type over A, $\mathcal{L}$ an ample invertible sheaf on X.
+    Let $A$ be a noetherian ring and $X$ be a scheme of finite type over A, $\mathcal{L}$ an ample invertible sheaf on X.
     Then there exists $r > 0$ such that $\mathcal{L}^{r}$ is very ample.
     \label{Theorem 6.6}
 \end{theorem}
@@ -3610,12 +3610,12 @@ In Midterm24.pdf, there is also a definition of immersion which is a little diff
     Thus $\mathcal{L}^{r}$ is very ample by remark 6.9.
 \end{proof}
 \begin{corollary}
-    Let A be a noetherian ring and X be a scheme of finite type over A, $\mathcal{L}$ an ample invertible sheaf on X.
+    Let $A$ be a noetherian ring and $X$ be a scheme of finite type over A, $\mathcal{L}$ an ample invertible sheaf on X.
     Then X is quasi-projective (resp. projective) over A if and only if X admits an ample invertible sheaf (resp. X admits an ample invertible sheaf and X is proper).
     \label{Corollary 6.2}
 \end{corollary}
 \begin{remark}
-    Let A be a noetherian ring and X be a scheme of finite type over A, $\mathcal{L}$ an ample invertible sheaf on X.
+    Let $A$ be a noetherian ring and $X$ be a scheme of finite type over A, $\mathcal{L}$ an ample invertible sheaf on X.
     If X admits an ample invertible sheaf, then X is separated.
 \end{remark}
 
@@ -3665,12 +3665,12 @@ There are some special functors in Algebraic Geometry.
     With $\mathcal{F}_{x} \hookrightarrow I_{x}$, get a monomorphism $\mathcal{F} \longrightarrow \mathcal{I}$ with $\mathcal{I}$ injective.
 \end{proof}
 \begin{definition}[\textbf{\emph{Sheaf Cohomology}}]
-    Let X be a topological space, $\Gamma(X, \cdot): Ab(X) \longrightarrow Ab$.
+    Let $X$ be a topological space, $\Gamma(X, \cdot): Ab(X) \longrightarrow Ab$.
     Define the cohomology functor $H^{i}(X, \cdot) = R^{i}\Gamma(X, \cdot)$.
     For $\mathcal{F}\in Ab(X)$, we call $H^{i}(X, \mathcal{F})$ the ith cohomology group of $\mathcal{F}$.
 \end{definition}
 \begin{definition}
-    Let X be a topological space, $\mathcal{F}\in Ab(X)$.
+    Let $X$ be a topological space, $\mathcal{F}\in Ab(X)$.
     We say that $\mathcal{F}$ is flasque if for all $V \subseteq U$ inclusion of open subsets,
     the restriction map $\mathcal{F}(U) \longrightarrow \mathcal{F}(V)$ is surjective.
 \end{definition}
@@ -3697,12 +3697,12 @@ There are some special functors in Algebraic Geometry.
     Thus $\mathcal{F}(U) \longrightarrow \mathcal{F}(V) \longrightarrow 0$ is exact so that $\mathcal{F}$ is flasque.
 \end{proof}
 \begin{corollary}
-    Let X be a topological space.
+    Let $X$ be a topological space.
     Then every injective object in $Ab(X)$ is flasque by viewing X as ringed space $(X, \mathbb{Z}_{X})$ where $\mathbb{Z}_{X}$ is the constant sheaf.
     \label{Corollary 7.1}
 \end{corollary}
 \begin{proposition}
-    Let X be a topological space.
+    Let $X$ be a topological space.
     Then every flasque sheaf on X is acyclic for the functor $\Gamma(X, \cdot)$.
     \label{Proposition 7.5}
 \end{proposition}
@@ -3727,7 +3727,7 @@ There are some special functors in Algebraic Geometry.
     Thus by Proposition \ref{Proposition 7.1}, the two right derived functors coincide.
 \end{reason}
 \begin{corollary}
-    Let X be a topological space, $Y \subseteq X$ closed subset, $i: Y \longrightarrow X$ inclusion.
+    Let $X$ be a topological space, $Y \subseteq X$ closed subset, $i: Y \longrightarrow X$ inclusion.
     Then for all $\mathcal{F}\in Ab(Y)$, we have $H^{i}(Y, \mathcal{F}) \cong H^{i}(X, j_{\ast}\mathcal{F})$.
     \label{Corollary 7.3}
 \end{corollary}
@@ -3736,23 +3736,23 @@ There are some special functors in Algebraic Geometry.
     Then $f_{\ast}J^{\ast}$ is a flasque resolution of $f_{\ast}\mathcal{F}$.
 \end{reason}
 \begin{remark}[\textbf{\emph{Gabber Theorem}}]
-    Let X be a scheme.
+    Let $X$ be a scheme.
     Then $Qcoh(X)$ has enough injective objects.
 \end{remark}
 \begin{remark}
-    Let X be a scheme.
+    Let $X$ be a scheme.
     Suppose that X is either noetherian or quasi-compact and separated.
     Then the right derived functor of $\Gamma(X, \cdot): Qcoh(X) \longrightarrow Ab$ coincide with $H^{i}(X), \cdot$.
     In fact, this property is equivalent to each injective object is $\Gamma(X, \cdot)$-acyclic.
 \end{remark}
 \begin{theorem}[\textbf{\emph{Grothendieck}}]
-    Let X be a noetherian topological space of dimension $n < \infty$.
+    Let $X$ be a noetherian topological space of dimension $n < \infty$.
     Then for all $\mathcal{F}\in Ab(X)$, we have that $H^{i}(X, \mathcal{F}) = 0$ for all $i > n$.
     \label{Theorem 7.1}
 \end{theorem}
 \subsection{Cohomology of Noetherian Affine Schemes}
 \begin{theorem}[\textbf{\emph{Artin-Rees}}]
-    Let A be a noetherian ring, $M \subseteq N$ finitely generated $A$-modules, $\mathfrak{a} \subseteq A$ ideal.
+    Let $A$ be a noetherian ring, $M \subseteq N$ finitely generated $A$-modules, $\mathfrak{a} \subseteq A$ ideal.
     Then for all $n > 0$, there exists $m > n$ such that $\mathfrak{a}M \supseteq M \cap a^{m}N$.
     \label{Theorem 7.2}
 \end{theorem}
@@ -3760,7 +3760,7 @@ There are some special functors in Algebraic Geometry.
     This theorem says that the $\mathfrak{a}$-adci topology of M is compatible with the induced topology of $\mathfrak{a}$-adic topology of N on M. 
 \end{remark}
 \begin{lemma}
-    Let A be a noetherian ring, I an injective $A$-module, $\mathfrak{a} \subseteq A$ ideal.
+    Let $A$ be a noetherian ring, I an injective $A$-module, $\mathfrak{a} \subseteq A$ ideal.
     Assume $J \subseteq I$ is the A-submodule consist of $x\in I$ such that $\mathfrak{a}^{n}x= 0$ for some $n > 0$.
     Then J is injective.
     \label{Lemma 7.1}
@@ -3785,7 +3785,7 @@ There are some special functors in Algebraic Geometry.
     Note that $im(\psi_{I}) \subseteq J$ since $\mathfrak{a}^{m}im(\psi{I}) = 0$, get $\psi$. 
 \end{proof}
 \begin{lemma}
-    Let A be a noetherian ring, I an injective $A$-module.
+    Let $A$ be a noetherian ring, I an injective $A$-module.
     Then for all $f\in A$, the localization $\theta: I \longrightarrow I_{f}$ is surjective.
     \label{Lemma 7.2}
 \end{lemma}
@@ -3801,7 +3801,7 @@ There are some special functors in Algebraic Geometry.
     Thus $\theta(z) = \frac{z}{1} = \frac{f^{n + r}z}{f^{n + r}} = \frac{f^{r}y}{f^{n + r}} = \frac{\theta(y)}{f^{n}} = x$ so that $\theta$ is surjective.
 \end{proof}
 \begin{proposition}
-    Let A be a noetherian ring, I an injective $A$-module.
+    Let $A$ be a noetherian ring, I an injective $A$-module.
     Then $\widetilde{I}$ is flasque on $X = \spec A$.
     \label{Proposition 7.6}
 \end{proposition}
@@ -3826,7 +3826,7 @@ There are some special functors in Algebraic Geometry.
     While $\widetilde{J}(X) = \Gamma_{Z}(X, \widetilde{I})$ and $\widetilde{J}(U) = \Gamma_{Z \cap U}(U, \widetilde{I}\big{|}_{U})$, done!
 \end{proof}
 \begin{theorem}[\textbf{\emph{Serre}}]
-    Let A be a noetherian ring and $X = \spec A$.
+    Let $A$ be a noetherian ring and $X = \spec A$.
     Then for all $\mathcal{F}$ quasi-coherent sheaf in X, we have that $H^{i}(X, \mathcal{F}) = 0$ for all $i > 0$.
     \label{Theorem 7.3}
 \end{theorem}
@@ -3838,13 +3838,13 @@ There are some special functors in Algebraic Geometry.
     But $\Gamma(X, \cdot)$ gives back to $0 \longrightarrow M \longrightarrow I^{0} \longrightarrow \cdots$ exact, get $H^{i}(X, \mathcal{F}) = 0$ for all $i > 0$. 
 \end{proof}
 \begin{corollary}
-    Let X be a noetherian affine scheme.
+    Let $X$ be a noetherian affine scheme.
     Then for all exact sequence $0 \longrightarrow \mathcal{F} \longrightarrow \mathcal{G} \longrightarrow \mathcal{H} \longrightarrow 0$ of $\mathcal{O}_{X}$-module with $\mathcal{F}$ quasi-coherent,
     we have that $0 \longrightarrow \mathcal{F}(X) \longrightarrow \mathcal{G}(X) \longrightarrow \mathcal{H}(X) \longrightarrow 0$ is exact.
     \label{Corollary 7.4}
 \end{corollary}\
 \begin{corollary}
-    Let X be a noetherian scheme.
+    Let $X$ be a noetherian scheme.
     Suppose that $0 \longrightarrow \mathcal{F} \longrightarrow \mathcal{G} \longrightarrow \mathcal{H} \longrightarrow 0$ is an exact sequence of $\mathcal{O}_{X}$-module.
     If $\mathcal{F}$ and $\mathcal{H}$ are both quasi-coherent (resp. coherent), then $\mathcal{G}$ is quasi-coherent (resp. coherent).
     \label{Corollary 7.5} 
@@ -3872,7 +3872,7 @@ There are some special functors in Algebraic Geometry.
     Then $\mathcal{G}(X)$ is also finitely generated so that $\mathcal{G}$ is coherent.
 \end{proof}
 \begin{lemma}
-    Let X be a noetherian scheme.
+    Let $X$ be a noetherian scheme.
     Assume that $H^{1}(X, \mathcal{I}) = 0$ for all $\mathcal{I}$ coherent ideal sheaf.
     Then we can cover X by affine open subsets of the form $X_{f}$ for $f\in A = \Gamma(X, \mathcal{O}_{X})$.
     \label{Lemma 7.3}
@@ -3888,7 +3888,7 @@ There are some special functors in Algebraic Geometry.
     On the other hand, $X_{f} \subseteq U$, get $X_{f}$ is affine.
 \end{proof}
 \begin{lemma}
-    Let X be a noetherian scheme.
+    Let $X$ be a noetherian scheme.
     Assume that $H^{1}(X, \mathcal{I}) = 0$ for all $\mathcal{I}$ coherent ideal sheaf.
     Then for all $e > 0$ and $\mathcal{F} \subseteq \mathcal{O}_{X}^{\oplus r}$ coherent, we have that $H^{1}(X, \mathcal{F}) = 0$.
     \label{Lemma 7.4}
@@ -3898,7 +3898,7 @@ There are some special functors in Algebraic Geometry.
     By long exact sequence and induction, get $H^{1}(X, \mathcal{F} \cap \mathcal{O}_{X}^{i}) = 0$ for all $i > 0$ so that $H^{1}(X, \mathcal{F}) = 0$.
 \end{proof}
 \begin{theorem}[\textbf{\emph{Serre, Cohomology Criterion of Affineness}}]
-    Let X be a noetherian scheme.
+    Let $X$ be a noetherian scheme.
     Then the following conditions are equivalent: \\
     (1)X is affine \\
     (2)$H^{i}(X, \mathcal{F}) = 0$ for all $i > 0$ and $\mathcal{F}$ quasi-coherent. \\
@@ -3913,7 +3913,7 @@ There are some special functors in Algebraic Geometry.
 \end{remark}
 \subsection{Čech Cohomology}
 \begin{definition}
-    Let X be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
+    Let $X$ be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
     For $i_{0}, \cdots, i_{p}\in I$, set $U_{i_{0}, \cdots, i_{p}} = U_{i_{0}} \cap \cdots \cap U_{i_{p}}$.
     Define complex $C^{\ast}(\mathcal{I}, \mathcal{F})$ to be 
     \begin{equation*}
@@ -3931,7 +3931,7 @@ There are some special functors in Algebraic Geometry.
     If we don't assume that I is well-ordered, we need to set $U_{i_{0}, \cdots, i_{p}} = 0$ if there are repeated index and $\alpha_{i_{0}, \cdots, i_{p}} = (-1)^{sgn(\sigma)}\alpha_{i_{\sigma(0)}, \cdots, i_{\sigma(p)}}$.
 \end{remark}
 \begin{definition}
-    Let X be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
+    Let $X$ be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
     Define $\check{H}^{p}(\mathcal{U}, \mathcal{F}) = h^{p}(C^{\ast}(\mathcal{U}, \mathcal{F}))$, called the pth Čech cohomology of $\mathcal{F}$ with respect to $\mathcal{U}$.
 \end{definition}
 \begin{example}
@@ -3939,7 +3939,7 @@ There are some special functors in Algebraic Geometry.
     (2)For $\mathcal{U} = \{X\}$, $\check{H}^{p}(\mathcal{U}, \mathcal{F}) = 0$ for all $p > 0$.
 \end{example}
 \begin{lemma}
-    Let X be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
+    Let $X$ be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
     Suppose that $\mathcal{U}$ contains $U_{i} = X$ for some i.
     Then $0 \longrightarrow \mathcal{F}(X) \longrightarrow C^{\ast}(\mathcal{U}, \mathcal{F})$ is exact.
     \label{Lemma 7.5}
@@ -3953,7 +3953,7 @@ There are some special functors in Algebraic Geometry.
 \end{proof}
 \subsection{Comparison Theorem}
 \begin{definition}
-    Let X be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
+    Let $X$ be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
     Define complex of sheaves on X $\mathcal{C}^{\ast}(\mathcal{U}, \mathcal{F})$ to be
     \begin{equation*}
         \mathcal{C}^{p}(\mathcal{U}, \mathcal{F}) = \prod_{i_{0}, \cdots, i_{p}} f_{\ast}(\mathcal{F}\big{|}_{U_{i_{0}, \cdots, i_{p}}})
@@ -3968,7 +3968,7 @@ There are some special functors in Algebraic Geometry.
     Obviously, $\Gamma(X, \mathcal{C}^{p}(\mathcal{U}, \mathcal{F})) = C^{p}(\mathcal{U}, \mathcal{F})$.
 \end{remark}
 \begin{proposition}
-    Let X be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
+    Let $X$ be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
     Then $0 \longrightarrow \mathcal{F} \longrightarrow \mathcal{C}^{\ast}(\mathcal{U}, \mathcal{F})$ is exact.
     \label{Proposition 7.7}
 \end{proposition}
@@ -3978,7 +3978,7 @@ There are some special functors in Algebraic Geometry.
     Apply Lemma \ref{Lemma 7.5}, get exactness of complex of sections on V.
 \end{reason}
 \begin{proposition}
-    Let X be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ flasque sheaf of abelian groups on X.
+    Let $X$ be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ flasque sheaf of abelian groups on X.
     Then $\check{H}^{p}(\mathcal{U}, \mathcal{F}) = 0$ for all $p > 0$.
     \label{Proposition 7.8}
 \end{proposition}
@@ -3991,7 +3991,7 @@ There are some special functors in Algebraic Geometry.
     \end{equation*}
 \end{proof}
 \begin{lemma}
-    Let X be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
+    Let $X$ be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
     Then for all $p \ge 0$, there is a natural homomorphism $\check{H}^{p}(\mathcal{U}, \mathcal{F}) \longrightarrow H^{p}(X, \mathcal{F})$.
     \label{Lemma 7.6}
 \end{lemma}
@@ -4001,7 +4001,7 @@ There are some special functors in Algebraic Geometry.
     inducing the natural homomorphisms we want.
 \end{proof}
 \begin{theorem}[\textbf{\emph{Comparison Theorem}}]
-    Let X be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
+    Let $X$ be a topological space, $\mathcal{U} = \{U_{i}\}_{i\in I}$ open covering of X with well-ordered index set I, $\mathcal{F}$ sheaf of abelian groups on X.
     Suppose that for all p and all $i_{0}, \cdots, i_{p}$, we have that $H^{q}(U_{i_{0}, \cdots, i_{p}}, \mathcal{F}\big{|}_{U_{i_{0}, \cdots, i_{p}}}) = 0$ for all $q > 0$.
     Then the natural homomorphism $\check{H}^{p}(\mathcal{U}, \mathcal{F}) \longrightarrow H^{p}(X, \mathcal{F})$ is isomorphic for all p.
     \label{Theorem 7.5}
@@ -4031,7 +4031,7 @@ There are some special functors in Algebraic Geometry.
     By induction, done!
 \end{proof}
 \begin{corollary}
-    Let X be a (noetherian) separated scheme, $\mathcal{U}$ affine open covering of X, $\mathcal{F}$ quasi-coherent sheaf on X.
+    Let $X$ be a (noetherian) separated scheme, $\mathcal{U}$ affine open covering of X, $\mathcal{F}$ quasi-coherent sheaf on X.
     Then the natural homomorphism $\check{H}^{p}(\mathcal{U}, \mathcal{F}) \longrightarrow H^{p}(X, \mathcal{F})$ is isomorphic for all p.
     \label{Corollary 7.6}
 \end{corollary}
@@ -4039,7 +4039,7 @@ There are some special functors in Algebraic Geometry.
     This corollary immediately comes from Serre Vanishing Theorem.
 \end{remark}
 \begin{corollary}
-    Let X be a (noetherian) separated scheme covered by $r + 1$ affine open subsets.
+    Let $X$ be a (noetherian) separated scheme covered by $r + 1$ affine open subsets.
     Then for all $\mathcal{F}$ quasi-coherent on X, we have that $H^{i}(X, \mathcal{F}) = 0$ for all $i > r$.
     In particular, when $r = 0$, this specializes to Serre Vanishing Theorem.
     \label{Corollary 7.7}
@@ -4047,7 +4047,7 @@ There are some special functors in Algebraic Geometry.
 \subsection{Cohomology of Projective Space}
 \label{subsection:Cohomology of Projective Space}
 \begin{theorem}
-    Let A be a noetherian ring, $S= A[x_{0}, \cdots, x_{r}]$, $X = \proj(S) = \mathbb{P}_{A}^{r}$, $r \ge 1$.
+    Let $A$ be a noetherian ring, $S= A[x_{0}, \cdots, x_{r}]$, $X = \proj(S) = \mathbb{P}_{A}^{r}$, $r \ge 1$.
     Then we have that \\ 
     (1)$H^{i}(X, \mathcal{O}_{X}(n)) = 0$ for all $0 < i < r$ and all $n\in \mathbb{Z}$ \\
     (2)$H^{r}(X, \mathcal{O}_{X}(-r - 1)) \cong A$ is free $A$-module of rank 1 \\
@@ -5658,7 +5658,7 @@ Note that here $\mathbb{P}(E)$ is the $\mathbb{P}(\mathcal{E}^{\lor})$ in Hartsh
 consider $C = \spec\mathcal{G}$ and $C' = \spec(\mathcal{G}')$, then there is closed immersions $C' \hookrightarrow C$ and $\mathbb{P}(C') \hookrightarrow \mathbb{P}(C)$ such that $\mathcal{O}_{\mathbb{P}(C)}(1)\big{|}_{\mathbb{P}(C')} \cong \mathcal{O}_{\mathbb{P}(C')}(1)$.
 In particular, as $\mathcal{G} \longrightarrow \mathcal{G}_{0} = \mathcal{O}_{X}$ is surjective, get zero section $0: X \hookrightarrow C$.
 \par
-(4)(base change)Let $C = \spec\mathcal{G}$ on X be the cone of $\mathcal{G}$ and $f: X' \longrightarrow X$ be a morphism with $X'$ noetherian.
+(4)(base change)Let $C = \spec\mathcal{G}$ on $X$ be the cone of $\mathcal{G}$ and $f: X' \longrightarrow X$ be a morphism with $X'$ noetherian.
 Then $f^{\ast}C := C \times_{X} X' \cong \spec(f^{\ast}\mathcal{G})$ and $\mathbb{C} \times_{X} X' \cong \proj(f^{\ast}\mathcal{G})$, where $f^{\ast}\mathcal{G}$ is a graded $\mathcal{O}_{X'}$-algebra.
 \subsection{Blowing-up}
 \begin{definition}
