@@ -477,13 +477,13 @@ Similar to the theory of abstract, we will define something basic like affine va
     \par
     For convenience, rewrite $f(\mathfrak{p}_{i})$ as $f_{i}$ and assume that $b(\mathfrak{p}_{i}) = \frac{a_{i}}{f_{i}^{n_{i}}}$.
     Then $\frac{a_{i}}{f_{i}^{n_{i}}}$ and $\frac{a_{j}}{f_{j}^{n_{j}}}$ coincide on $A_{\mathfrak{q}}$ for all $i,j$ and $\mathfrak{q}\in D(f_{i}f_{j})$.
-    Consider $\Delta_{ij} = a_{i}f_{j}^{n_{j}} - a_{j}f_{i}^{n_{i}}$ and annihilator $ann_{A}(\Delta_{ij})$.
-    If $f_{i}f_{j}\notin rad(ann_{A}(\Delta_{ij}))$, take maximal ideal $\mathfrak{m}_{ij} \supseteq ann_{A}(\Delta_{ij})$.
+    Consider $\Delta_{ij} = a_{i}f_{j}^{n_{j}} - a_{j}f_{i}^{n_{i}}$ and annihilator $\annihilator_{A}(\Delta_{ij})$.
+    If $f_{i}f_{j}\notin rad(\annihilator_{A}(\Delta_{ij}))$, take maximal ideal $\mathfrak{m}_{ij} \supseteq \annihilator_{A}(\Delta_{ij})$.
     Then $\mathfrak{m}_{ij}\in D(f_{i}f_{j})$ and so $\frac{a_{i}}{f_{i}^{n_{i}}} = \frac{a_{j}}{f_{j}^{n_{j}}}$ in $A_{\mathfrak{m}_{ij}}$.
-    Thus there exists $s_{ij}\in (A \setminus \mathfrak{m}_{ij})$ such that $s\Delta_(ij) = 0$ and so $s\in ann_{A}(\Delta_{ij})$.
-    But $ann_{A}(\Delta_{ij}) \subseteq \mathfrak{m}_{ij}$, get $s\in \mathfrak{m}_{ij}$, contradiction!
+    Thus there exists $s_{ij}\in (A \setminus \mathfrak{m}_{ij})$ such that $s\Delta_(ij) = 0$ and so $s\in \annihilator_{A}(\Delta_{ij})$.
+    But $\annihilator_{A}(\Delta_{ij}) \subseteq \mathfrak{m}_{ij}$, get $s\in \mathfrak{m}_{ij}$, contradiction!
     \par
-    Thus $f_{i}f_{j}\in rad(ann_{A}(\Delta_{ij}))$ and there exists $k_{ij}\in \mathbb{M}$ such that $(f_{i}f_{j})^{k_{ij}}\Delta_{ij} = 0$.
+    Thus $f_{i}f_{j}\in rad(\annihilator_{A}(\Delta_{ij}))$ and there exists $k_{ij}\in \mathbb{M}$ such that $(f_{i}f_{j})^{k_{ij}}\Delta_{ij} = 0$.
     Note that there are finitely many i, we can take a supremum k and so $(f_{i}f_{j})^{k}\Delta_{ij} = 0$ for all $i,j$.
     Let $a_{i}' = a_{i}f_{i}^{k}$ and $f_{i}' = f_{i}^{n_{i} + k}$.
     Can replace $\frac{a_{i}}{f_{i}^{n_{i}}}$ by $\frac{a_{i}'}{f_{i}'}$.
@@ -494,16 +494,16 @@ Similar to the theory of abstract, we will define something basic like affine va
     Get $\frac{\sum_{i} b_{i}a_{i}'}{f^{n}} \longmapsto (a_{\mathfrak{p}})_{\mathfrak{p}\in D(f)}$ and so homomorphism is surjective.
 \end{reason}
 \begin{corollary}
-    Let A be a ring, $\mathcal{O}_{Spec(A)}$ structure sheaf.
-    Then $\mathcal{O}_{Spec(A)}(Spec(A)) = A$.
+    Let $A$ be a ring, $\mathcal{O}_{\spec A}$ the structure sheaf.
+    Then $\mathcal{O}_{\spec A}(\spec A) = A$.
     \label{Corollary 1.2}
 \end{corollary}
 \begin{remark}
-    With structure sheaf, now we can distinguish $\spec k$ and $\spec(k')$ for different fields k and $k'$.
+    With the structure sheaf, now we can distinguish $\spec k$ and $\spec k'$ for different fields $k$ and $k'$.
 \end{remark}
 \begin{proposition}
-    Let A be a ring, $\mathcal{O}_{Spec(A)}$ structure sheaf.
-    Then for all $\mathfrak{p}\in \spec A$, we have an isomorphism $A_{\mathfrak{p}} \overset{\sim}{\longrightarrow} \mathcal{O}_{Spec(A), \mathfrak{p}}$.
+    Let $A$ be a ring, $\mathcal{O}_{\spec A}$ the structure sheaf.
+    Then for all $\mathfrak{p}\in \spec A$, we have an isomorphism $A_{\mathfrak{p}} \overset{\sim}{\longrightarrow} \mathcal{O}_{\spec A, \mathfrak{p}}$.
     \label{Proposition 1.10}
 \end{proposition}
 \begin{reason}
@@ -3787,7 +3787,7 @@ There are some special functors in Algebraic Geometry.
     \label{Lemma 7.2}
 \end{lemma}
 \begin{proof}
-    For all $i > 0$, set $\mathfrak{b}_{i} = ann_{A}(f^{i})$.
+    For all $i > 0$, set $\mathfrak{b}_{i} = \annihilator_{A}(f^{i})$.
     Get an increasing sequence of ideals $\mathfrak{b}_{1} \subseteq \mathfrak{b}_{2} \subseteq \cdots$.
     As A is noetherian, $\{\mathfrak{b}_{i}\}$ stabilize from $\mathfrak{b}_{r}$ for some $r < \infty$.
     For $x\in I_{f}$, we can write $x = \frac{\theta(y)}{f^{n}}$ where $y\in I$ and $n > 0$.
