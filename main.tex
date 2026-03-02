@@ -2951,8 +2951,9 @@ With this definition, we can state definition of abstract variety over general f
 \section{Sheaves of Modules}
 \label{section:Sheaves of Modules}
 
-\subsection{Modules over Ringed Space}
-\label{subsection:Modules over Ringed Space}
+\subsection{Modules over ringed space}
+\label{subsection:Sheaves_of_Modules_Modules_over_ringed_space}
+
 \begin{definition}
     Let $X$ be a scheme or $(X, \mathcal{O}_{X})$ be a ringed space.
     A sheaf of $\mathcal{O}_{X}$-modules is a sheaf of abelian groups $\mathcal{F}$ on X such that for all $U \subseteq X$ open, 
@@ -3001,7 +3002,10 @@ With this definition, we can state definition of abstract variety over general f
     On the other hand, the inverse image $f^{\ast}\mathcal{G} = f^{-1}\mathcal{G} \otimes_{f^{-1}\mathcal{O}_{Y}} \mathcal{O}_{X}$ of $\mathcal{G}$ is an $\mathcal{O}_{X}$-module where $f^{-1}\mathcal{O}_{Y} \longrightarrow \mathcal{O}_{X}$ is induced by $f^{\sharp}$.
     \label{Lemma 6.1}
 \end{lemma}
-\subsection{Quasi-coherent and Coherent Sheaves}
+
+\subsection{Quasi-coherent and coherent sheaves}
+\label{subsection:Sheaves_of_Modules_Quasi-coherent_and_coherent_sheaves}
+
 \begin{definition}
     Let $A$ be a ring, $X = \spec A$, $M\in Mod_{A}$.
     Define an $\mathcal{O}_{X}$-module $\widetilde{M}$ on X by the same process as $\mathcal{O}_{X}$ replacing A by M.
@@ -3176,7 +3180,10 @@ With this definition, we can state definition of abstract variety over general f
     Now let $X = \spec A$ be an affine scheme with A integral domain, $U \subsetneq X$ nonempty open subset with inclusion $j: U \longrightarrow X$.
     Then $j_{!}\mathcal{O}_{U}$ is an $\mathcal{O}_{X}$-module but not quasi-coherent.
 \end{example}
-\subsection{Direct and Inverse Images}
+
+\subsection{Direct and inverse images}
+\label{subsection:Sheaves_of_Modules_Direct_and_inverse_images}
+
 \begin{lemma}
     Let $f: X \longrightarrow Y$ be a morphism of schemes, $\mathcal{M}, \mathcal{N}$ two $\mathcal{O}_{Y}$-modules.
     Then $f^{\ast}\mathcal{M} \otimes_{\mathcal{O}_{X}} f^{\ast}\mathcal{N} \cong f^{\ast}(\mathcal{M} \otimes_{\mathcal{O}_{Y}} \mathcal{N})$.
@@ -3224,7 +3231,7 @@ With this definition, we can state definition of abstract variety over general f
 \end{proposition}
 \begin{proof}
     Can assume $X = \spec(B)$ and $Y = \spec A$.
-    Then $\mathcal{G} = \widetilde{M}$ for some finitely generated $A$-module M so that $f^{\ast} = \widetilde{M \otimes_{A} B}$.
+    Then $\mathcal{G} = \widetilde{M}$ for some finitely generated $A$-module M so that $f^{\ast}\mathcal{G} = \widetilde{M \otimes_{A} B}$.
     Since M is finitely generated $A$-module, get $M \otimes_{A} B$ finitely generated as $B$-module.
     Get $f^{\ast}\mathcal{G}$ is a coherent $\mathcal{O}_{X}$-module.
 \end{proof}
