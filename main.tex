@@ -801,14 +801,14 @@ Now with well defined affine and projective scheme, we can restate definition of
 \end{definition}
 
 \section{Morphisms of Schemes}
-\label{section:Morphisms of Schemes}
+\label{section:Morphisms_of_Schemes}
 
 Recall a morphism of schemes $(f, f^{\sharp}): (X, \mathcal{O}_{X}) \longrightarrow (Y, \mathcal{O}_{Y})$ is a morphism of locally ringed spaces.
 From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a morphism of schemes from $(X, \mathcal{O}_{X})$ to $(Y, \mathcal{O}_{Y})$.
 \begin{lemma}
     Let $f: X \longrightarrow Y$ be a morphism of schemes.
     Suppose that $U \subseteq X$ is an open subset.
-    Then f induce a morphism $f\big{|}_{U} : U \longrightarrow Y$, where U is scheme $(U, \mathcal{O}_{X}\big{|}_{U})$.
+    Then $f$ induce a morphism $f\big{|}_{U} : U \longrightarrow Y$, where $U$ is scheme $(U, \mathcal{O}_{X}\big{|}_{U})$.
     \label{Lemma 2.1}
 \end{lemma}
 \begin{proof}
@@ -849,8 +849,8 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     While each ring homomorphism in $g^{\sharp}$ and $\widetilde{g}^{\sharp}$ is a ring homomorphism in $f^{\sharp}$, get $g = \widetilde{g}$ as morphisms of schemes.
 \end{reason}
 \begin{lemma}[\textbf{\emph{Gluing Lemma}}]
-    Let X,Y be two schemes.
-    Assume that $\{U_{i}\}_{i\in I}$ is an open covering of X.
+    Let $X,Y$ be two schemes.
+    Assume that $\{U_{i}\}_{i\in I}$ is an open covering of $X$.
     Then giving a morphism $f: X \longrightarrow Y$ is equivalent to giving a family of morphisms ${f_{i}: U_{i} \longrightarrow Y}_{i\in I}$ such that $f_{i}\big{|}_{U_{i} \cap U_{j}} = f_{j}\big{|}_{U_{i} \cap U_{j}}$.
     \label{Lemma 2.3}
 \end{lemma}
@@ -862,9 +862,9 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     For each $V \subseteq Y$ open subset and $t\in \mathcal{O}_{Y}(V)$, we have images ${f_{i}^{\sharp}(V)(t)}_{i\in I}$.
     Note that $f_{i}^{\sharp}(t)\in \mathcal{O}_{X}(f^{-1}(V) \cap U_{i})$, while $f^{-1}(V) \cap U_{i}$ form an open covering of $f^{-1}(V)$ and $f_{i}^{\sharp}(t)$ coincide on $f^{-1}(U) \cap U_{i} \cap U_{j}$ for all $i,j\in I$.
     By property of sheaf, there exists $s\in \mathcal{O}_{X}(f^{-1}(V))$ such that $s\big{|}_{f^{-1} \cap U_{i}} = f_{i}^{\sharp}(t)$.
-    Let $f^{\sharp}(V)$ map t to s.
+    Let $f^{\sharp}(V)$ map $t$ to $s$.
     By property of sheaf, it is easty to check naturality and that $f^{\sharp}(V)$ is a ring homomorphism.
-    Get a morphism f of schemes from X to Y and $f\big{|}_{U_{i}} = f_{i}$.
+    Get a morphism f of schemes from $X$ to $Y$ and $f\big{|}_{U_{i}} = f_{i}$.
 \end{proof}
 \begin{lemma}
     Let $X$ be a scheme, $x\in X$.
@@ -873,13 +873,13 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
 \end{lemma}
 \begin{reason}
     For affine case, assume $X = \spec A$.
-    For all $x\in X$, it corresponds to a prime ideal $\mathfrak{p}$ of A and there is a natural homomorphism $A \longrightarrow A_{\mathfrak{p}}$,
+    For all $x\in X$, it corresponds to a prime ideal $\mathfrak{p}$ of $A$ and there is a natural homomorphism $A \longrightarrow A_{\mathfrak{p}}$,
     where $A_{\mathfrak{p}}$ is just $\mathcal{O}_{X, x}$, inducing a morphism $\spec(\mathcal{O}_{X, x}) \longrightarrow X$.
     \par
-    For general case, we can take an affine open neighbourhood U of x, which gives a morphism $\spec(\mathcal{\mathcal{O}_{X, x}}) = (\mathcal{O}_{X}\big{|}_{U})_{x} \longrightarrow U$.
+    For general case, we can take an affine open neighbourhood $U$ of $x$, which gives a morphism $\spec(\mathcal{\mathcal{O}_{X, x}}) = (\mathcal{O}_{X}\big{|}_{U})_{x} \longrightarrow U$.
     Composing with $i: U \hookrightarrow X$, get $\spec(\mathcal{O}_{X, x}) \longrightarrow X$.
-    To show that the morphism is independent of choose of U.
-    Consider two affine open neighbourhoods $V \subseteq U$ of x and there is a commutative diagram
+    To show that the morphism is independent of choose of $U$.
+    Consider two affine open neighbourhoods $V \subseteq U$ of $x$ and there is a commutative diagram
     \begin{equation*}
         \begin{tikzcd}
             \mathcal{O}_{X}(U) \arrow[rr, "\rho_{UV}"] \arrow[dr] &&
@@ -892,11 +892,14 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
 \begin{remark}
     Since there is a natural morphism $\spec(k(x)) \longrightarrow \spec(\mathcal{O}_{X, x})$, we also get $\spec(k(x)) \longrightarrow X$.
 \end{remark}
+
 \subsection{S-schemes}
+\label{subsection:Morphisms_of_Schemes_S-schemes}
+
 \begin{definition}
-    Let S be a schemes.
-    An S-scheme (or scheme over S) is a scheme X equipped with a morphism of schemes $X \longrightarrow S$.
-    A morphism of S-schemes is a morphism of schemes $X \longrightarrow Y$ such that the following diagram commutes
+    Let $S$ be a schemes.
+    An $S$-scheme (or scheme over $S$) is a scheme $X$ equipped with a morphism of schemes $X \longrightarrow S$.
+    A morphism of $S$-schemes is a morphism of schemes $X \longrightarrow Y$ such that the following diagram commutes
     \begin{equation*}
         \begin{tikzcd}
             X \arrow[rr] \arrow[dr] &&
@@ -904,16 +907,16 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
             & S &
         \end{tikzcd}
     \end{equation*}
-    Define $Mor_{S}(X, Y)$ to be the set of all morphism of S-schemes from X to Y.
-    In particular, if $S = \spec A$ is an affine scheme, we write A-scheme for short.
+    Define $Mor_{S}(X, Y)$ to be the set of all morphism of S-schemes from $X$ to $Y$.
+    In particular, if $S = \spec A$ is an affine scheme, we write $A$-scheme for short.
 \end{definition}
 \begin{definition}
-    Let $A$ be a ring, B an A-algebra, X an A-scheme.
-    Define the set of B-points of X to be $X(B) = Mor_{Spec(A)}(Spec(B), X)$. 
+    Let $A$ be a ring, $B$ an $A$-algebra, $X$ an $A$-scheme.
+    Define the set of $B$-points of $X$ to be $X(B) = Mor_{Spec(A)}(Spec(B), X)$. 
 \end{definition}
 \begin{example}
-    (1)Let $k$ be a field, $l/K$ field extension, X a k-scheme.
-    Then an l-point of X
+    (1)Let $k$ be a field, $l/K$ field extension, $X$ a $k$-scheme.
+    Then an $l$-point of $X$
     \begin{equation*}
         \begin{tikzcd}[sep = tiny]
             \spec(l) \arrow[rr] \arrow[dr] &&
@@ -931,7 +934,7 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
     where the first row of the second diagram is a local homomorphism.
     In particular, $X(k) \longleftrightarrow \{x\in X \big{|} k(x) = k\}$. \\
     (2)Let $X = \mathbb{A}_{\mathbb{R}}^{1} = \spec(\mathbb{R}[t])$.
-    There are 2 $\mathbb{C}$-points of X where image is $(t^{2} + 1)\in X$ with residue field isomorphic to $\mathbb{C}$.
+    There are $2$ $\mathbb{C}$-points of $X$ where image is $(t^{2} + 1)\in X$ with residue field isomorphic to $\mathbb{C}$.
     The fact comes from another fact that the following commutative diagram has two choices
     \begin{equation*}
         \begin{tikzcd}
@@ -940,9 +943,9 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
             & \mathbb{R} &
         \end{tikzcd}
     \end{equation*}
-    (3)Let $k$ be a field, X a k-scheme.
+    (3)Let $k$ be a field, $X$ a k-scheme.
     Assume that $k[\varepsilon] = k[t]/(t^{2})$ and $\spec(k[\varepsilon]) = \{(\overline{t})\}$.
-    Then a $k[\varepsilon]$-point of X
+    Then a $k[\varepsilon]$-point of $X$
     \begin{equation*}
         \begin{tikzcd}[sep = tiny]
             \spec k[\varepsilon] \arrow[rr] \arrow[dr] &&
@@ -962,13 +965,14 @@ From now on, for convenience, we would just write $f: X \longrightarrow Y$ for a
 \end{example}
 \begin{definition}[\textbf{\emph{Tangent Spaces}}]
     Let $X$ be a scheme.
-    Assume that $x\in X$ with $k(x) = k$ for some field k.
-    Define the tangent space of X at x to be $T_{x}(X) = \hom_{k}(\mathfrak{m}_{x}/\mathfrak{m}_{x}^{2}, k)$, 
-    which is the dual space of $\mathfrak{m}_{x}/\mathfrak{m}_{x}^{2}$ as a k-vector space.
+    Assume that $x\in X$ with $k(x) = k$ for some field $k$.
+    Define the tangent space of $X$ at $x$ to be $T_{x}(X) = \hom_{k}(\mathfrak{m}_{x}/\mathfrak{m}_{x}^{2}, k)$, 
+    which is the dual space of $\mathfrak{m}_{x}/\mathfrak{m}_{x}^{2}$ as a $k$-vector space.
 \end{definition}
 \begin{remark}
     With this language of tangent space, we can conclude example 2.1 (3) that $X(k[\varepsilon]) = \{(x, v) \big{|} x\in X \text{ such that } k(x) = k, v\in T_{x}(X)\}$.
 \end{remark}
+
 \subsection{Open Immersions and Closed Immersions}
 \begin{definition}
     Let $X$ be a scheme.
